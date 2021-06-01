@@ -12,7 +12,7 @@ namespace Exercise3 {
             //var amountPerStore =  sales.GetPerStoreSales();　//店舗別売上別売り上げを求める
             var amountPerCategory = sales.GetPerCategorySales();//商品カテゴリ別売り上げを求める
             foreach (var obj in amountPerCategory) {
-                Console.WriteLine("{0} {1:0,000}円", obj.Key, obj.Value);
+                Console.WriteLine("{0} {1:0,000}円", obj.Key, obj.Value);//{1:#,#}
             }
         }
     }
