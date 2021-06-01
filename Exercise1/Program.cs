@@ -22,6 +22,7 @@ namespace Exercise1 {
             foreach(var song in songs) {
                 Console.WriteLine("タイトル{0},歌手名{1},演奏時間{2:m\\:ss}", song.Title, song.ArtistName, TimeSpan.FromSeconds(song.Length));
             }
+            //:を文字と認識させるため\をつけ,\:をエスケープシーケンスと認識させないように@を先頭につけるか\\をつける
         }
     }
 }
