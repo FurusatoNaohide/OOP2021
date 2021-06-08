@@ -106,7 +106,7 @@ namespace Section01 {
         private static void Exercise2_5(List<string> names) {
             int count = 0;
 
-            //names.ForEach(n => n.Count(c => char.IsLower(c));
+            //names.ForEach(n => count += n.Count(c => char.IsLower(c));
 
             foreach (var name in names) {
                 //IsLower() 小文字か判別
