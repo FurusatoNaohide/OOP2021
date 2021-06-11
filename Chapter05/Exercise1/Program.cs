@@ -22,8 +22,7 @@ namespace Exercise1 {
 #endif
 #if true
             #region 問題5.2
-            var s1 = Console.ReadLine();
-            var s2 = Console.ReadLine();
+            var str = Console.ReadLine();
             #endregion
 #endif
         }
