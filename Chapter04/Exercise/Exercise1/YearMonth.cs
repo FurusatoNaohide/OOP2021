@@ -18,17 +18,21 @@ namespace Exercise1 {
         }
 
         //4.1.2
+        //21世紀ならTrue(プロパティ)
         public bool Is21Century {
             get {
-               return 2001 <= Year && Year >= 2100;
+               return 2001 <= Year && Year <= 2100;
             }
         }
 
         //4.1.3
         public YearMonth AddOneMonth() {
+            //12月だったら
             if(Month == 12) {
+                //翌年にして、１月にする
                 return new YearMonth(this.Year + 1,1);
             } else {
+                //次月にする
                 return new YearMonth(this.Year, this.Month + 1);
             }
             
