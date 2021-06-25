@@ -44,7 +44,10 @@ namespace Exercise3 {
             this.label5 = new System.Windows.Forms.Label();
             this.Button5_3_6 = new System.Windows.Forms.Button();
             this.TextBoxWordChange2 = new System.Windows.Forms.TextBox();
-            this.TextBoxNovel = new System.Windows.Forms.TextBox();
+            this.inputStrData = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.outputStrData = new System.Windows.Forms.TextBox();
+            this.Button5_4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -225,19 +228,49 @@ namespace Exercise3 {
             this.TextBoxWordChange2.Size = new System.Drawing.Size(368, 23);
             this.TextBoxWordChange2.TabIndex = 3;
             // 
-            // TextBoxNovel
+            // inputStrData
             // 
-            this.TextBoxNovel.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TextBoxNovel.Location = new System.Drawing.Point(12, 497);
-            this.TextBoxNovel.Name = "TextBoxNovel";
-            this.TextBoxNovel.Size = new System.Drawing.Size(467, 28);
-            this.TextBoxNovel.TabIndex = 1;
+            this.inputStrData.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.inputStrData.Location = new System.Drawing.Point(198, 524);
+            this.inputStrData.Name = "inputStrData";
+            this.inputStrData.Size = new System.Drawing.Size(467, 28);
+            this.inputStrData.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(7, 485);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 27);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "問題5.4";
+            // 
+            // outputStrData
+            // 
+            this.outputStrData.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.outputStrData.Location = new System.Drawing.Point(198, 558);
+            this.outputStrData.Multiline = true;
+            this.outputStrData.Name = "outputStrData";
+            this.outputStrData.Size = new System.Drawing.Size(467, 89);
+            this.outputStrData.TabIndex = 1;
+            // 
+            // Button5_4
+            // 
+            this.Button5_4.Location = new System.Drawing.Point(17, 524);
+            this.Button5_4.Name = "Button5_4";
+            this.Button5_4.Size = new System.Drawing.Size(94, 41);
+            this.Button5_4.TabIndex = 10;
+            this.Button5_4.Text = "問題5.4";
+            this.Button5_4.UseVisualStyleBackColor = true;
+            this.Button5_4.Click += new System.EventHandler(this.Button5_4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 576);
+            this.ClientSize = new System.Drawing.Size(800, 659);
+            this.Controls.Add(this.Button5_4);
             this.Controls.Add(this.Button5_3_6);
             this.Controls.Add(this.Button5_3_5);
             this.Controls.Add(this.Button5_3_4);
@@ -256,8 +289,10 @@ namespace Exercise3 {
             this.Controls.Add(this.TextBoxBeforWord);
             this.Controls.Add(this.TextBoxSpaceCount);
             this.Controls.Add(this.Button5_3_1);
-            this.Controls.Add(this.TextBoxNovel);
+            this.Controls.Add(this.outputStrData);
+            this.Controls.Add(this.inputStrData);
             this.Controls.Add(this.inputStrText);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -289,7 +324,10 @@ namespace Exercise3 {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Button5_3_6;
         private System.Windows.Forms.TextBox TextBoxWordChange2;
-        private System.Windows.Forms.TextBox TextBoxNovel;
+        private System.Windows.Forms.TextBox inputStrData;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox outputStrData;
+        private System.Windows.Forms.Button Button5_4;
     }
 }
 
