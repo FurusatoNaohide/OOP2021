@@ -27,14 +27,29 @@ namespace Exercise1 {
                 }
             }
             //Aから並べ替えて出力
-            var d = dict.OrderBy(s => s);
-            foreach (var obj in d) {
-               Console.WriteLine("{0}:{1}", obj.Key, obj.Value);
+            foreach (var obj in dict.OrderBy(s => s.Key)) {
+               Console.WriteLine("'{0}':{1}", obj.Key, obj.Value);
             }
         }
 
         private static void Exercise1_2(string text) {
-
+            var dict = new SortedDictionary<Char,int>();
+            foreach (var c in text) {
+                //大文字小文字を区別しないため全て大文字に変換して処理
+                var uc = char.ToUpper(c);
+                if ('A' <= uc && uc <= 'Z') {
+                    if (dict.ContainsKey(uc)) {
+                        dict[uc]++;
+                    } else {
+                        dict[uc] = 1;
+                    }
+                }
+            }
+            //Aから並べ替えて出力
+            //ソートされているからOrderBy()は必要ない
+            foreach (var obj in dict) {
+                Console.WriteLine("'{0}':{1}", obj.Key, obj.Value);
+            }
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Section03 {
             abbrs.Add("IOC", "国際オリンピック委員会");
             abbrs.Add("NPT", "核兵器不拡散条約");
 
+
+#if false //リスト7.20
             // インデクサの利用例
             var names = new[] { "WHO", "FIFA", "NPT", };
             foreach (var name in names) {
@@ -41,6 +43,39 @@ namespace Section03 {
                 Console.WriteLine("{0}={1}", item.Key, item.Value);
             }
             Console.WriteLine();
+#endif
+
+
+            //7.2.3(Countプロパティの呼び出し)
+            var count = abbrs.Count;
+            Console.WriteLine("---- 7.2.3 Countプロパティの呼び出し----");
+            Console.WriteLine(count);
+            Console.WriteLine();
+
+            //7.2.3(Removeの呼び出し)戻り値はbool(true or false)
+            Console.WriteLine("---- 7.2.3 Removeメソッドの呼び出し----");
+            if (abbrs.Remove("IOC")) {
+                Console.WriteLine("削除されました");
+            }
+
+            if (abbrs.Remove("IOC")) {
+                Console.WriteLine("削除されました");
+            } else {
+                Console.WriteLine("削除エラー");
+            }
+
+            Console.WriteLine();
+
+            //7.2.3(Countプロパティの呼び出し)
+            count = abbrs.Count;
+            Console.WriteLine("---- 7.2.3 Countプロパティの呼び出し----");
+            Console.WriteLine(count);
+            Console.WriteLine();
+
+            //7.2.4
+            foreach (var item in abbrs.Where(x => x.Key.Length == 3)) {
+                Console.WriteLine("{0}={1}",item.Key ,item.Value);
+            }
         }
     }
 }
