@@ -15,10 +15,10 @@ namespace Exercise1 {
         }
 
         private void btAction_Click(object sender, EventArgs e) {
-            //var today = DateTime.Today;
             var day = new DateTime((int)nudYear.Value,(int)nudMonth.Value,(int)nudDay.Value);
             var today = DateTime.Today;
             DayOfWeek dayOfWeek = day.DayOfWeek;
+
 
 #if false   //曜日
             string dow = "";
@@ -49,10 +49,13 @@ namespace Exercise1 {
             }
             tbOutput.Text = dow + "です";
 #endif
-            //今日 - 指定した日付
+#if false //今日 - 指定した日付
             TimeSpan diff = today.Date - day.Date;
             tbOutput.Text = diff.Days + "日前";
-            
+#endif
+            //年齢を求める
+            tbOutput.Text = GetAge(dtpDateTime.Value, today).ToString() + "歳";
+
 
             //閏年判定
             var isLeapYear = DateTime.IsLeapYear(day.Year);
@@ -65,5 +68,13 @@ namespace Exercise1 {
             //tbOutput.Text = DateTime.Today.DayOfYear.ToString();
         }
 
+        //年齢を求めるメソッド
+        public int GetAge(DateTime birthday, DateTime targetday) {
+            var age = targetday.Year - birthday.Year;
+            if(targetday < birthday.AddYears(age)) {
+                age--;
+            }
+            return age;
+        }
     }
 }
