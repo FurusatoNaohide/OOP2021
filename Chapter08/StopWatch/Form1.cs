@@ -19,16 +19,23 @@ namespace StopWatch {
         }
 
         private void btStart_Click(object sender, EventArgs e) {
-            tmDisp.Tick += Tm_Tick;
-            tmDisp.Interval = 10;
-            tmDisp.Start();
-            sw.Start();
+            //tmDisp.Tick += Tm_Tick;
+            //tmDisp.Interval = 10;//発生頻度 ms
+            tmDisp.Start();//画面更新用のタイマースタート
+            sw.Start();//ストップウォッチスタート
             lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
         }
 
+        //画面更新用タイマーのタイムアウト
+        private void tmDisp_Tick(object sender, EventArgs e) {
+            lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
+        }
+
+        /*
         private void Tm_Tick(object sender, EventArgs e) {
             lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
         }
+        */
 
         private void Form1_Load(object sender, EventArgs e) {
             lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
@@ -42,7 +49,15 @@ namespace StopWatch {
 
         private void btReset_Click(object sender, EventArgs e) {
             sw.Restart();
-            lbTimerDisp.Text = "00:00:00.00";
+            lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
+            //lbTimerDisp.Text = "00:00:00.00";
+            lbLap.Items.Clear();
         }
+
+        private void btLup_Click(object sender, EventArgs e) {
+            //lbLap.Items.Add(sw.Elapsed.ToString(@"hh\:mm\:ss\.ff"));//昇順（下に入る）
+            lbLap.Items.Insert(0,sw.Elapsed.ToString(@"hh\:mm\:ss\.ff"));//降順（毎回０番目に入れる）
+        }
+
     }
 }

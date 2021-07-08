@@ -29,7 +29,7 @@ namespace StopWatch {
             this.btstop = new System.Windows.Forms.Button();
             this.btReset = new System.Windows.Forms.Button();
             this.lbTimerDisp = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbLap = new System.Windows.Forms.ListBox();
             this.tmDisp = new System.Windows.Forms.Timer(this.components);
             this.btLup = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -74,14 +74,20 @@ namespace StopWatch {
             this.lbTimerDisp.TabIndex = 4;
             this.lbTimerDisp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listBox1
+            // lbLap
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(339, 43);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 184);
-            this.listBox1.TabIndex = 5;
+            this.lbLap.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbLap.FormattingEnabled = true;
+            this.lbLap.ItemHeight = 16;
+            this.lbLap.Location = new System.Drawing.Point(339, 43);
+            this.lbLap.Name = "lbLap";
+            this.lbLap.Size = new System.Drawing.Size(120, 180);
+            this.lbLap.TabIndex = 5;
+            // 
+            // tmDisp
+            // 
+            this.tmDisp.Interval = 1;
+            this.tmDisp.Tick += new System.EventHandler(this.tmDisp_Tick);
             // 
             // btLup
             // 
@@ -91,6 +97,7 @@ namespace StopWatch {
             this.btLup.TabIndex = 6;
             this.btLup.Text = "ラップ→";
             this.btLup.UseVisualStyleBackColor = true;
+            this.btLup.Click += new System.EventHandler(this.btLup_Click);
             // 
             // Form1
             // 
@@ -99,13 +106,13 @@ namespace StopWatch {
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(476, 268);
             this.Controls.Add(this.btLup);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbLap);
             this.Controls.Add(this.lbTimerDisp);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.btstop);
             this.Controls.Add(this.btStart);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ストップウォッチ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -117,7 +124,7 @@ namespace StopWatch {
         private System.Windows.Forms.Button btstop;
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Label lbTimerDisp;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbLap;
         private System.Windows.Forms.Timer tmDisp;
         private System.Windows.Forms.Button btLup;
     }
