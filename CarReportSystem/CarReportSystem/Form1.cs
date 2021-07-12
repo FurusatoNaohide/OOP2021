@@ -78,7 +78,63 @@ namespace CarReportSystem {
         private void setCbCarName(string carname) {
             if (!cbCarName.Items.Contains(carname)) {
                 cbCarName.Items.Add(carname);
+
             }
+        }
+
+        private void dgvRegistData_CellClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex == -1)
+                return;
+
+            //選択された行のデータを取得
+            CarReport selectedCar = listCarReport[e.RowIndex];
+                
+            //取得したデータ項目を各コントロールへ設定
+            dtpDate.Value = selectedCar.Date;
+            cbAuthor.Text = selectedCar.Auther; 
+            setMakerRadioButton(selectedCar.Maker);
+            cbCarName.Text = selectedCar.CarName;
+            pbPicture.Image = selectedCar.Picture;
+            tbReport.Text = selectedCar.Report;
+
+            
+        }
+
+        private void setMakerRadioButton(CarReport.MakerGroup mg) {
+            switch (mg) {
+
+                case CarReport.MakerGroup.トヨタ:
+                    rbToyota.Checked = true;
+                    break;
+                case CarReport.MakerGroup.日産:
+                    rbNissan.Checked = true;
+                    break;
+                case CarReport.MakerGroup.ホンダ:
+                    rbHonda.Checked = true;
+                    break;
+                case CarReport.MakerGroup.スバル:
+                    rbSubaru.Checked = true;
+                    break;
+                case CarReport.MakerGroup.外車:
+                    rbImport.Checked = true;
+                    break;
+                default:    //その他
+                    rbOther.Checked = true;
+                    break;
+            }
+        }
+
+        private void btDataDelete_Click(object sender, EventArgs e) {
+            //CurrrentRow 選択してるセルのある行を選択
+            listCarReport.RemoveAt(dgvRegistData.CurrentRow.Index);
+        }
+
+        //今表示しているデータに更新、指定行に入れる
+        private void btDataCorrect_Click(object sender, EventArgs e) {
+            listCarReport[dgvRegistData.CurrentRow.Index].UpDate(
+                dtpDate.Value, cbAuthor.Text, selectedGroup(), 
+                cbCarName.Text, tbReport.Text,pbPicture.Image);
+            dgvRegistData.Update();
         }
     }
 }

@@ -24,9 +24,8 @@ namespace CarReportSystem {
             その他,
         }
 
-        //引数付コンストラクタ
-        /*
-        public CarReport(DateTime date, 
+        //データ更新用
+        public void UpDate(DateTime date, 
                          string auther, 
                          MakerGroup maker, 
                          string carname, 
@@ -39,6 +38,6 @@ namespace CarReportSystem {
             this.Report = report;
             this.Picture = picture;
         }
-        */
+        
     }
 }
