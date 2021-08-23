@@ -33,9 +33,10 @@ namespace Exercise3 {
             // 
             // btOpen
             // 
-            this.btOpen.Location = new System.Drawing.Point(12, 12);
+            this.btOpen.Location = new System.Drawing.Point(16, 15);
+            this.btOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btOpen.Name = "btOpen";
-            this.btOpen.Size = new System.Drawing.Size(122, 34);
+            this.btOpen.Size = new System.Drawing.Size(163, 42);
             this.btOpen.TabIndex = 0;
             this.btOpen.Text = "開く...";
             this.btOpen.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@ namespace Exercise3 {
             // 
             // btAddFile
             // 
-            this.btAddFile.Location = new System.Drawing.Point(12, 52);
+            this.btAddFile.Location = new System.Drawing.Point(16, 65);
+            this.btAddFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAddFile.Name = "btAddFile";
-            this.btAddFile.Size = new System.Drawing.Size(122, 34);
+            this.btAddFile.Size = new System.Drawing.Size(163, 42);
             this.btAddFile.TabIndex = 1;
             this.btAddFile.Text = "追加元";
             this.btAddFile.UseVisualStyleBackColor = true;
@@ -57,9 +59,10 @@ namespace Exercise3 {
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(12, 92);
+            this.btAdd.Location = new System.Drawing.Point(16, 115);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(122, 34);
+            this.btAdd.Size = new System.Drawing.Size(163, 42);
             this.btAdd.TabIndex = 2;
             this.btAdd.Text = "追加";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -67,12 +70,13 @@ namespace Exercise3 {
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(144, 137);
+            this.ClientSize = new System.Drawing.Size(197, 171);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.btAddFile);
             this.Controls.Add(this.btOpen);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
