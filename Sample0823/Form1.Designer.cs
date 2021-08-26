@@ -43,7 +43,7 @@ namespace Sample0823
             this.Value.Location = new System.Drawing.Point(30, 24);
             this.Value.Multiline = true;
             this.Value.Name = "Value";
-            this.Value.Size = new System.Drawing.Size(137, 67);
+            this.Value.Size = new System.Drawing.Size(137, 59);
             this.Value.TabIndex = 0;
             // 
             // label1
@@ -52,7 +52,7 @@ namespace Sample0823
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(173, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 44);
+            this.label1.Size = new System.Drawing.Size(54, 43);
             this.label1.TabIndex = 1;
             this.label1.Text = "の";
             // 
@@ -62,7 +62,7 @@ namespace Sample0823
             this.Jyou.Location = new System.Drawing.Point(235, 24);
             this.Jyou.Multiline = true;
             this.Jyou.Name = "Jyou";
-            this.Jyou.Size = new System.Drawing.Size(137, 67);
+            this.Jyou.Size = new System.Drawing.Size(137, 59);
             this.Jyou.TabIndex = 2;
             // 
             // label2
@@ -71,7 +71,7 @@ namespace Sample0823
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(378, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 44);
+            this.label2.Size = new System.Drawing.Size(62, 43);
             this.label2.TabIndex = 3;
             this.label2.Text = "乗";
             // 
@@ -92,7 +92,7 @@ namespace Sample0823
             this.Result.Location = new System.Drawing.Point(610, 24);
             this.Result.Multiline = true;
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(137, 67);
+            this.Result.Size = new System.Drawing.Size(178, 59);
             this.Result.TabIndex = 5;
             // 
             // Form1

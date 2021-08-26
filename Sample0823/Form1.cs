@@ -21,12 +21,16 @@ namespace Sample0823
         {
             var num1 = int.Parse(Value.Text);//整数に変換
             var num2 = int.Parse(Jyou.Text);
+            
             var answer = 1;
             for (int i = 0; i < num2; i++)
             {
                 answer *= num1;
             }
             Result.Text =  answer.ToString();
+            
+
+            //Result.Text = Math.Pow(num1, num2).ToString();
         }
     }
 }
