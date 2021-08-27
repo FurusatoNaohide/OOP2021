@@ -52,10 +52,21 @@ namespace Exercise1
             var xdoc = XDocument.Load(file);
             var sports = xdoc.Root.Elements()
                                 .OrderBy(x => (string)x.Element("firstplayed"));
+            /*
+            var sports = xdoc.Root.Elements()
+                             .Select(x => new {
+                                 FirstPlayed = x.Element("firstplayed").Value,
+                                 Name = x.Element("name").Attribute("kanji").Value
+                                 
+                             }).OrderBy(x => int.Parse(x.FirstPlayed));
+            */
+
             foreach (var sport in sports)
             {
                 var xname = sport.Element("name").Attribute("kanji");
                 Console.WriteLine(xname.Value);
+
+                //Console.WriteLine("{0} {1}", sport.Name, sport.FirstAttribute);
             }
         }
 
