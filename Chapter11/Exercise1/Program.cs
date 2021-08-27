@@ -54,7 +54,7 @@ namespace Exercise1
                                 .OrderBy(x => (string)x.Element("firstplayed"));
             foreach (var sport in sports)
             {
-                var xname = sport.Element("name");
+                var xname = sport.Element("name").Attribute("kanji");
                 Console.WriteLine(xname.Value);
             }
         }
