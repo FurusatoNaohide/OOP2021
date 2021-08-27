@@ -13,25 +13,36 @@ namespace Exercise1
         {
             var file = "Sample.xml";
             Exercise1_1(file);
-            Console.WriteLine("-------");
+            Console.WriteLine("--11_1_1-----");
 
             Exercise1_2(file);
-            Console.WriteLine("-------");
+            Console.WriteLine("--11_1_2-----");
 
             Exercise1_3(file);
-            Console.WriteLine("-------");
+            Console.WriteLine("--11_1_3-----");
             
         }
 
         private static void Exercise1_1(string file)
         {
             var xdoc = XDocument.Load(file);
-            var xelements = xdoc.Root.Elements();
-            foreach (var xnovelist in xelements)
+            var sports = xdoc.Root.Elements();
+            /*
+            var sports = xdoc.Root.Elements()
+                             .Select(x=> new { 
+                                Name = x.Element("name").Value,
+                                Teammembers = x.Element("teammembers").Value
+                             });
+            */
+
+            foreach (var sport in sports)
             {
-                var xname = xnovelist.Element("name");
-                var members = xnovelist.Element("teammembers");
+                
+                var xname = sport.Element("name");
+                var members = sport.Element("teammembers");
                 Console.WriteLine("{0} {1}", xname.Value, int.Parse(members.Value));
+                
+                //Console.WriteLine("{0} {1}", sport.Name, sport.Teammembers);
             }
 
         }
@@ -39,19 +50,27 @@ namespace Exercise1
         private static void Exercise1_2(string file)
         {
             var xdoc = XDocument.Load(file);
-            var xelements = xdoc.Root.Elements()
+            var sports = xdoc.Root.Elements()
                                 .OrderBy(x => (string)x.Element("firstplayed"));
-            foreach (var xnovelist in xelements)
+            foreach (var sport in sports)
             {
-                var xname = xnovelist.Element("name");
+                var xname = sport.Element("name");
                 Console.WriteLine(xname.Value);
             }
         }
 
         private static void Exercise1_3(string file)
         {
+            
             var xdoc = XDocument.Load(file);
-            var xelements = xdoc.Root.Elements();
+            var sports = xdoc.Root.Elements()
+                                .OrderByDescending(x => (string)x.Element("teammembers")).Take(1);
+            foreach (var sport in sports)
+            {
+                var xname = sport.Element("name");
+                Console.WriteLine(xname.Value);
+            }
+            
         }
     }
 }
