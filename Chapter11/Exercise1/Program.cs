@@ -38,7 +38,14 @@ namespace Exercise1
 
         private static void Exercise1_2(string file)
         {
-            
+            var xdoc = XDocument.Load(file);
+            var xelements = xdoc.Root.Elements()
+                                .OrderBy(x => (string)x.Element("firstplayed"));
+            foreach (var xnovelist in xelements)
+            {
+                var xname = xnovelist.Element("name");
+                Console.WriteLine(xname.Value);
+            }
         }
 
         private static void Exercise1_3(string file)
