@@ -27,7 +27,7 @@ namespace Exercise1
         {
             var xdoc = XDocument.Load(file);
             var sports = xdoc.Root.Elements();
-            /*
+            /*匿名クラスを用いた
             var sports = xdoc.Root.Elements()
                              .Select(x=> new { 
                                 Name = x.Element("name").Value,
@@ -51,8 +51,8 @@ namespace Exercise1
         {
             var xdoc = XDocument.Load(file);
             var sports = xdoc.Root.Elements()
-                                .OrderBy(x => (string)x.Element("firstplayed"));
-            /*
+                                .OrderBy(x => (int)x.Element("firstplayed"));
+            /*匿名クラスを用いた
             var sports = xdoc.Root.Elements()
                              .Select(x => new {
                                  FirstPlayed = x.Element("firstplayed").Value,
@@ -64,7 +64,8 @@ namespace Exercise1
             foreach (var sport in sports)
             {
                 var xname = sport.Element("name").Attribute("kanji");
-                Console.WriteLine(xname.Value);
+                var first = sport.Element("firstplayed");
+                Console.WriteLine("{0} {1}", xname.Value,first.Value);
 
                 //Console.WriteLine("{0} {1}", sport.Name, sport.FirstAttribute);
             }
@@ -75,11 +76,22 @@ namespace Exercise1
             
             var xdoc = XDocument.Load(file);
             var sports = xdoc.Root.Elements()
-                                .OrderByDescending(x => (string)x.Element("teammembers")).Take(1);
+                                .OrderByDescending(x => (int)x.Element("teammembers")).Take(1);
+            /* 匿名クラスを用いた*/
+            /*var sports = xdoc.Root.Elements()
+                              .Select(x => new
+                              {
+                                  Name = x.Element("name").Value,
+                                  Teammembers = x.Element("teammembers").Value
+
+                              }).OrderByDescending(x => int.Parse(x.Teammembers)).First(); 
+            Console.WriteLine("{0} {1}", sports.Name, sports.Teammembers);
+            */
             foreach (var sport in sports)
             {
                 var xname = sport.Element("name");
                 Console.WriteLine(xname.Value);
+                
             }
             
         }
