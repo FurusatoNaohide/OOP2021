@@ -85,7 +85,7 @@ namespace Exercise1
                                   Teammembers = x.Element("teammembers").Value
 
                               }).OrderByDescending(x => int.Parse(x.Teammembers)).First(); 
-            Console.WriteLine("{0} {1}", sports.Name, sports.Teammembers);
+            Console.WriteLine("{0}", sports.Name);
             */
             foreach (var sport in sports)
             {
