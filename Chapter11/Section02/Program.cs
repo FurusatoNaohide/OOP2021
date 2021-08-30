@@ -11,6 +11,16 @@ namespace Section02
     {
         static void Main(string[] args)
         {
+            #region 削除
+            /*
+            var xdoc = XDocument.Load("novelists.xml");
+            var elements = xdoc.Root.Elements()
+                               .Where(x => x.Element("name").Value == "菊池 寛");
+            elements.Remove();
+            xdoc.Save("novelists.xml");//XMLファイルへの保存
+            */
+            #endregion
+            #region 登録
             string elmstring =
               @"<novelist>
                 <name kana=""きくち かん"">菊池 寛</name>
@@ -21,13 +31,15 @@ namespace Section02
                     <title>真珠夫人</title>
                 </masterpieces>
               </novelist>";
-
+            
             XElement element = XElement.Parse(elmstring);
-
+            
             var xdoc = XDocument.Load("novelists.xml");
             xdoc.Root.Add(element);
 
             xdoc.Save("novelists.xml");//XMLファイルへの保存
+            #endregion
+
         }
     }
 }

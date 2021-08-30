@@ -12,16 +12,28 @@ namespace Exercise1
         static void Main(string[] args)
         {
             var file = "Sample.xml";
-            Exercise1_1(file);
             Console.WriteLine("--11_1_1-----");
+            Exercise1_1(file);
+            Console.WriteLine();
+            Console.WriteLine("-------");
 
-            Exercise1_2(file);
             Console.WriteLine("--11_1_2-----");
+            Exercise1_2(file);
+            Console.WriteLine();
+            Console.WriteLine("-------");
 
-            Exercise1_3(file);
             Console.WriteLine("--11_1_3-----");
-            
+            Exercise1_3(file);
+            Console.WriteLine();
+            Console.WriteLine("-------");
+
+            Console.WriteLine("--11_1_4-----");
+            Exercise1_4(file);
+            Console.WriteLine();
+            Console.WriteLine("-------");
         }
+
+        
 
         private static void Exercise1_1(string file)
         {
@@ -94,6 +106,20 @@ namespace Exercise1
                 
             }
             
+        }
+
+        private static void Exercise1_4(string file)
+        {
+            var newfile = "sports.xml";//出力する新しいファイル
+            //P290 リスト11.5を参考
+            var element = new XElement("ballsport",
+                                new XElement("name","サッカー",new XAttribute("kanji","蹴球")),
+                                new XElement("temmembers","11"),
+                                new XElement("firstplayed","1863")
+                                );
+            var xdoc = XDocument.Load(file);
+            xdoc.Root.Add(element);
+            xdoc.Save(newfile);
         }
     }
 }
