@@ -12,6 +12,7 @@ namespace Exercise1
         static void Main(string[] args)
         {
             var file = "Sample.xml";
+            var file2 = "11_2.xml";
             Console.WriteLine("--11_1_1-----");
             Exercise1_1(file);
             Console.WriteLine();
@@ -31,10 +32,14 @@ namespace Exercise1
             Exercise1_4(file);
             Console.WriteLine();
             Console.WriteLine("-------");
+
+            Console.WriteLine("--11_2-----");
+            Exercise2(file2);
+            Console.WriteLine();
+            Console.WriteLine("-------");
         }
 
         
-
         private static void Exercise1_1(string file)
         {
             var xdoc = XDocument.Load(file);
@@ -120,6 +125,30 @@ namespace Exercise1
             var xdoc = XDocument.Load(file);
             xdoc.Root.Add(element);
             xdoc.Save(newfile);
+            
         }
+
+        private static void Exercise2(string file2)
+        {
+            /*未完成
+            var newfile = "11_2_bak.xml";//出力する新しいファイル
+            var xdoc = XDocument.Load(file2);
+            var pairs = xdoc.Root.Elements()
+                            .Select(x => new
+                            {
+                                Key = x.Element("kanji").Value,
+                                Value = x.Element("yomi").Value
+                            });
+            var dict = pairs.ToDictionary(x => x.Key, x => x.Value);
+            var word = new XElement("word");
+            foreach (var d in dict)
+            {
+                word.SetAttributeValue(d.Key,d.Value);
+            }
+            var root = new XElement("difficultkanji", word);
+            root.Save(newfile);
+            */
+        }
+
     }
 }
