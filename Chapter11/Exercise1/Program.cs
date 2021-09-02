@@ -16,27 +16,22 @@ namespace Exercise1
             Console.WriteLine("--11_1_1-----");
             Exercise1_1(file);
             Console.WriteLine();
-            Console.WriteLine("-------");
 
             Console.WriteLine("--11_1_2-----");
             Exercise1_2(file);
             Console.WriteLine();
-            Console.WriteLine("-------");
 
             Console.WriteLine("--11_1_3-----");
             Exercise1_3(file);
             Console.WriteLine();
-            Console.WriteLine("-------");
 
             Console.WriteLine("--11_1_4-----");
             Exercise1_4(file);
             Console.WriteLine();
-            Console.WriteLine("-------");
 
             Console.WriteLine("--11_2-----");
             Exercise2(file2);
             Console.WriteLine();
-            Console.WriteLine("-------");
         }
 
         
