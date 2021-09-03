@@ -23,7 +23,36 @@ namespace Section04
             //DownloadString();
             //DownloadFileAsync();
             //OpenReadSample();
-            var results = GetWeatherReportFromYahoo(4210);
+            var select = 0;
+            Console.WriteLine("yahoo! 週間天気予報");
+            Console.WriteLine();
+            Console.WriteLine("地域コードを入力");
+            Console.WriteLine("1:前橋");
+            Console.WriteLine("2:みなかみ");
+            Console.WriteLine("3:宇都宮");
+            Console.WriteLine("4:水戸");
+            Console.WriteLine("9:その他（直接入力）");
+            var Choise = int.Parse(Console.ReadLine());
+            switch (Choise)
+            {
+                case 1:
+                    select = 4210;
+                    break;
+                case 2:
+                    select = 4220;
+                    break;
+                case 3:
+                    select = 4110;
+                    break;
+                case 4:
+                    select = 4010;
+                    break;
+                case 9:
+                    Console.WriteLine("地域コードを入力してください");
+                    select = int.Parse(Console.ReadLine());
+                    break;
+            }
+            var results = GetWeatherReportFromYahoo(select);
             foreach (var s in results)
             {
                 Console.WriteLine(s);
