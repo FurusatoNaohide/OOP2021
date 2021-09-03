@@ -12,6 +12,16 @@ namespace Section04
 {
     class Program
     {
+        /*
+        Dictionary<string, int> AreaDic = new Dictionary<string, int>()
+        {
+            {"前橋",4210 },
+            {"前橋",4220 },
+            {"前橋",4110 },
+            {"前橋",4010 },
+            {"さいたま",4999},
+        };
+        */
         static void Main(string[] args)
         {
             new Program();
@@ -23,16 +33,28 @@ namespace Section04
             //DownloadString();
             //DownloadFileAsync();
             //OpenReadSample();
-            var select = 0;
+            
             Console.WriteLine("yahoo! 週間天気予報");
-            Console.WriteLine();
+            Console.WriteLine();//改行
             Console.WriteLine("地域コードを入力");
+            /*
+            int num = 1;
+            foreach (KeyValuePair<string,int> pair in AreaDic)
+            {
+                Console.WriteLine("{0}:{1}",num++,pair.Key);
+            }
+            */
             Console.WriteLine("1:前橋");
             Console.WriteLine("2:みなかみ");
             Console.WriteLine("3:宇都宮");
             Console.WriteLine("4:水戸");
             Console.WriteLine("9:その他（直接入力）");
+            Console.WriteLine();//改行
+
+            Console.Write(">");
+            //文字列として入力した数字を取り込む
             var Choise = int.Parse(Console.ReadLine());
+            var select = 0;
             switch (Choise)
             {
                 case 1:

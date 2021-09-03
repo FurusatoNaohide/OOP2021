@@ -30,9 +30,9 @@ namespace WeatherApp
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbDetaul = new System.Windows.Forms.ListBox();
+            this.btWeathreView = new System.Windows.Forms.Button();
+            this.cbSelectArea = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,45 +44,47 @@ namespace WeatherApp
             this.label1.TabIndex = 0;
             this.label1.Text = "地域を選択";
             // 
-            // listBox1
+            // lbDetaul
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(69, 111);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(534, 319);
-            this.listBox1.TabIndex = 1;
+            this.lbDetaul.FormattingEnabled = true;
+            this.lbDetaul.ItemHeight = 15;
+            this.lbDetaul.Location = new System.Drawing.Point(69, 111);
+            this.lbDetaul.Name = "lbDetaul";
+            this.lbDetaul.Size = new System.Drawing.Size(534, 319);
+            this.lbDetaul.TabIndex = 1;
             // 
-            // button1
+            // btWeathreView
             // 
-            this.button1.Location = new System.Drawing.Point(467, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "天気表示";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btWeathreView.Location = new System.Drawing.Point(467, 37);
+            this.btWeathreView.Name = "btWeathreView";
+            this.btWeathreView.Size = new System.Drawing.Size(135, 40);
+            this.btWeathreView.TabIndex = 2;
+            this.btWeathreView.Text = "天気表示";
+            this.btWeathreView.UseVisualStyleBackColor = true;
+            this.btWeathreView.Click += new System.EventHandler(this.btWeathreView_Click);
             // 
-            // comboBox1
+            // cbSelectArea
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbSelectArea.FormattingEnabled = true;
+            this.cbSelectArea.Items.AddRange(new object[] {
             "前橋",
             "みなかみ",
             "宇都宮",
+            "大田原",
             "水戸"});
-            this.comboBox1.Location = new System.Drawing.Point(164, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 23);
-            this.comboBox1.TabIndex = 3;
+            this.cbSelectArea.Location = new System.Drawing.Point(164, 47);
+            this.cbSelectArea.Name = "cbSelectArea";
+            this.cbSelectArea.Size = new System.Drawing.Size(235, 23);
+            this.cbSelectArea.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.cbSelectArea);
+            this.Controls.Add(this.btWeathreView);
+            this.Controls.Add(this.lbDetaul);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -94,9 +96,9 @@ namespace WeatherApp
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox lbDetaul;
+        private System.Windows.Forms.Button btWeathreView;
+        private System.Windows.Forms.ComboBox cbSelectArea;
     }
 }
 
