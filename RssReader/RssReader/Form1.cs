@@ -32,16 +32,32 @@ namespace RssReader
             using (var wc = new WebClient())
             {
                 wc.Headers.Add("Content-type", "charset=UTF-8");
-                var url = new Uri(uri);
-                var stream = wc.OpenRead(url);
+                var stream = wc.OpenRead(uri);
 
                 XDocument xdoc = XDocument.Load(stream);
                 var titles = xdoc.Root.Descendants("title");
                 foreach (var title in titles)
                 {
-                    string s = Regex.Unescape(title.Value);
-                    lbTitles.Items.Add(s);
+                    lbTitles.Items.Add(title.Value);
                 }
+            }
+        }
+
+        private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var title = lbTitles.SelectedItem.ToString();
+            selectLinkUrl(title);
+        }
+
+        private void selectLinkUrl(string Title)
+        {
+            using (var wc = new WebClient())
+            {
+                wc.Headers.Add("Content-type", "charset=UTF-8");
+                var stream = wc.OpenRead(tbUrl.Text);
+
+                XDocument xdoc = XDocument.Load(stream);
+                var title = xdoc.Root.Elements().Where(x => (string)x.Element("title") == Title);
             }
         }
     }
