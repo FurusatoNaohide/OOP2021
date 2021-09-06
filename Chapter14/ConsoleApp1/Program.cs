@@ -12,16 +12,20 @@ namespace Section04
 {
     class Program
     {
-        /*
+        
+        
         Dictionary<string, int> AreaDic = new Dictionary<string, int>()
         {
             {"前橋",4210 },
-            {"前橋",4220 },
-            {"前橋",4110 },
-            {"前橋",4010 },
-            {"さいたま",4999},
+            {"みなかみ",4220 },
+            {"宇都宮",4110 },
+            {"水戸",4010 },
+            {"さいたま",4310},
         };
-        */
+
+        //コードを保存する
+        List<int> cityCode = new List<int>();
+
         static void Main(string[] args)
         {
             new Program();
@@ -30,31 +34,44 @@ namespace Section04
         //コンストラクタ
         public Program()
         {
-            //DownloadString();
-            //DownloadFileAsync();
-            //OpenReadSample();
-            
             Console.WriteLine("yahoo! 週間天気予報");
             Console.WriteLine();//改行
             Console.WriteLine("地域コードを入力");
-            /*
+            
             int num = 1;
+
+            //Dictionaly の値をリストへ保存
             foreach (KeyValuePair<string,int> pair in AreaDic)
             {
                 Console.WriteLine("{0}:{1}",num++,pair.Key);
+                cityCode.Add(pair.Value); //コードをリストへ保存
             }
-            */
-            Console.WriteLine("1:前橋");
-            Console.WriteLine("2:みなかみ");
-            Console.WriteLine("3:宇都宮");
-            Console.WriteLine("4:水戸");
             Console.WriteLine("9:その他（直接入力）");
             Console.WriteLine();//改行
 
             Console.Write(">");
             //文字列として入力した数字を取り込む
-            var Choise = int.Parse(Console.ReadLine());
-            var select = 0;
+            var selectArea = Console.ReadLine();
+            int pos = int.Parse(selectArea);
+            //if分岐でその他の場合を実装
+
+            //IEnumerable<string> results;
+            int code;
+            if (pos != 9)
+            {
+               // results = GetWeatherReportFromYahoo(cityCode[pos - 1]);
+                code = cityCode[pos - 1];
+            }
+            else
+            {
+                Console.WriteLine("地域コードを入力してください");
+                var inputCode = Console.ReadLine();
+                //results = GetWeatherReportFromYahoo(int.Parse(inputCode));
+                code = int.Parse(inputCode);
+
+
+            }
+#if false
             switch (Choise)
             {
                 case 1:
@@ -74,7 +91,9 @@ namespace Section04
                     select = int.Parse(Console.ReadLine());
                     break;
             }
-            var results = GetWeatherReportFromYahoo(select);
+#endif
+
+            var results = GetWeatherReportFromYahoo(code);
             foreach (var s in results)
             {
                 Console.WriteLine(s);
@@ -128,6 +147,8 @@ namespace Section04
                 sr.Dispose();
             }
         }
+
+
 
         //リスト14.19
         private static IEnumerable<string> GetWeatherReportFromYahoo(int cityCode)
