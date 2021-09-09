@@ -16,7 +16,10 @@ namespace RssReader
     public partial class Form1 : Form
     {
         List<string> LINK = new List<string>();
+        List<string> Description = new List<string>();
         string URL;
+        int titlenum;
+        int num;
 
         public Form1()
         {
@@ -32,6 +35,8 @@ namespace RssReader
         private void setRssTitle(string uri)
         {
             lbTitles.Items.Clear();
+            LINK.Clear();
+            Description.Clear();
             URL = uri;
             using (var wc = new WebClient())
             {
@@ -41,6 +46,7 @@ namespace RssReader
                 XDocument xdoc = XDocument.Load(stream);
                 var titles = xdoc.Root.Descendants("title");
                 var links = xdoc.Root.Descendants("link");
+                var dcriptions = xdoc.Root.Descendants("description");
                 foreach (var title in titles)
                 {
                     lbTitles.Items.Add(title.Value);
@@ -49,32 +55,48 @@ namespace RssReader
                 {
                     LINK.Add(link.Value);
                 }
+                foreach (var d in dcriptions)
+                {
+                    Description.Add(d.Value);
+                }
+                lbTitles.Items.RemoveAt(0);
+                LINK.RemoveAt(0);
+                Description.RemoveAt(0);
             }
         }
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var title = lbTitles.SelectedItem.ToString();
-            var titlenum = lbTitles.SelectedIndex;
-            if (titlenum != -1)
+            titlenum = lbTitles.SelectedIndex;
+            num = 0;
+            foreach (var d in Description)
             {
-                selectLinkUrl(titlenum);
+                if (num++ == titlenum)
+                {
+                    lbDescription.Text = d;
+                }
             }
         }
 
         private void selectLinkUrl(int titlenum)
         {
-            string LinkUrl = null;
-            int num = 0;
+            num = 0;
             foreach (var link in LINK)
             {
                 if (num++ == titlenum)
                 {
-                    LinkUrl = link;
+                    wbBrowser.Url = new Uri(link);
                 }
                     
             }
-            wbBrowser.Url = new Uri(LinkUrl);
+        }
+
+        private void lbTitles_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (titlenum != -1)
+            {
+                selectLinkUrl(titlenum);
+            }
         }
     }
 }
