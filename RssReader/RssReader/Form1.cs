@@ -19,7 +19,7 @@ namespace RssReader
         List<string> Description = new List<string>();
         string URL;
         int titlenum;
-        int num;
+        //int num;
 
         public Form1()
         {
@@ -68,7 +68,13 @@ namespace RssReader
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
             titlenum = lbTitles.SelectedIndex;
-            num = 0;
+            if (titlenum != -1)
+            {
+                lbDescription.Text = Description[titlenum];
+            }
+            #region
+            /*
+             * num = 0;
             foreach (var d in Description)
             {
                 if (num++ == titlenum)
@@ -76,11 +82,16 @@ namespace RssReader
                     lbDescription.Text = d;
                 }
             }
+            */
+            #endregion
         }
 
         private void selectLinkUrl(int titlenum)
         {
-            num = 0;
+            wbBrowser.Url = new Uri(LINK[titlenum]);
+            #region
+            /*
+             * num = 0;
             foreach (var link in LINK)
             {
                 if (num++ == titlenum)
@@ -89,6 +100,8 @@ namespace RssReader
                 }
                     
             }
+            */
+            #endregion
         }
 
         private void lbTitles_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -97,6 +110,16 @@ namespace RssReader
             {
                 selectLinkUrl(titlenum);
             }
+        }
+
+        private void btWebBrowser_Click(object sender, EventArgs e)
+        {
+            if (titlenum != -1)
+            {
+                selectLinkUrl(titlenum);
+            }
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }
