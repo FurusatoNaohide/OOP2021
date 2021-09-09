@@ -71,7 +71,7 @@ namespace RssReader
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
             this.wbBrowser.ScriptErrorsSuppressed = true;
-            this.wbBrowser.Size = new System.Drawing.Size(665, 659);
+            this.wbBrowser.Size = new System.Drawing.Size(764, 659);
             this.wbBrowser.TabIndex = 3;
             this.wbBrowser.Url = new System.Uri("", System.UriKind.Relative);
             // 
@@ -98,7 +98,7 @@ namespace RssReader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 713);
+            this.ClientSize = new System.Drawing.Size(995, 713);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.wbBrowser);

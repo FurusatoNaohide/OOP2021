@@ -15,7 +15,7 @@ namespace RssReader
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, string> TitleLink = new Dictionary<string, string>();
+        List<string> LINK = new List<string>();
         string URL;
 
         public Form1()
@@ -40,9 +40,14 @@ namespace RssReader
 
                 XDocument xdoc = XDocument.Load(stream);
                 var titles = xdoc.Root.Descendants("title");
+                var links = xdoc.Root.Descendants("link");
                 foreach (var title in titles)
                 {
                     lbTitles.Items.Add(title.Value);
+                }
+                foreach (var link in links)
+                {
+                    LINK.Add(link.Value);
                 }
             }
         }
@@ -59,25 +64,17 @@ namespace RssReader
 
         private void selectLinkUrl(int titlenum)
         {
-            using (var wc = new WebClient())
+            string LinkUrl = null;
+            int num = 0;
+            foreach (var link in LINK)
             {
-                wc.Headers.Add("Content-type", "charset=UTF-8");
-                var stream = wc.OpenRead(URL);
-
-                XDocument xdoc = XDocument.Load(stream);
-                var links = xdoc.Root.Descendants("link");
-                string Link = null;
-                int num = 0;
-                foreach (var link in links)
+                if (num++ == titlenum)
                 {
-                    if (num++ == titlenum)
-                    {
-                        Link = link.Value;
-                    }
-                    
+                    LinkUrl = link;
                 }
-                wbBrowser.Url = new Uri(Link);
+                    
             }
+            wbBrowser.Url = new Uri(LinkUrl);
         }
     }
 }
