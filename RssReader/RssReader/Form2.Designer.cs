@@ -34,10 +34,13 @@ namespace RssReader
             // 
             // wbBrowser
             // 
-            this.wbBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wbBrowser.Location = new System.Drawing.Point(0, 0);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
+            this.wbBrowser.ScriptErrorsSuppressed = true;
             this.wbBrowser.Size = new System.Drawing.Size(1398, 760);
             this.wbBrowser.TabIndex = 0;
             // 
@@ -49,12 +52,13 @@ namespace RssReader
             this.Controls.Add(this.wbBrowser);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser wbBrowser;
+        public System.Windows.Forms.WebBrowser wbBrowser;
     }
 }

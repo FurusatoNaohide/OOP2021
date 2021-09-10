@@ -16,9 +16,13 @@ namespace RssReader
     public partial class Form1 : Form
     {
         List<string> LINK = new List<string>();
+        //List<DateTime> pubDate = new List<DateTime>();
+        List<string> pubDate = new List<string>();
         List<string> Description = new List<string>();
         string URL;
+        DateTime dt;
         int titlenum;
+        
         //int num;
 
         public Form1()
@@ -36,6 +40,7 @@ namespace RssReader
         {
             lbTitles.Items.Clear();
             LINK.Clear();
+            pubDate.Clear();
             Description.Clear();
             URL = uri;
             using (var wc = new WebClient())
@@ -44,9 +49,27 @@ namespace RssReader
                 var stream = wc.OpenRead(uri);
 
                 XDocument xdoc = XDocument.Load(stream);
+                var items = xdoc.Root.Descendants("item");
+                #region
+                /*
                 var titles = xdoc.Root.Descendants("title");
                 var links = xdoc.Root.Descendants("link");
+                var pubdates = xdoc.Root.Descendants("pubDate");
                 var dcriptions = xdoc.Root.Descendants("description");
+                */
+#endregion
+                foreach (var item in items)
+                {
+                    lbTitles.Items.Add(item.Element("title").Value);
+                    LINK.Add(item.Element("link").Value);
+                    if (DateTime.TryParse(item.Element("pubDate").Value, out dt) == true)
+                    {
+                        pubDate.Add(dt.ToString("yyyy/MM/dd HH:mm:ss"));
+                    }
+                    Description.Add(item.Element("description").Value);
+                }
+                #region
+                /*
                 foreach (var title in titles)
                 {
                     lbTitles.Items.Add(title.Value);
@@ -55,12 +78,20 @@ namespace RssReader
                 {
                     LINK.Add(link.Value);
                 }
+                foreach (var date in pubdates)
+                {
+                    //pubDate.Add(DateTime.ParseExact(date.Value,format,null));
+                    pubDate.Add(date.Value);
+                }
                 foreach (var d in dcriptions)
                 {
                     Description.Add(d.Value);
                 }
+                */
+                #endregion
                 lbTitles.Items.RemoveAt(0);
                 LINK.RemoveAt(0);
+                pubDate.RemoveAt(0);
                 Description.RemoveAt(0);
             }
         }
@@ -68,9 +99,10 @@ namespace RssReader
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
             titlenum = lbTitles.SelectedIndex;
+            lbDescription.Text = "";
             if (titlenum != -1)
             {
-                lbDescription.Text = Description[titlenum];
+                lbDescription.Text += pubDate[titlenum] + "\r\n" + Description[titlenum] + "\r\n";
             }
             #region
             /*
@@ -85,11 +117,11 @@ namespace RssReader
             */
             #endregion
         }
-
+#if false
         private void selectLinkUrl(int titlenum)
         {
             wbBrowser.Url = new Uri(LINK[titlenum]);
-            #region
+        #region
             /*
              * num = 0;
             foreach (var link in LINK)
@@ -101,7 +133,7 @@ namespace RssReader
                     
             }
             */
-            #endregion
+        #endregion
         }
 
         private void lbTitles_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -111,15 +143,15 @@ namespace RssReader
                 selectLinkUrl(titlenum);
             }
         }
-
+#endif
         private void btWebBrowser_Click(object sender, EventArgs e)
         {
             if (titlenum != -1)
             {
-                selectLinkUrl(titlenum);
+                Form2 form2 = new Form2();
+                form2.Show();
+                form2.wbBrowser.Url = new Uri(LINK[titlenum]);
             }
-            Form2 form2 = new Form2();
-            form2.Show();
         }
     }
 }
