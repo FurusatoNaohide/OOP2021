@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace RssReader
@@ -43,7 +44,26 @@ namespace RssReader
 
         private void btRead_Click(object sender, EventArgs e)
         {
-            setRssTitle(tbUrl.Text);
+            //setRssTitle(tbUrl.Text);
+            
+            try
+            {
+                setRssTitle(tbUrl.Text);
+            }
+            catch (ArgumentException aex)
+            {
+                MessageBox.Show(aex.Message);
+            }
+            catch(WebException wex)
+            {
+                MessageBox.Show(wex.Message);
+            }
+            catch(XmlException xex)
+            {
+                MessageBox.Show(xex.Message);
+            }
+            
+            
         }
 
         //指定したURL先からXMLデータを取得し title要素 を取得し、リストボックスへセットする
@@ -188,6 +208,7 @@ namespace RssReader
         {
             if (titlenum != -1)
             {
+                //新しいFormへ表示するリンク
                 Form2 form2 = new Form2();
                 form2.Show();
                 form2.wbBrowser.Url = new Uri(LINK[titlenum]);
