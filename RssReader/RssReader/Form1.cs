@@ -15,10 +15,13 @@ namespace RssReader
 {
     #region 匿名クラスを用いた要素取り出し
     /*
+    //読み込んだ情報を格納する用のカスタムクラス
     public class ItemData
     {
-
-
+        public string Title { get; set; }
+        public string Link { get; set; }
+        public DateTime PubDate { get; set; }
+        public string Description { get; set; }
     }
     */
     #endregion
@@ -130,10 +133,13 @@ namespace RssReader
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
             titlenum = lbTitles.SelectedIndex;
-            lbDescription.Text = "";
+            lbDescription.Text = "概要"+"\r\n";
             if (titlenum != -1)
             {
                 lbDescription.Text += pubDate[titlenum] + "\r\n" + Description[titlenum] + "\r\n";
+                #region 匿名クラスを用いた
+                //lbDescription.Text = (items.ToArray())[lbTitles.SelectedIndex].Description;
+                #endregion
             }
             #region
             /*

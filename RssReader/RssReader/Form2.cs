@@ -22,6 +22,43 @@ namespace RssReader
         {
 
         }
-        
+
+        private void btGoBack_Click(object sender, EventArgs e)
+        {
+            if (wbBrowser.CanGoBack)
+            {
+                wbBrowser.GoBack();
+            }
+        }
+
+        private void btGoForWard_Click(object sender, EventArgs e)
+        {
+            if (wbBrowser.CanGoForward)
+            {
+                wbBrowser.GoForward();
+            }
+        }
+
+        private void wbBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+
+            if (wbBrowser.CanGoBack)
+            {
+                btGoBack.Enabled = true;
+            }
+            else
+            {
+                btGoBack.Enabled = false;
+            }
+
+            if (wbBrowser.CanGoForward)
+            {
+                btGoForWard.Enabled = true;
+            }
+            else
+            {
+                btGoForWard.Enabled = false;
+            }
+        }
     }
 }

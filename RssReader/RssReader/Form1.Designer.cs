@@ -77,9 +77,10 @@ namespace RssReader
             // 
             // lbDescription
             // 
-            this.lbDescription.Location = new System.Drawing.Point(219, 51);
+            this.lbDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lbDescription.Location = new System.Drawing.Point(219, 148);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(643, 395);
+            this.lbDescription.Size = new System.Drawing.Size(643, 292);
             this.lbDescription.TabIndex = 5;
             // 
             // btWebBrowser
