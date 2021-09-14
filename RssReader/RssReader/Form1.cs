@@ -214,6 +214,7 @@ namespace RssReader
                 form2.Show();
                 try
                 {
+                    //表示したいリンクを渡す
                     form2.wbBrowser.Url = new Uri(LINK[titlenum]);
                 }
                 catch (ArgumentOutOfRangeException aooe)

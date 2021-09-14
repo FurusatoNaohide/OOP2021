@@ -53,25 +53,13 @@ namespace RssReader
 
         private void wbBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            switch (wbBrowser.CanGoBack)
-            {
-                case true:
-                    btGoBack.Enabled = true;
-                    break;
-                default:
-                    btGoBack.Enabled = false;
-                    break;
-            }
+        }
 
-            switch (wbBrowser.CanGoForward)
-            {
-                case true:
-                    btGoForWard.Enabled = true;
-                    break;
-                default:
-                    btGoForWard.Enabled = false;
-                    break;
-            }
+        //ページの読み込みが完了すると呼ばれる
+        private void wbBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            btGoBack.Enabled = wbBrowser.CanGoBack;
+            btGoForWard.Enabled = wbBrowser.CanGoForward;
         }
     }
 }
