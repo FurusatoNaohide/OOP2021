@@ -157,6 +157,7 @@ namespace RssReader
             if (titlenum != -1)
             {
                 lbDescription.Text += pubDate[titlenum] + "\r\n" + Description[titlenum] + "\r\n";
+                btWebBrowser.Enabled = true;
                 #region 匿名クラスを用いた
                 //lbDescription.Text = (items.ToArray())[lbTitles.SelectedIndex].Description;
                 #endregion
@@ -211,8 +212,21 @@ namespace RssReader
                 //新しいFormへ表示するリンク
                 Form2 form2 = new Form2();
                 form2.Show();
-                form2.wbBrowser.Url = new Uri(LINK[titlenum]);
+                try
+                {
+                    form2.wbBrowser.Url = new Uri(LINK[titlenum]);
+                }
+                catch (ArgumentOutOfRangeException aooe)
+                {
+                    MessageBox.Show(aooe.Message);
+                }
+                
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            btWebBrowser.Enabled = false;
         }
     }
 }

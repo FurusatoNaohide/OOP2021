@@ -23,11 +23,11 @@ namespace SendMail
         {
             try
             {
-                //メール送信の為のインスタンスを生成
+                //メール送信のためのインスタンスを生成
                 MailMessage mailMessage = new MailMessage();
-                //差出人アドレス
+                //差出人アドレス 複数の宛先に指定可能
                 mailMessage.From = new MailAddress("ojsinfosys01@gmail.com");
-                //宛先（To）複数の宛先に指定可能
+                //宛先（To）
                 mailMessage.To.Add(tbTo.Text);
                 //件名（タイトル）
                 mailMessage.Subject = tbTitle.Text;
@@ -36,7 +36,7 @@ namespace SendMail
 
                 //SMTPを使ってメールを送信する
                 SmtpClient smtpClient = new SmtpClient();
-                //メール送信の為の認証情報を設定（ユーザー名、パスワード）
+                //メール送信のための認証情報を設定（ユーザー名、パスワード）
                 smtpClient.Credentials
                     = new NetworkCredential("ojsinfosys01@gmail.com", "Infosys2021");
                 smtpClient.Host = "smtp.gmail.com";
