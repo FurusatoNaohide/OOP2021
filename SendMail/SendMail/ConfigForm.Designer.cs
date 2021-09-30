@@ -30,18 +30,18 @@ namespace SendMail
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbHost = new System.Windows.Forms.TextBox();
-            this.tbUserName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbPort = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbSsl = new System.Windows.Forms.CheckBox();
             this.tbPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbPort = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbUserName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbHost = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbSender = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbSsl = new System.Windows.Forms.CheckBox();
             this.btDefault = new System.Windows.Forms.Button();
             this.btOk = new System.Windows.Forms.Button();
             this.tbCancel = new System.Windows.Forms.Button();
@@ -68,64 +68,15 @@ namespace SendMail
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "サーバー情報";
             // 
-            // groupBox2
+            // cbSsl
             // 
-            this.groupBox2.Controls.Add(this.tbSender);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 126);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 51);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ユーザー情報";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "送信サーバー";
-            // 
-            // tbHost
-            // 
-            this.tbHost.Location = new System.Drawing.Point(81, 22);
-            this.tbHost.Name = "tbHost";
-            this.tbHost.Size = new System.Drawing.Size(140, 19);
-            this.tbHost.TabIndex = 1;
-            // 
-            // tbUserName
-            // 
-            this.tbUserName.Location = new System.Drawing.Point(81, 63);
-            this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(140, 19);
-            this.tbUserName.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ユーザー名";
-            // 
-            // tbPort
-            // 
-            this.tbPort.Location = new System.Drawing.Point(315, 22);
-            this.tbPort.Name = "tbPort";
-            this.tbPort.Size = new System.Drawing.Size(140, 19);
-            this.tbPort.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(276, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 12);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ポート";
+            this.cbSsl.AutoSize = true;
+            this.cbSsl.Location = new System.Drawing.Point(387, 88);
+            this.cbSsl.Name = "cbSsl";
+            this.cbSsl.Size = new System.Drawing.Size(68, 16);
+            this.cbSsl.TabIndex = 8;
+            this.cbSsl.Text = "SSL有効";
+            this.cbSsl.UseVisualStyleBackColor = true;
             // 
             // tbPass
             // 
@@ -144,6 +95,65 @@ namespace SendMail
             this.label4.TabIndex = 6;
             this.label4.Text = "パスワード";
             // 
+            // tbPort
+            // 
+            this.tbPort.Location = new System.Drawing.Point(315, 22);
+            this.tbPort.Name = "tbPort";
+            this.tbPort.Size = new System.Drawing.Size(140, 19);
+            this.tbPort.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(276, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 12);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ポート";
+            // 
+            // tbUserName
+            // 
+            this.tbUserName.Location = new System.Drawing.Point(81, 63);
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.Size = new System.Drawing.Size(140, 19);
+            this.tbUserName.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ユーザー名";
+            // 
+            // tbHost
+            // 
+            this.tbHost.Location = new System.Drawing.Point(81, 22);
+            this.tbHost.Name = "tbHost";
+            this.tbHost.Size = new System.Drawing.Size(140, 19);
+            this.tbHost.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "送信サーバー";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tbSender);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 126);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(251, 51);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ユーザー情報";
+            // 
             // tbSender
             // 
             this.tbSender.Location = new System.Drawing.Point(81, 18);
@@ -159,16 +169,6 @@ namespace SendMail
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 2;
             this.label5.Text = "送信元";
-            // 
-            // cbSsl
-            // 
-            this.cbSsl.AutoSize = true;
-            this.cbSsl.Location = new System.Drawing.Point(387, 88);
-            this.cbSsl.Name = "cbSsl";
-            this.cbSsl.Size = new System.Drawing.Size(68, 16);
-            this.cbSsl.TabIndex = 8;
-            this.cbSsl.Text = "SSL有効";
-            this.cbSsl.UseVisualStyleBackColor = true;
             // 
             // btDefault
             // 
@@ -198,6 +198,7 @@ namespace SendMail
             this.tbCancel.TabIndex = 4;
             this.tbCancel.Text = "キャンセル";
             this.tbCancel.UseVisualStyleBackColor = true;
+            this.tbCancel.Click += new System.EventHandler(this.tbCancel_Click);
             // 
             // btApply
             // 

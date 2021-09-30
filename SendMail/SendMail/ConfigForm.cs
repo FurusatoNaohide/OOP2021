@@ -12,6 +12,8 @@ namespace SendMail
 {
     public partial class ConfigForm : Form
     {
+        private Settings settings = Settings.getInstance();
+
         public ConfigForm()
         {
             InitializeComponent();
@@ -19,26 +21,37 @@ namespace SendMail
 
         private void btDefault_Click(object sender, EventArgs e)
         {
-            Settings set = new Settings();
-            tbHost.Text = set.sHost();
-            tbPort.Text = set.sPort();
-            tbUserName.Text = set.sMailAddr();
-            tbPass.Text = set.sPass();
-            cbSsl.Checked = true;
+            tbHost.Text = settings.sHost();//ホスト名
+            tbPort.Text = settings.sPort();//ポート番号
+            tbUserName.Text = settings.sMailAddr();//ユーザー名
+            tbPass.Text = settings.sPass();//パスワード
+            cbSsl.Checked = settings.bSsl();//SSL
+            tbSender.Text = settings.sMailAddr();//送信元
         }
-
+        //OKボタン
         private void btOk_Click(object sender, EventArgs e)
         {
-            Close();
+            SettingRegist();
+            this.Close();
         }
-
+        //送信データ登録
+        private void SettingRegist()
+        {
+            settings.Host = tbHost.Text;
+            settings.Port = int.Parse(tbPort.Text);
+            settings.MailAddr = tbUserName.Text;
+            settings.Pass = tbPass.Text;
+            settings.Ssl = cbSsl.Checked;
+        }
+        //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
         {
-            Settings set = new Settings();
-            set.Host = tbHost.Text;
-            set.Port = int.Parse(tbPort.Text);
-            set.MailAddr = tbUserName.Text;
-            set.Pass = tbPass.Text;
+            SettingRegist();//送信データ登録
+        }
+
+        private void tbCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
