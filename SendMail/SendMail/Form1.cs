@@ -56,9 +56,12 @@ namespace SendMail
                 smtpClient.Host = settings.Host;
                 smtpClient.Port = settings.Port;
                 smtpClient.EnableSsl = settings.Ssl;
-                smtpClient.Send(mailMessage);
 
-                MessageBox.Show("送信完了");
+                //送信完了時に呼ばれるイベントハンドラの登録
+                smtpClient.SendCompleted += SmtpClient_SendCompleted;
+                string userState = "SendMail";
+                smtpClient.SendAsync(mailMessage,userState);  //非同期操作で並行処理
+                
             }
             catch (Exception ex)
             {
@@ -66,9 +69,28 @@ namespace SendMail
             }
         }
 
+        //送信が完了すると呼ばれるコールバックメソッド
+        private void SmtpClient_SendCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+            else
+            {
+                MessageBox.Show("送信完了");
+            }
+            
+        }
+
         private void btConfig_Click(object sender, EventArgs e)
         {
             configForm.ShowDialog();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

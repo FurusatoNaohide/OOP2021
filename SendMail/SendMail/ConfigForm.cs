@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SendMail
 {
@@ -42,6 +43,24 @@ namespace SendMail
             settings.MailAddr = tbUserName.Text;
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
+
+            /*
+            //保存先のファイル名
+            string fileName = @"C:\Users\infosys\Desktop\Example\xml\set.xml";
+
+
+            //XmlSerializerオブジェクトを作成
+            //オブジェクトの型を指定する
+            System.Xml.Serialization.XmlSerializer serializer =
+                new System.Xml.Serialization.XmlSerializer(typeof(Settings));
+            //書き込むファイルを開く（UTF-8 BOM無し）
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                fileName, false, new System.Text.UTF8Encoding(false));
+            //シリアル化し、XMLファイルに保存する
+            serializer.Serialize(sw, settings);
+            //ファイルを閉じる
+            sw.Close();
+            */
         }
         //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
