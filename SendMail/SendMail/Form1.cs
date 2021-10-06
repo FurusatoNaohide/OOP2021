@@ -97,6 +97,7 @@ namespace SendMail
             
             if (File.Exists("mailsettings.xml"))
             {
+                //逆シリアル化
                 using (var reader = XmlReader.Create("mailsettings.xml"))
                 {
                     var serializer = new DataContractSerializer(typeof(Settings));
