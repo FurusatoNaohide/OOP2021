@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SendMail
 {
+    [Serializable]
     public class Settings
     {
         private static Settings instance = null;
@@ -15,11 +16,6 @@ namespace SendMail
         public string MailAddr { get; set; } //メールアドレス
         public string Pass { get; set; }     //パスワード
         public bool Ssl { get; set; }   //SSL
-        public override string ToString()
-        {
-            return string.Format("[Port={0},Host={1},MailAddr={2},Pass={3},Ssl={4}]",
-                                 Port,Host,MailAddr,Pass,Ssl);
-        }
 
         //コンストラクタ
         private Settings(){}

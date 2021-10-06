@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml;
+using System.Runtime.Serialization;
 
 namespace SendMail
 {
@@ -35,6 +37,7 @@ namespace SendMail
             SettingRegist();
             this.Close();
         }
+
         //送信データ登録
         private void SettingRegist()
         {
@@ -44,23 +47,20 @@ namespace SendMail
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
 
-            /*
-            //保存先のファイル名
-            string fileName = @"C:\Users\infosys\Desktop\Example\xml\set.xml";
+            //シリアル化
+            var xws = new XmlWriterSettings
+            {
+                Encoding = new System.Text.UTF8Encoding(false),
+                Indent = true,
+                IndentChars = "   ",
+            };
 
 
-            //XmlSerializerオブジェクトを作成
-            //オブジェクトの型を指定する
-            System.Xml.Serialization.XmlSerializer serializer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Settings));
-            //書き込むファイルを開く（UTF-8 BOM無し）
-            System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                fileName, false, new System.Text.UTF8Encoding(false));
-            //シリアル化し、XMLファイルに保存する
-            serializer.Serialize(sw, settings);
-            //ファイルを閉じる
-            sw.Close();
-            */
+            using (var writer = XmlWriter.Create("mailsettings.xml", xws))
+            {
+                var serialier = new DataContractSerializer(settings.GetType());
+                serialier.WriteObject(writer, settings);
+            }
         }
         //適用ボタン
         private void btApply_Click(object sender, EventArgs e)

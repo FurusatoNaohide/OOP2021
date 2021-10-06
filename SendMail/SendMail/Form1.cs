@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SendMail
 {
@@ -91,7 +94,27 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
+            if (File.Exists("mailsettings.xml"))
+            {
+                using (var reader = XmlReader.Create("mailsettings.xml"))
+                {
+                    var serializer = new DataContractSerializer(typeof(Settings));
+                    var set = serializer.ReadObject(reader) as Settings;
+                    settings.Port = set.Port;
+                    settings.Host = set.Host;
+                    settings.MailAddr = set.MailAddr;
+                    settings.Pass = set.Pass;
+                    settings.Ssl = set.Ssl;
+                }
+            }
+            else
+            {
+                configForm.ShowDialog();
+            }
+            
+            
+            
         }
     }
 }
