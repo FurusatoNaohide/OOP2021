@@ -16,6 +16,7 @@ namespace SendMail
     public partial class ConfigForm : Form
     {
         private Settings settings = Settings.getInstance();
+        public string FileName = "mailsettings.xml";
 
         public ConfigForm()
         {
@@ -34,8 +35,16 @@ namespace SendMail
         //OKボタン
         private void btOk_Click(object sender, EventArgs e)
         {
-            SettingRegist();
-            this.Close();
+            try
+            {
+                SettingRegist();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         //送信データ登録
@@ -47,7 +56,7 @@ namespace SendMail
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
 
-            //シリアル化
+            //XMLファイルへ書き出し（シリアル化）【P302参照】
             var xws = new XmlWriterSettings
             {
                 Encoding = new System.Text.UTF8Encoding(false),
@@ -56,7 +65,7 @@ namespace SendMail
             };
 
 
-            using (var writer = XmlWriter.Create("mailsettings.xml", xws))
+            using (var writer = XmlWriter.Create(FileName, xws))
             {
                 var serialier = new DataContractSerializer(settings.GetType());
                 serialier.WriteObject(writer, settings);
@@ -65,12 +74,31 @@ namespace SendMail
         //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
         {
-            SettingRegist();//送信データ登録
+            try
+            {
+                SettingRegist();//送信データ登録
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void tbCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //設定画面をロードすると一度だけ実行されるイベントハンドラ
+        private void ConfigForm_Load(object sender, EventArgs e)
+        {
+            tbHost.Text = settings.Host;//ホスト名
+            tbPort.Text = settings.Port.ToString();//ポート番号
+            tbUserName.Text = settings.MailAddr;//ユーザー名
+            tbPass.Text = settings.Pass;//パスワード
+            cbSsl.Checked = settings.Ssl;//SSL
+            tbSender.Text = settings.MailAddr;//送信元
         }
     }
 }

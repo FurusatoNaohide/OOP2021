@@ -94,16 +94,15 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            if (File.Exists("mailsettings.xml"))
+            if (File.Exists(configForm.FileName))
             {
-                //逆シリアル化
-                using (var reader = XmlReader.Create("mailsettings.xml"))
+                //XMLファイルを読み込み（逆シリアル化）【P303参照】
+                using (var reader = XmlReader.Create(configForm.FileName))
                 {
                     var serializer = new DataContractSerializer(typeof(Settings));
                     var set = serializer.ReadObject(reader) as Settings;
-                    settings.Port = set.Port;
                     settings.Host = set.Host;
+                    settings.Port = set.Port;
                     settings.MailAddr = set.MailAddr;
                     settings.Pass = set.Pass;
                     settings.Ssl = set.Ssl;
