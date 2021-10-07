@@ -94,6 +94,7 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
             if (File.Exists(configForm.FileName))
             {
                 //XMLファイルを読み込み（逆シリアル化）【P303参照】
@@ -112,9 +113,12 @@ namespace SendMail
             {
                 configForm.ShowDialog();
             }
-            
-            
-            
+            */
+
+            if (Settings.setDataCheck() == false)
+            {
+                configForm.ShowDialog();
+            }
         }
     }
 }
