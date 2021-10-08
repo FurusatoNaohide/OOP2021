@@ -30,6 +30,21 @@ namespace SendMail
 
         private void btSend_Click(object sender, EventArgs e)
         {
+            btSend.Enabled = false;
+            if (!Settings.FileCheck)
+            {
+                MessageBox.Show("送信情報を設定してください");
+                btSend.Enabled = true;
+                return;
+            }
+            //送信情報がないとここからの処理に進めない
+            if (string.IsNullOrWhiteSpace(tbTo.Text) || string.IsNullOrWhiteSpace(tbMessage.Text))
+            {
+                MessageBox.Show("送信先アドレス又は本文が未入力です");
+                btSend.Enabled = true;
+                return;
+            }
+
             try
             {
                 //メール送信のためのインスタンスを生成
@@ -64,7 +79,7 @@ namespace SendMail
                 smtpClient.SendCompleted += SmtpClient_SendCompleted;
                 string userState = "SendMail";
                 smtpClient.SendAsync(mailMessage,userState);  //非同期操作で並行処理
-                
+
             }
             catch (Exception ex)
             {
@@ -78,10 +93,13 @@ namespace SendMail
             if (e.Error != null)
             {
                 MessageBox.Show(e.Error.Message);
+                btSend.Enabled = true;
             }
             else
             {
+                新規作成ToolStripMenuItem_Click(sender, e);
                 MessageBox.Show("送信完了");
+                btSend.Enabled = true;
             }
             
         }
@@ -94,31 +112,25 @@ namespace SendMail
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*
-            if (File.Exists(configForm.FileName))
-            {
-                //XMLファイルを読み込み（逆シリアル化）【P303参照】
-                using (var reader = XmlReader.Create(configForm.FileName))
-                {
-                    var serializer = new DataContractSerializer(typeof(Settings));
-                    var set = serializer.ReadObject(reader) as Settings;
-                    settings.Host = set.Host;
-                    settings.Port = set.Port;
-                    settings.MailAddr = set.MailAddr;
-                    settings.Pass = set.Pass;
-                    settings.Ssl = set.Ssl;
-                }
-            }
-            else
+            //起動時に送信情報が未設定の場合設定画面を切り替える(! ← not)
+            if (!Settings.FileCheck)
             {
                 configForm.ShowDialog();
             }
-            */
+        }
 
-            if (Settings.setDataCheck() == false)
-            {
-                configForm.ShowDialog();
-            }
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbTo.Clear();
+            tbCc.Clear();
+            tbBcc.Clear();
+            tbTitle.Clear();
+            tbMessage.Clear();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace SendMail
         {
             try
             {
-                SettingRegist();
+                btApply_Click(sender, e);   //適用ボタンの呼び出し
                 this.Close();
             }
             catch (Exception ex)
@@ -47,18 +47,14 @@ namespace SendMail
             
         }
 
-        //送信データ登録
-        private void SettingRegist()
-        {
-            
-            
-        }
         //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
         {
             try
             {
-                SettingRegist();//送信データ登録
+                //Settingsオブジェクトに入力データを渡して登録を行う
+                settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text),
+                                        tbUserName.Text, tbPass.Text, cbSsl.Checked);
             }
             catch (Exception ex)
             {

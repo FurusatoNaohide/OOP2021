@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace SendMail
@@ -14,7 +16,9 @@ namespace SendMail
     {
         private static Settings instance = null;
         public static string FileName = "mailsettings.xml";
-        public static bool FileCheack = false;
+
+        //送信データ設定済み
+        public static bool FileCheck { get; private set; } = true;
 
         public int Port { get; set; }   //ポート番号
         public string Host { get; set; }     //ホスト名
@@ -34,27 +38,35 @@ namespace SendMail
             if (instance == null)
             {
                 instance = new Settings();
-                
-                
-                //XMLファイルを読み込み（逆シリアル化）【P303参照】
-                using (var reader = XmlReader.Create(FileName))
-                {
-                    var serializer = new DataContractSerializer(typeof(Settings));
-                    var set = serializer.ReadObject(reader) as Settings;
 
-                    instance.Host = set.Host;
-                    instance.Port = set.Port;
-                    instance.MailAddr = set.MailAddr;
-                    instance.Pass = set.Pass;
-                    instance.Ssl = set.Ssl;
-                }
-                
+                    //XMLファイルを読み込み（逆シリアル化）【P303参照】
+                    try
+                    {
+                        using (var reader = XmlReader.Create(FileName))
+                        {
+                            var serializer = new DataContractSerializer(typeof(Settings));
+                            var set = serializer.ReadObject(reader) as Settings;
+
+                            instance.Host = set.Host;
+                            instance.Port = set.Port;
+                            instance.MailAddr = set.MailAddr;
+                            instance.Pass = set.Pass;
+                            instance.Ssl = set.Ssl;
+                        }
+                    }
+                    //ファイルがない場合（初回起動時）
+                    catch (Exception ex)
+                    {
+                        FileCheck = false;  //データ未設定
+                        MessageBox.Show("ファイルが見つかりませんでした");
+                    }
+
             }
             return instance;
         }
 
         //送信データ登録
-        public void setSendConfig(string host,int port,string mailAddr,
+        public bool setSendConfig(string host,int port,string mailAddr,
                                   string pass,bool ssl)
         {
             Host = host;
@@ -76,6 +88,8 @@ namespace SendMail
                 var serialier = new DataContractSerializer(this.GetType());
                 serialier.WriteObject(writer, this);
             }
+            FileCheck = true;
+            return true;    //登録完了
         }
 
         //初期値
@@ -101,18 +115,6 @@ namespace SendMail
         public bool bSsl()
         {
             return true;
-        }
-
-        public static bool setDataCheck()
-        {
-            if (FileCheack)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
     }
 }
