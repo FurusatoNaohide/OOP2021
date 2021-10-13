@@ -111,6 +111,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssReader", "RssReader\RssReader\RssReader.csproj", "{B71A8313-4C6B-41FE-B5DD-784A0FCA7CFC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SendMail", "SendMail", "{52432846-225A-4811-AAB0-71C508EACD32}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\テスト仕様書_32025.xlsx = ..\..\..\..\Desktop\テスト仕様書_32025.xlsx
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMail", "SendMail\SendMail\SendMail.csproj", "{5AD779F8-A3F0-4C94-9153-6C2FC59ABE14}"
 EndProject
