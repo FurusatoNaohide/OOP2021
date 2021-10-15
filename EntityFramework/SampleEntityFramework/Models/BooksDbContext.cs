@@ -15,6 +15,8 @@ namespace SampleEntityFramework.Models
         public BooksDbContext()
             : base("name=BooksDbContext")
         {
+            /*自動マイグレーション用*/
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BooksDbContext, Configuration>());
         }
 
         // モデルに含めるエンティティ型ごとに DbSet を追加します。Code First モデルの構成および使用の
