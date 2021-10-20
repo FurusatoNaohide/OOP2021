@@ -47,6 +47,8 @@ namespace SampleEntityFramework
             Console.WriteLine("#1.5");
             Exercise13_5();
 
+            Console.WriteLine("データ入力");
+
             Console.ReadLine(); //F5で実行してもすぐコンソール画面が消えないようにする
 
             #region// 13-10 高度なクエリ
@@ -96,10 +98,15 @@ namespace SampleEntityFramework
             using (var db =new BooksDbContext())
             {
                 var datas = db.Books.OrderByDescending(b => b.Author.Birthday).ToList();
-                foreach (var data in datas)
+                var query = datas.GroupBy(x => x.Author.Name);
+                foreach (var group in query)
                 {
-                    Console.WriteLine($"{data.Author.Name} {data.Author.Birthday}");
-                    Console.WriteLine($"    {data.Title} {data.PublishedYear} \r\n");
+                    Console.WriteLine(group.Key);
+                    foreach (var book in group)
+                    {
+                        Console.WriteLine($"{book.Title} {book.PublishedYear}");
+                    }
+                    Console.WriteLine();
                 }
             }
         }
@@ -112,7 +119,6 @@ namespace SampleEntityFramework
                 foreach (var data in datas)
                 {
                     Console.WriteLine($"{data.Title} {data.Author.Name}");
-                    Console.WriteLine($"{data.PublishedYear} \r\n");
                 }
             }
         }
