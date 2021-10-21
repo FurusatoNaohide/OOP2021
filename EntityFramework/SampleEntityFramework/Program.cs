@@ -30,10 +30,10 @@ namespace SampleEntityFramework
 
             //演習13章
             Console.WriteLine("#1.1");
-            Exercise13_1_1();
+            //Exercise13_1_1();
 
             Console.WriteLine("#1.1.2");
-            Exercise13_1_2();
+            //Exercise13_1_2();
 
             Console.WriteLine("#1.2");
             Exercise13_2();
@@ -47,7 +47,7 @@ namespace SampleEntityFramework
             Console.WriteLine("#1.5");
             Exercise13_5();
 
-            Console.WriteLine("データ入力");
+            //Exercise13_6(); //コンソールから書籍情報入力 未完成
 
             Console.ReadLine(); //F5で実行してもすぐコンソール画面が消えないようにする
 
@@ -93,12 +93,63 @@ namespace SampleEntityFramework
 
         }
 
+        private static void Exercise13_6()
+        {
+            Console.Write("著者名：");
+            var AName = Console.ReadLine();
+            Console.WriteLine("生年月日");
+            Console.Write("年：");
+            var Year = int.Parse(Console.ReadLine());
+            Console.Write("月：");
+            var Month = int.Parse(Console.ReadLine());
+            Console.Write("日：");
+            var Date = int.Parse(Console.ReadLine());
+
+            Console.Write("性別 M or F：");
+            var AGender = Console.ReadLine();
+
+            using (var db = new BooksDbContext())
+            {
+                var author = new Author
+                {
+                    Birthday = new DateTime(Year, Month, Date),
+                    Gender = AGender,
+                    Name = AName
+                };
+
+                db.Authors.Add(author);
+                db.SaveChanges();
+            }
+
+            Console.Write("書籍名：");
+            var BTitle = Console.ReadLine();
+            Console.Write("発行年：");
+            var BPublishedYear = Console.ReadLine();
+            Console.Write("著者名：");
+            var BName = Console.ReadLine();
+
+            using (var db = new BooksDbContext())
+            {
+                var author = db.Authors.Single(a => a.Name == BName);
+                var book = new Book
+                {
+                    Title = BTitle,
+                    PublishedYear = int.Parse(BPublishedYear),
+                    Author = author,
+                };
+                db.Books.Add(book);
+                db.SaveChanges();
+            }
+
+
+        }
+
         private static void Exercise13_5()
         {
             using (var db =new BooksDbContext())
             {
-                var datas = db.Books.OrderByDescending(b => b.Author.Birthday).ToList();
-                var query = datas.GroupBy(x => x.Author.Name);
+                var a = db.Books.OrderByDescending(b => b.Author.Birthday).ToList();
+                var query = a.GroupBy(x => x.Author.Name);
                 foreach (var group in query)
                 {
                     Console.WriteLine(group.Key);
@@ -108,6 +159,20 @@ namespace SampleEntityFramework
                     }
                     Console.WriteLine();
                 }
+
+                /*解説
+                var authors = db.Authors.OrderByDescending(b => b.Birthday);
+                foreach (var author in authors)
+                {
+                    Console.WriteLine("{0} ({1:yyyy/MM})", author.Name, author.Birthday);
+                    foreach (var book in author.Books)  //authorからBookクラスを参照
+                    {
+                        Console.WriteLine("{0} {1}",
+                                book.Title, book.PublishedYear);
+                    }
+                    Console.WriteLine();
+                }
+                */
             }
         }
 
@@ -119,6 +184,10 @@ namespace SampleEntityFramework
                 foreach (var data in datas)
                 {
                     Console.WriteLine($"{data.Title} {data.Author.Name}");
+                    /* 解説
+                    Console.WriteLine("{0} {1} {2} ({3:yyyy/MM/dd})",
+                                        data.Title, data.PublishedYear, data.Author.Name, data.Author.Birthday);
+                    */
                 }
             }
         }
@@ -127,10 +196,14 @@ namespace SampleEntityFramework
         {
             using (var db = new BooksDbContext())
             {
-                var datas = db.Books.Where(x => x.Title.Length == db.Books.Max(m => m.Title.Length)).ToList();
+                var datas = db.Books.Where(x => x.Title.Length == db.Books.Max(m => m.Title.Length));
                 foreach (var data in datas)
                 {
                     Console.WriteLine($"{data.Title}");
+                    /* 解説
+                    Console.WriteLine("{0} {1} {2} ({3:yyyy/MM/dd})",
+                                        data.Title, data.PublishedYear, data.Author.Name, data.Author.Birthday);
+                    */
                 }
             }
         }
@@ -139,10 +212,15 @@ namespace SampleEntityFramework
         {
             using (var db = new BooksDbContext())
             {
-                var datas = db.Books.ToList();
+                var datas = db.Books;
+                //var datas = db.Books.OrderBy(x => x.Author.Name); //著者名ごとに並び替え(昇順)
                 foreach (var data in datas)
                 {
                     Console.WriteLine($"{data.Title} {data.PublishedYear} {data.Author.Name}");
+                    /*解説
+                    Console.WriteLine("{0} {1} {2} ({3:yyyy/MM/dd})",
+                                        data.Title, data.PublishedYear, data.Author.Name, data.Author.Birthday);
+                    */
                 }
             }
         }
@@ -168,7 +246,6 @@ namespace SampleEntityFramework
                     Author = author2,
                 };
                 db.Books.Add(book2);
-                db.SaveChanges();
 
                 var author3 = db.Authors.Single(a => a.Name == "菊池寛");
                 var book3 = new Book
@@ -178,7 +255,6 @@ namespace SampleEntityFramework
                     Author = author3,
                 };
                 db.Books.Add(book3);
-                db.SaveChanges();
 
                 var author4 = db.Authors.Single(a => a.Name == "宮沢賢治");
                 var book4 = new Book
@@ -217,7 +293,7 @@ namespace SampleEntityFramework
             }
         }
 
-        #region "テキスト内容"
+        #region "テキスト内容 P321～343"
         // List 13-12
         private static void DeleteBook()
         {
