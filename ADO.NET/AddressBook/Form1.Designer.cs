@@ -189,7 +189,7 @@ namespace AddressBook
             this.dtpFilter.Name = "dtpFilter";
             this.dtpFilter.Size = new System.Drawing.Size(200, 19);
             this.dtpFilter.TabIndex = 14;
-            this.dtpFilter.Value = new System.DateTime(2021, 10, 22, 0, 0, 0, 0);
+            this.dtpFilter.Value = new System.DateTime(2021, 10, 27, 14, 9, 47, 0);
             // 
             // btBirthdayFilter
             // 
