@@ -62,7 +62,6 @@ namespace CarReportSystem {
 
         //選択されているメーカーの列挙型を返す
         private CarReport.MakerGroup selectedGroup() {
-
             foreach (var rb in gbMaker.Controls) {
                 if(((RadioButton)rb).Checked) {
                     return (CarReport.MakerGroup)int.Parse(((string)((RadioButton)rb).Tag));
@@ -153,6 +152,7 @@ namespace CarReportSystem {
             carReportDataGridView.CurrentRow.Cells[5].Value = tbReport.Text;    //レポート
             carReportDataGridView.CurrentRow.Cells[6].Value = ImageToByteArray(pbPicture.Image);  //画像
 
+
             //データベースへ反映
             this.Validate();
             this.carReportBindingSource.EndEdit();
@@ -232,7 +232,7 @@ namespace CarReportSystem {
                 cbAuthor.Text = carReportDataGridView.CurrentRow.Cells[2].Value.ToString(); //記録者
                 //メーカー(文字列→列挙型)
                 setMakerRadioButton(
-                    (CarReport.MakerGroup)Enum.Parse(typeof(CarReport.MakerGroup),carReportDataGridView.CurrentRow.Cells[3].Value.ToString()));
+                    (CarReport.MakerGroup)Enum.Parse(typeof(CarReport.MakerGroup), carReportDataGridView.CurrentRow.Cells[3].Value.ToString()));
                 cbCarName.Text = carReportDataGridView.CurrentRow.Cells[4].Value.ToString();    //車名
                 tbReport.Text = carReportDataGridView.CurrentRow.Cells[5].Value.ToString();     //レポート
                 pbPicture.Image = ByteArrayToImage((byte[])carReportDataGridView.CurrentRow.Cells[6].Value);       //画像
@@ -242,7 +242,7 @@ namespace CarReportSystem {
             {
                 pbPicture.Image = null;
             }
-            
+
         }
 
         // バイト配列をImageオブジェクトに変換
@@ -259,6 +259,5 @@ namespace CarReportSystem {
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
             return b;
         }
-
     }
 }
