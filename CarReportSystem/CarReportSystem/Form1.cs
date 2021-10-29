@@ -35,30 +35,7 @@ namespace CarReportSystem {
             pbPicture.Image = null;
         }
 
-        //追加ボタン
-        private void btDataAdd_Click(object sender, EventArgs e) {
-            if (cbAuthor.Text == "" || cbCarName.Text == "") {
-                MessageBox.Show("入力されていません");
-                return;
-            }   
-
-            CarReport carReport = new CarReport {
-                Date = dtpDate.Value,
-                Auther = cbAuthor.Text,
-                Maker = selectedGroup(),
-                CarName = cbCarName.Text,
-                Picture = pbPicture.Image,
-                Report = tbReport.Text
-            };
-            
-            listCarReport.Add(carReport);   //1レコード追加
-
-            //コンボボックスの履歴登録
-            setCbAuther(cbAuthor.Text);
-            setCbCarName(cbCarName.Text);
-            
-            
-        }
+        
 
         //選択されているメーカーの列挙型を返す
         private CarReport.MakerGroup selectedGroup() {
@@ -126,20 +103,6 @@ namespace CarReportSystem {
             }
         }
 
-        private void btDataDelete_Click(object sender, EventArgs e) {
-            //CurrrentRow 選択してるセルのある行を選択
-            //listCarReport.RemoveAt(dgvRegistData.CurrentRow.Index);
-        }
-
-        //今表示しているデータに更新、指定行に入れる
-        private void btDataCorrect_Click(object sender, EventArgs e) {
-            /*
-            listCarReport[dgvRegistData.CurrentRow.Index].UpDate(
-                dtpDate.Value, cbAuthor.Text, selectedGroup(), 
-                cbCarName.Text, tbReport.Text,pbPicture.Image);
-            dgvRegistData.Refresh();    //コントロールの強制再描画
-            */
-        }
 
         //更新ボタンイベント処理
         private void btUpdate_Click(object sender, EventArgs e) {
@@ -258,6 +221,11 @@ namespace CarReportSystem {
             ImageConverter imgconv = new ImageConverter();
             byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
             return b;
+        }
+
+        private void carReportDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }
