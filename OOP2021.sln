@@ -135,6 +135,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleGridApp", "WPF\Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUnitConverter", "WPF\SampleUnitConverter\SampleUnitConverter.csproj", "{86131657-8FC7-4A8A-8C8F-C5D8B028876B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGame", "WPF\NumberGame\NumberGame.csproj", "{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -305,6 +307,10 @@ Global
 		{86131657-8FC7-4A8A-8C8F-C5D8B028876B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86131657-8FC7-4A8A-8C8F-C5D8B028876B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86131657-8FC7-4A8A-8C8F-C5D8B028876B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -354,6 +360,7 @@ Global
 		{985DDD85-055F-4CE1-A8D9-F78E1BC0CE2E} = {AB1A414D-E7AE-4A60-8F7C-DC6B313AE1FB}
 		{DF9B2622-9065-4A05-BB96-18EDDAFD8EFB} = {AB1A414D-E7AE-4A60-8F7C-DC6B313AE1FB}
 		{86131657-8FC7-4A8A-8C8F-C5D8B028876B} = {AB1A414D-E7AE-4A60-8F7C-DC6B313AE1FB}
+		{C046A64E-79BD-4F2F-9447-5F96FF5FE2B6} = {AB1A414D-E7AE-4A60-8F7C-DC6B313AE1FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B3F4533-0FDC-4CDC-B4E2-4347FD38D513}
