@@ -8,7 +8,7 @@
         Title="MainWindow" Height="320" Width="260" VerticalAlignment="Top">
     <DockPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="15">
-            <TextBlock TextWrapping="Wrap" Text="数字を選んでください"/>
+            <TextBlock x:Name="TbMessage" TextWrapping="Wrap"/>
         </StackPanel>
         <Grid Margin="0,0,0,20">
             <Grid.RowDefinitions>
@@ -25,38 +25,39 @@
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
-            <Button Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button x:Name="Num1" Grid.Column="1" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Num1_Click"/>
-            <Button Grid.Column="2" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Column="3" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Column="4" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
+            
+            <Button x:Name="Num1" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num2" Grid.Column="1" Content="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num3" Grid.Column="2" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num4" Grid.Column="3" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num5" Grid.Column="4" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
 
-            <Button Grid.Row="1" Grid.Column="0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="1" Grid.Column="2" Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="1" Grid.Column="3" Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="1" Grid.Column="4" Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
+            <Button x:Name="Num6" Grid.Row="1" Grid.Column="0" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num7" Grid.Row="1" Grid.Column="1" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num8" Grid.Row="1" Grid.Column="2" Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num9" Grid.Row="1" Grid.Column="3" Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num10" Grid.Row="1" Grid.Column="4" Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Content="11" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="12" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="2" Grid.Column="2" Content="13" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="2" Grid.Column="3" Content="14" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="2" Grid.Column="4" Content="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
+            <Button x:Name="Num11" Grid.Row="2" Grid.Column="0" Content="11" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num12" Grid.Row="2" Grid.Column="1" Content="12" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num13" Grid.Row="2" Grid.Column="2" Content="13" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num14" Grid.Row="2" Grid.Column="3" Content="14" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num15" Grid.Row="2" Grid.Column="4" Content="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
 
-            <Button Grid.Row="3" Grid.Column="0" Content="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="3" Grid.Column="1" Content="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="3" Grid.Column="2" Content="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="3" Grid.Column="3" Content="19" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="3" Grid.Column="4" Content="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
+            <Button x:Name="Num16" Grid.Row="3" Grid.Column="0" Content="16" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num17" Grid.Row="3" Grid.Column="1" Content="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num18" Grid.Row="3" Grid.Column="2" Content="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num19" Grid.Row="3" Grid.Column="3" Content="19" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num20" Grid.Row="3" Grid.Column="4" Content="20" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
 
-            <Button Grid.Row="4" Grid.Column="0" Content="21" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="4" Grid.Column="1" Content="22" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="4" Grid.Column="2" Content="23" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="4" Grid.Column="3" Content="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
-            <Button Grid.Row="4" Grid.Column="4" Content="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50"/>
+            <Button x:Name="Num21" Grid.Row="4" Grid.Column="0" Content="21" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num22" Grid.Row="4" Grid.Column="1" Content="22" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num23" Grid.Row="4" Grid.Column="2" Content="23" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num24" Grid.Row="4" Grid.Column="3" Content="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
+            <Button x:Name="Num25" Grid.Row="4" Grid.Column="4" Content="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Height="50" Click="Number_Click"/>
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Height="20" Margin="-242,0,0,0" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="250">
-            <TextBlock TextWrapping="Wrap" Text="数字を選んでください" Width="240"/>
+            <TextBlock x:Name="TbResult" TextWrapping="Wrap" Text="数字を選んでください" Width="240"/>
         </StackPanel>
     </DockPanel>
 </Window>

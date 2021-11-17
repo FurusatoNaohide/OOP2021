@@ -20,15 +20,46 @@ namespace NumberGame
     /// </summary>
     public partial class MainWindow : Window
     {
-        int num;
+        int Cnum;
+        int Rnum;
+        int Count = 5;
         public MainWindow()
         {
             InitializeComponent();
-            num = new Random().Next(1, 25);
+            Rnum = new Random().Next(1, 25);
+            TbMessage.Text = string.Format("選ばれた数字を{0}回以内で当ててください",Count);
         }
-        private void Num1_Click(object sender, RoutedEventArgs e)
+        private void Number_Click(object sender, RoutedEventArgs e)
+        {
+            Cnum = int.Parse(((Button)sender).Content.ToString());
+            CheckNumber(Cnum);
+        }
+
+        public void CheckNumber(int num)
         {
             
+            Count--;
+            TbResult.Text = string.Format("あと{0}回 ", Count);
+            if (Rnum > num)
+            {
+                TbResult.Text += "選ばれた数字より小さいです";
+            }
+            else if (Rnum < num)
+            {
+                TbResult.Text += "選ばれた数字より大きいです";
+            }
+            else
+            {
+                TbResult.Text = "あたり!";
+                MessageBox.Show("あたり!\r\nCongratulations!");
+                Close();
+            }
+
+            if (Count <= 0 && Rnum != num)
+            {
+                MessageBox.Show("Game Over");
+                Close();
+            }
         }
     }
 }
