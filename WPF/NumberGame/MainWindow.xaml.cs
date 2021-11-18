@@ -91,7 +91,7 @@ namespace NumberGame
                     var bt = new Button();
                     bt.Width = MainForm.Width / Colums;
                     bt.Height = MainForm.Height / Rows;
-                    bt.Content = (j + 1)+(i * 5);
+                    bt.Content = (j + 1)+(i * Rows);
                     bt.FontSize = 20;
                     bt.Click += Bt_Click;
                     Grid.SetRow(bt, 1);
