@@ -90,24 +90,32 @@ namespace CardsWar
             };
 
             int score1 = 0;
-/////ここに判定処理１を入れる
-            
-
-
-
-
-
-
+            /////ここに判定処理１を入れる
+            for (int i = 0; i < pictures.Length; i++)
+            {
+                if (cards1[index1].Picture == pictures[i])
+                {
+                    score1 = scores[i];
+                }
+            }
             int score2 = 0;
-/////ここに判定処理２を入れる
-
-
-
-
-
-            
-            
+            /////ここに判定処理２を入れる
+            for (int i = 0; i < pictures.Length; i++)
+            {
+                if (cards2[index2].Picture == pictures[i])
+                {
+                    score2 = scores[i];
+                }
+            }
             // 判定する
+            if (score1 > score2)
+            {
+                return 2;
+            }
+            else if (score2 > score1)
+            {
+                return 0;
+            }
             return 1;   // 無いとエラーになるのでダミーで記述（引き分けの場合）
         }
 
@@ -116,6 +124,9 @@ namespace CardsWar
         {
             // カードの生成
             CreateCards(ref cards);
+
+            //カードをシャッフルする
+            ShuffleCard(cards);
 
             // カードを分ける
             userCards = new Card[cards.Length / 2];
