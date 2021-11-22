@@ -30,6 +30,8 @@ namespace Pelmanism
             string[] picture =
             {
                 "〇","●","△","▲","□","■","◇","◆","☆","★","※","×",
+                //"spadeA","spade2","spade3","spade4","spade5","spade6",
+                //"spade7","spade8","spade9","spade10","spadeJ","spadeQ",
             };
             //カードのインスタンスの生成
             cards = new Card[picture.Length * 2];
@@ -206,9 +208,9 @@ namespace Pelmanism
             labelSec.Text = "あと" + gameSec + "秒";
             if (gameSec == 0)
             {
+                labelGuidance.Text = "時間切れです。お疲れさまでした。";
                 timer1.Stop();
-                MessageBox.Show("Game Over");
-                Close();
+                buttonStart.Enabled = true; //スタートボタン選択可
             }
         }
     }
