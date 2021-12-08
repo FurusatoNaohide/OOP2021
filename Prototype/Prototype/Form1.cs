@@ -31,5 +31,11 @@ namespace Prototype
         {
             pbPicture.Image = null;
         }
+
+        private void btCheck_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.ShowDialog();
+        }
     }
 }

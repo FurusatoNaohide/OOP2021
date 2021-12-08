@@ -49,7 +49,7 @@ namespace Prototype
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btCheck = new System.Windows.Forms.Button();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -231,14 +231,15 @@ namespace Prototype
             this.button5.Text = "削除";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btCheck
             // 
-            this.button6.Location = new System.Drawing.Point(149, 308);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(96, 34);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "確認";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btCheck.Location = new System.Drawing.Point(149, 308);
+            this.btCheck.Name = "btCheck";
+            this.btCheck.Size = new System.Drawing.Size(96, 34);
+            this.btCheck.TabIndex = 20;
+            this.btCheck.Text = "確認";
+            this.btCheck.UseVisualStyleBackColor = true;
+            this.btCheck.Click += new System.EventHandler(this.btCheck_Click);
             // 
             // ofdPictureOpen
             // 
@@ -249,7 +250,7 @@ namespace Prototype
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 580);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btCheck);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -301,7 +302,7 @@ namespace Prototype
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btCheck;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
     }
 }
