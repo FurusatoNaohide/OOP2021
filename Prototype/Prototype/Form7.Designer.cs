@@ -29,22 +29,52 @@ namespace Prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tbClubName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbClubID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbPassWord = new System.Windows.Forms.TextBox();
             this.btRegister = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
+            this.clubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clubTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ClubTableAdapter();
+            this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
+            this.clubBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.clubBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.clubDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btConnect = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingNavigator)).BeginInit();
+            this.clubBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clubDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 37);
             this.label1.TabIndex = 2;
@@ -53,67 +83,59 @@ namespace Prototype
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(18, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 37);
             this.label2.TabIndex = 3;
             this.label2.Text = "部活動名：";
             // 
-            // textBox1
+            // tbClubName
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(141, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 31);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(356, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 37);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "部";
+            this.tbClubName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbClubName.Location = new System.Drawing.Point(147, 103);
+            this.tbClubName.Name = "tbClubName";
+            this.tbClubName.Size = new System.Drawing.Size(209, 31);
+            this.tbClubName.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(42, 130);
+            this.label4.Location = new System.Drawing.Point(48, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "部活ID：";
             // 
-            // textBox2
+            // tbClubID
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(141, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 31);
-            this.textBox2.TabIndex = 7;
+            this.tbClubID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbClubID.Location = new System.Drawing.Point(147, 166);
+            this.tbClubID.Name = "tbClubID";
+            this.tbClubID.Size = new System.Drawing.Size(209, 31);
+            this.tbClubID.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(12, 200);
+            this.label5.Location = new System.Drawing.Point(18, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 37);
             this.label5.TabIndex = 8;
             this.label5.Text = "パスワード：";
             // 
-            // textBox3
+            // tbPassWord
             // 
-            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox3.Location = new System.Drawing.Point(141, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 31);
-            this.textBox3.TabIndex = 9;
+            this.tbPassWord.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbPassWord.Location = new System.Drawing.Point(147, 235);
+            this.tbPassWord.Name = "tbPassWord";
+            this.tbPassWord.PasswordChar = '＊';
+            this.tbPassWord.Size = new System.Drawing.Size(209, 31);
+            this.tbPassWord.TabIndex = 9;
             // 
             // btRegister
             // 
             this.btRegister.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btRegister.Location = new System.Drawing.Point(256, 253);
+            this.btRegister.Location = new System.Drawing.Point(271, 444);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(94, 33);
             this.btRegister.TabIndex = 10;
@@ -124,7 +146,7 @@ namespace Prototype
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btCancel.Location = new System.Drawing.Point(356, 253);
+            this.btCancel.Location = new System.Drawing.Point(271, 495);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(94, 33);
             this.btCancel.TabIndex = 11;
@@ -132,23 +154,243 @@ namespace Prototype
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
+            // infosys202107DataSet
+            // 
+            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
+            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clubBindingSource
+            // 
+            this.clubBindingSource.DataMember = "Club";
+            this.clubBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // clubTableAdapter
+            // 
+            this.clubTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClubTableAdapter = this.clubTableAdapter;
+            this.tableAdapterManager.CostTableAdapter = null;
+            this.tableAdapterManager.ManageTableAdapter = null;
+            this.tableAdapterManager.PresentersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Prototype.infosys202107DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // clubBindingNavigator
+            // 
+            this.clubBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.clubBindingNavigator.BindingSource = this.clubBindingSource;
+            this.clubBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.clubBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.clubBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.clubBindingNavigatorSaveItem});
+            this.clubBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.clubBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.clubBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.clubBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.clubBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.clubBindingNavigator.Name = "clubBindingNavigator";
+            this.clubBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.clubBindingNavigator.Size = new System.Drawing.Size(389, 25);
+            this.clubBindingNavigator.TabIndex = 12;
+            this.clubBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "最初に移動";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "前に戻る";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "位置";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "現在の場所";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorCountItem.Text = "/ {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "項目の総数";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "次に移動";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "最後に移動";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "新規追加";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "削除";
+            // 
+            // clubBindingNavigatorSaveItem
+            // 
+            this.clubBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.clubBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("clubBindingNavigatorSaveItem.Image")));
+            this.clubBindingNavigatorSaveItem.Name = "clubBindingNavigatorSaveItem";
+            this.clubBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.clubBindingNavigatorSaveItem.Text = "データの保存";
+            this.clubBindingNavigatorSaveItem.Click += new System.EventHandler(this.clubBindingNavigatorSaveItem_Click);
+            // 
+            // clubDataGridView
+            // 
+            this.clubDataGridView.AutoGenerateColumns = false;
+            this.clubDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clubDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.clubDataGridView.DataSource = this.clubBindingSource;
+            this.clubDataGridView.Location = new System.Drawing.Point(23, 322);
+            this.clubDataGridView.Name = "clubDataGridView";
+            this.clubDataGridView.RowTemplate.Height = 21;
+            this.clubDataGridView.Size = new System.Drawing.Size(242, 206);
+            this.clubDataGridView.TabIndex = 12;
+            this.clubDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Club_No";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Club_No";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(18, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(137, 37);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "登録一覧：";
+            // 
+            // btConnect
+            // 
+            this.btConnect.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btConnect.Location = new System.Drawing.Point(271, 322);
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(94, 33);
+            this.btConnect.TabIndex = 14;
+            this.btConnect.Text = "接続";
+            this.btConnect.UseVisualStyleBackColor = true;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 298);
+            this.ClientSize = new System.Drawing.Size(389, 555);
+            this.Controls.Add(this.btConnect);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.clubDataGridView);
+            this.Controls.Add(this.clubBindingNavigator);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btRegister);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbPassWord);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbClubID);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbClubName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form7";
             this.Text = "Form7";
+            this.Load += new System.EventHandler(this.Form7_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingNavigator)).EndInit();
+            this.clubBindingNavigator.ResumeLayout(false);
+            this.clubBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clubDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,13 +400,36 @@ namespace Prototype
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbClubName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbClubID;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbPassWord;
         private System.Windows.Forms.Button btRegister;
         private System.Windows.Forms.Button btCancel;
+        private infosys202107DataSet infosys202107DataSet;
+        private System.Windows.Forms.BindingSource clubBindingSource;
+        private infosys202107DataSetTableAdapters.ClubTableAdapter clubTableAdapter;
+        private infosys202107DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator clubBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton clubBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView clubDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btConnect;
     }
 }

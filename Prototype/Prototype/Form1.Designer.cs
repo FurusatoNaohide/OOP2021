@@ -29,62 +29,101 @@ namespace Prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbClubName = new System.Windows.Forms.Label();
+            this.cbCostName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pbPicture = new System.Windows.Forms.PictureBox();
+            this.dtpUsedDate = new System.Windows.Forms.DateTimePicker();
+            this.cbPresenter = new System.Windows.Forms.ComboBox();
+            this.tbMoney = new System.Windows.Forms.TextBox();
+            this.pbReceipt = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btPictureOpen = new System.Windows.Forms.Button();
-            this.btPictureDelete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btReceiptOpen = new System.Windows.Forms.Button();
+            this.btReceiptDelete = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.tbSummary = new System.Windows.Forms.TextBox();
+            this.btRegister = new System.Windows.Forms.Button();
+            this.btUpdate = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             this.btCheck = new System.Windows.Forms.Button();
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
+            this.manageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.manageTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ManageTableAdapter();
+            this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
+            this.clubTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ClubTableAdapter();
+            this.manageBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.manageBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.manageDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpPresenDate = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReceipt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingNavigator)).BeginInit();
+            this.manageBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("HG教科書体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(299, 9);
+            this.label1.Location = new System.Drawing.Point(319, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "部費使用登録画面";
             // 
-            // label2
+            // lbClubName
             // 
-            this.label2.Font = new System.Drawing.Font("HGS教科書体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "～～部";
+            this.lbClubName.Font = new System.Drawing.Font("HGS教科書体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbClubName.Location = new System.Drawing.Point(12, 44);
+            this.lbClubName.Name = "lbClubName";
+            this.lbClubName.Size = new System.Drawing.Size(301, 23);
+            this.lbClubName.TabIndex = 1;
+            this.lbClubName.Text = "～～部";
             // 
-            // comboBox1
+            // cbCostName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 2;
+            this.cbCostName.FormattingEnabled = true;
+            this.cbCostName.Location = new System.Drawing.Point(122, 195);
+            this.cbCostName.Name = "cbCostName";
+            this.cbCostName.Size = new System.Drawing.Size(121, 20);
+            this.cbCostName.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(12, 53);
+            this.label3.Location = new System.Drawing.Point(34, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 23);
             this.label3.TabIndex = 3;
@@ -93,7 +132,7 @@ namespace Prototype
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(12, 153);
+            this.label4.Location = new System.Drawing.Point(34, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 23);
             this.label4.TabIndex = 4;
@@ -102,138 +141,132 @@ namespace Prototype
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(12, 119);
+            this.label5.Location = new System.Drawing.Point(34, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 5;
-            this.label5.Text = "記録者名：";
+            this.label5.Text = "提出者名：";
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(13, 85);
+            this.label6.Location = new System.Drawing.Point(35, 122);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 23);
             this.label6.TabIndex = 6;
             this.label6.Text = "使用日：";
             // 
-            // dateTimePicker1
+            // dtpUsedDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(100, 84);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 19);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpUsedDate.Location = new System.Drawing.Point(122, 121);
+            this.dtpUsedDate.Name = "dtpUsedDate";
+            this.dtpUsedDate.Size = new System.Drawing.Size(121, 19);
+            this.dtpUsedDate.TabIndex = 7;
             // 
-            // comboBox2
+            // cbPresenter
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 119);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 8;
+            this.cbPresenter.FormattingEnabled = true;
+            this.cbPresenter.Location = new System.Drawing.Point(122, 159);
+            this.cbPresenter.Name = "cbPresenter";
+            this.cbPresenter.Size = new System.Drawing.Size(121, 20);
+            this.cbPresenter.TabIndex = 8;
             // 
-            // textBox1
+            // tbMoney
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 19);
-            this.textBox1.TabIndex = 9;
+            this.tbMoney.Location = new System.Drawing.Point(122, 236);
+            this.tbMoney.Name = "tbMoney";
+            this.tbMoney.Size = new System.Drawing.Size(121, 19);
+            this.tbMoney.TabIndex = 9;
             // 
-            // pbPicture
+            // pbReceipt
             // 
-            this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPicture.Location = new System.Drawing.Point(274, 78);
-            this.pbPicture.Name = "pbPicture";
-            this.pbPicture.Size = new System.Drawing.Size(201, 264);
-            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPicture.TabIndex = 10;
-            this.pbPicture.TabStop = false;
+            this.pbReceipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbReceipt.Location = new System.Drawing.Point(272, 109);
+            this.pbReceipt.Name = "pbReceipt";
+            this.pbReceipt.Size = new System.Drawing.Size(201, 314);
+            this.pbReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReceipt.TabIndex = 10;
+            this.pbReceipt.TabStop = false;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(271, 52);
+            this.label7.Location = new System.Drawing.Point(269, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 23);
             this.label7.TabIndex = 11;
             this.label7.Text = "領収書：";
             // 
-            // btPictureOpen
+            // btReceiptOpen
             // 
-            this.btPictureOpen.Location = new System.Drawing.Point(349, 49);
-            this.btPictureOpen.Name = "btPictureOpen";
-            this.btPictureOpen.Size = new System.Drawing.Size(60, 23);
-            this.btPictureOpen.TabIndex = 12;
-            this.btPictureOpen.Text = "開く...";
-            this.btPictureOpen.UseVisualStyleBackColor = true;
-            this.btPictureOpen.Click += new System.EventHandler(this.btPictureOpen_Click);
+            this.btReceiptOpen.Location = new System.Drawing.Point(347, 80);
+            this.btReceiptOpen.Name = "btReceiptOpen";
+            this.btReceiptOpen.Size = new System.Drawing.Size(60, 23);
+            this.btReceiptOpen.TabIndex = 12;
+            this.btReceiptOpen.Text = "開く...";
+            this.btReceiptOpen.UseVisualStyleBackColor = true;
+            this.btReceiptOpen.Click += new System.EventHandler(this.btPictureOpen_Click);
             // 
-            // btPictureDelete
+            // btReceiptDelete
             // 
-            this.btPictureDelete.Location = new System.Drawing.Point(415, 49);
-            this.btPictureDelete.Name = "btPictureDelete";
-            this.btPictureDelete.Size = new System.Drawing.Size(60, 23);
-            this.btPictureDelete.TabIndex = 13;
-            this.btPictureDelete.Text = "削除";
-            this.btPictureDelete.UseVisualStyleBackColor = true;
-            this.btPictureDelete.Click += new System.EventHandler(this.btPictureDelete_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 369);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(459, 187);
-            this.dataGridView1.TabIndex = 14;
+            this.btReceiptDelete.Location = new System.Drawing.Point(413, 80);
+            this.btReceiptDelete.Name = "btReceiptDelete";
+            this.btReceiptDelete.Size = new System.Drawing.Size(60, 23);
+            this.btReceiptDelete.TabIndex = 13;
+            this.btReceiptDelete.Text = "削除";
+            this.btReceiptDelete.UseVisualStyleBackColor = true;
+            this.btReceiptDelete.Click += new System.EventHandler(this.btPictureDelete_Click);
             // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(13, 185);
+            this.label8.Location = new System.Drawing.Point(35, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 23);
             this.label8.TabIndex = 15;
             this.label8.Text = "概要：";
             // 
-            // textBox2
+            // tbSummary
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 185);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 52);
-            this.textBox2.TabIndex = 16;
+            this.tbSummary.Location = new System.Drawing.Point(122, 268);
+            this.tbSummary.Multiline = true;
+            this.tbSummary.Name = "tbSummary";
+            this.tbSummary.Size = new System.Drawing.Size(121, 52);
+            this.tbSummary.TabIndex = 16;
             // 
-            // button3
+            // btRegister
             // 
-            this.button3.Location = new System.Drawing.Point(29, 261);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 34);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "登録";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btRegister.Location = new System.Drawing.Point(27, 342);
+            this.btRegister.Name = "btRegister";
+            this.btRegister.Size = new System.Drawing.Size(102, 34);
+            this.btRegister.TabIndex = 17;
+            this.btRegister.Text = "登録";
+            this.btRegister.UseVisualStyleBackColor = true;
+            this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
             // 
-            // button4
+            // btUpdate
             // 
-            this.button4.Location = new System.Drawing.Point(149, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 34);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "更新";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btUpdate.Location = new System.Drawing.Point(147, 342);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(96, 34);
+            this.btUpdate.TabIndex = 18;
+            this.btUpdate.Text = "更新";
+            this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
-            // button5
+            // btDelete
             // 
-            this.button5.Location = new System.Drawing.Point(29, 308);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 34);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "削除";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btDelete.Location = new System.Drawing.Point(27, 389);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(102, 34);
+            this.btDelete.TabIndex = 19;
+            this.btDelete.Text = "削除";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btCheck
             // 
-            this.btCheck.Location = new System.Drawing.Point(149, 308);
+            this.btCheck.Location = new System.Drawing.Point(147, 389);
             this.btCheck.Name = "btCheck";
             this.btCheck.Size = new System.Drawing.Size(96, 34);
             this.btCheck.TabIndex = 20;
@@ -245,36 +278,309 @@ namespace Prototype
             // 
             this.ofdPictureOpen.FileName = "openFileDialog1";
             // 
+            // infosys202107DataSet
+            // 
+            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
+            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // manageBindingSource
+            // 
+            this.manageBindingSource.DataMember = "Manage";
+            this.manageBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // manageTableAdapter
+            // 
+            this.manageTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClubTableAdapter = this.clubTableAdapter;
+            this.tableAdapterManager.CostTableAdapter = null;
+            this.tableAdapterManager.ManageTableAdapter = this.manageTableAdapter;
+            this.tableAdapterManager.PresentersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Prototype.infosys202107DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // clubTableAdapter
+            // 
+            this.clubTableAdapter.ClearBeforeFill = true;
+            // 
+            // manageBindingNavigator
+            // 
+            this.manageBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.manageBindingNavigator.BindingSource = this.manageBindingSource;
+            this.manageBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.manageBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.manageBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.manageBindingNavigatorSaveItem});
+            this.manageBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.manageBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.manageBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.manageBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.manageBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.manageBindingNavigator.Name = "manageBindingNavigator";
+            this.manageBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.manageBindingNavigator.Size = new System.Drawing.Size(501, 25);
+            this.manageBindingNavigator.TabIndex = 21;
+            this.manageBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "新規追加";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorCountItem.Text = "/ {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "項目の総数";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "削除";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "最初に移動";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "前に戻る";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "位置";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "現在の場所";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "次に移動";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "最後に移動";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // manageBindingNavigatorSaveItem
+            // 
+            this.manageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.manageBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("manageBindingNavigatorSaveItem.Image")));
+            this.manageBindingNavigatorSaveItem.Name = "manageBindingNavigatorSaveItem";
+            this.manageBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.manageBindingNavigatorSaveItem.Text = "データの保存";
+            this.manageBindingNavigatorSaveItem.Click += new System.EventHandler(this.manageBindingNavigatorSaveItem_Click);
+            // 
+            // manageDataGridView
+            // 
+            this.manageDataGridView.AutoGenerateColumns = false;
+            this.manageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.manageDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.manageDataGridView.DataSource = this.manageBindingSource;
+            this.manageDataGridView.Location = new System.Drawing.Point(27, 439);
+            this.manageDataGridView.Name = "manageDataGridView";
+            this.manageDataGridView.RowTemplate.Height = 21;
+            this.manageDataGridView.Size = new System.Drawing.Size(439, 212);
+            this.manageDataGridView.TabIndex = 21;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PDate";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "UsedDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "UsedDate";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Presenter_Id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Presenter_Id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Cost_Id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cost_Id";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Money";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Money";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Summary";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Summary";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Receipt";
+            this.dataGridViewImageColumn1.HeaderText = "Receipt";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Confirmation";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Confirmation";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Remarks";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Remarks";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Club_Id";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Club_Id";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // clubBindingSource
+            // 
+            this.clubBindingSource.DataMember = "Club";
+            this.clubBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(35, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "提出日：";
+            // 
+            // dtpPresenDate
+            // 
+            this.dtpPresenDate.Location = new System.Drawing.Point(122, 84);
+            this.dtpPresenDate.Name = "dtpPresenDate";
+            this.dtpPresenDate.Size = new System.Drawing.Size(121, 19);
+            this.dtpPresenDate.TabIndex = 23;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 580);
+            this.ClientSize = new System.Drawing.Size(501, 678);
+            this.Controls.Add(this.dtpPresenDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.manageDataGridView);
+            this.Controls.Add(this.manageBindingNavigator);
             this.Controls.Add(this.btCheck);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btDelete);
+            this.Controls.Add(this.btUpdate);
+            this.Controls.Add(this.btRegister);
+            this.Controls.Add(this.tbSummary);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btPictureDelete);
-            this.Controls.Add(this.btPictureOpen);
+            this.Controls.Add(this.btReceiptDelete);
+            this.Controls.Add(this.btReceiptOpen);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.pbPicture);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.pbReceipt);
+            this.Controls.Add(this.tbMoney);
+            this.Controls.Add(this.cbPresenter);
+            this.Controls.Add(this.dtpUsedDate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbCostName);
+            this.Controls.Add(this.lbClubName);
             this.Controls.Add(this.label1);
             this.Name = "Registration";
             this.Text = "部費管理システム";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Registration_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbReceipt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingNavigator)).EndInit();
+            this.manageBindingNavigator.ResumeLayout(false);
+            this.manageBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,27 +589,59 @@ namespace Prototype
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbClubName;
+        private System.Windows.Forms.ComboBox cbCostName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pbPicture;
+        private System.Windows.Forms.DateTimePicker dtpUsedDate;
+        private System.Windows.Forms.ComboBox cbPresenter;
+        private System.Windows.Forms.TextBox tbMoney;
+        private System.Windows.Forms.PictureBox pbReceipt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btPictureOpen;
-        private System.Windows.Forms.Button btPictureDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btReceiptOpen;
+        private System.Windows.Forms.Button btReceiptDelete;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox tbSummary;
+        private System.Windows.Forms.Button btRegister;
+        private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btCheck;
         private System.Windows.Forms.OpenFileDialog ofdPictureOpen;
+        private infosys202107DataSet infosys202107DataSet;
+        private System.Windows.Forms.BindingSource manageBindingSource;
+        private infosys202107DataSetTableAdapters.ManageTableAdapter manageTableAdapter;
+        private infosys202107DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator manageBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton manageBindingNavigatorSaveItem;
+        private infosys202107DataSetTableAdapters.ClubTableAdapter clubTableAdapter;
+        private System.Windows.Forms.DataGridView manageDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource clubBindingSource;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpPresenDate;
     }
 }
 

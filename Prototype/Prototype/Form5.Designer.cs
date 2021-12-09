@@ -29,12 +29,19 @@ namespace Prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbClubID = new System.Windows.Forms.TextBox();
+            this.tbPassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btOk = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
+            this.clubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clubTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ClubTableAdapter();
+            this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,21 +53,21 @@ namespace Prototype
             this.label1.TabIndex = 0;
             this.label1.Text = "部活ID：";
             // 
-            // textBox1
+            // tbClubID
             // 
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(124, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 31);
-            this.textBox1.TabIndex = 1;
+            this.tbClubID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbClubID.Location = new System.Drawing.Point(124, 29);
+            this.tbClubID.Name = "tbClubID";
+            this.tbClubID.Size = new System.Drawing.Size(209, 31);
+            this.tbClubID.TabIndex = 1;
             // 
-            // textBox2
+            // tbPassWord
             // 
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox2.Location = new System.Drawing.Point(124, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 31);
-            this.textBox2.TabIndex = 3;
+            this.tbPassWord.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbPassWord.Location = new System.Drawing.Point(124, 92);
+            this.tbPassWord.Name = "tbPassWord";
+            this.tbPassWord.Size = new System.Drawing.Size(209, 31);
+            this.tbPassWord.TabIndex = 3;
             // 
             // label2
             // 
@@ -91,19 +98,45 @@ namespace Prototype
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
+            // infosys202107DataSet
+            // 
+            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
+            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clubBindingSource
+            // 
+            this.clubBindingSource.DataMember = "Club";
+            this.clubBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // clubTableAdapter
+            // 
+            this.clubTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClubTableAdapter = this.clubTableAdapter;
+            this.tableAdapterManager.CostTableAdapter = null;
+            this.tableAdapterManager.ManageTableAdapter = null;
+            this.tableAdapterManager.PresentersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Prototype.infosys202107DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 190);
+            this.ClientSize = new System.Drawing.Size(379, 192);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbPassWord);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbClubID);
             this.Controls.Add(this.label1);
             this.Name = "Form5";
             this.Text = "ログイン画面";
+            this.Load += new System.EventHandler(this.Form5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,10 +145,14 @@ namespace Prototype
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbClubID;
+        private System.Windows.Forms.TextBox tbPassWord;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btOk;
         private System.Windows.Forms.Button btCancel;
+        private infosys202107DataSet infosys202107DataSet;
+        private System.Windows.Forms.BindingSource clubBindingSource;
+        private infosys202107DataSetTableAdapters.ClubTableAdapter clubTableAdapter;
+        private infosys202107DataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

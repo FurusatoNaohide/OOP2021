@@ -76,7 +76,6 @@
     </None>
     <None Include="infosys202107DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>infosys202107DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="infosys202107DataSet.xss">
