@@ -63,17 +63,17 @@ namespace Prototype
 
             lbClubName.Text = this.infosys202107DataSet.Club[_clubId - 1].Name;
 
-            manageDataGridView.Columns[0].Visible = false;
+            manageDataGridView.Columns[0].Visible = false;      //Id　主キー
             manageDataGridView.Columns[1].HeaderText = "提出日";
-            manageDataGridView.Columns[2].Visible = false;
-            manageDataGridView.Columns[3].Visible = false;
-            manageDataGridView.Columns[4].Visible = false;
+            manageDataGridView.Columns[2].Visible = false;      //部費使用日
+            manageDataGridView.Columns[3].Visible = false;      //提出者Id　外部キー
+            manageDataGridView.Columns[4].Visible = false;      //費用Id　外部キー
             manageDataGridView.Columns[5].HeaderText = "使用金額";
             manageDataGridView.Columns[6].HeaderText = "概要";
-            manageDataGridView.Columns[7].Visible = false;
+            manageDataGridView.Columns[7].Visible = false;      //領収書
             manageDataGridView.Columns[8].HeaderText = "確認欄";
-            manageDataGridView.Columns[9].Visible = false;
-            manageDataGridView.Columns[10].Visible = false;
+            manageDataGridView.Columns[9].Visible = false;      //備考
+            manageDataGridView.Columns[10].Visible = false;     //部活Id　外部キー
         }
 
         private void manageBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -84,14 +84,37 @@ namespace Prototype
 
         }
 
+        //更新ボタン
         private void btUpdate_Click(object sender, EventArgs e)
         {
-            
+            if (manageDataGridView.CurrentRow.Cells == null) return;
+
+            manageDataGridView.CurrentRow.Cells[1].Value = dtpPresenDate.Value;
+            manageDataGridView.CurrentRow.Cells[2].Value = dtpUsedDate.Value;
+            //提出者、費用名は外部キーで参照
+            //manageDataGridView.CurrentRow.Cells[3].Value = ;
+            //manageDataGridView.CurrentRow.Cells[4].Value = ;
+            manageDataGridView.CurrentRow.Cells[5].Value = tbMoney.Text;
+            manageDataGridView.CurrentRow.Cells[6].Value = tbSummary.Text;
+            manageDataGridView.CurrentRow.Cells[7].Value = pbReceipt.Image;
+            manageDataGridView.CurrentRow.Cells[10].Value = _clubId;
         }
 
         private void btDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //新規ボタン押下　データボックス初期化
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            dtpPresenDate.Value = DateTime.Today;
+            dtpUsedDate.Value = DateTime.Today;
+            cbPresenter.Text = null;
+            cbCostName.Text = null;
+            tbMoney.Text = null;
+            tbSummary.Text = null;
+            pbReceipt.Image = null;
         }
     }
 }

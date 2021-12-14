@@ -97,93 +97,104 @@ namespace Prototype
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("HG教科書体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(319, 44);
+            this.label1.Location = new System.Drawing.Point(425, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 23);
+            this.label1.Size = new System.Drawing.Size(235, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "部費使用登録画面";
             // 
             // lbClubName
             // 
             this.lbClubName.Font = new System.Drawing.Font("HGS教科書体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbClubName.Location = new System.Drawing.Point(12, 44);
+            this.lbClubName.Location = new System.Drawing.Point(16, 55);
+            this.lbClubName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbClubName.Name = "lbClubName";
-            this.lbClubName.Size = new System.Drawing.Size(301, 23);
+            this.lbClubName.Size = new System.Drawing.Size(401, 29);
             this.lbClubName.TabIndex = 1;
             this.lbClubName.Text = "～～部";
             // 
             // cbCostName
             // 
             this.cbCostName.FormattingEnabled = true;
-            this.cbCostName.Location = new System.Drawing.Point(122, 195);
+            this.cbCostName.Location = new System.Drawing.Point(163, 244);
+            this.cbCostName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbCostName.Name = "cbCostName";
-            this.cbCostName.Size = new System.Drawing.Size(121, 20);
+            this.cbCostName.Size = new System.Drawing.Size(160, 23);
             this.cbCostName.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(34, 195);
+            this.label3.Location = new System.Drawing.Point(45, 244);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 23);
+            this.label3.Size = new System.Drawing.Size(96, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "費用名：";
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(34, 236);
+            this.label4.Location = new System.Drawing.Point(45, 295);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 23);
+            this.label4.Size = new System.Drawing.Size(120, 29);
             this.label4.TabIndex = 4;
             this.label4.Text = "使用金額：";
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(34, 159);
+            this.label5.Location = new System.Drawing.Point(45, 199);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.Size = new System.Drawing.Size(133, 29);
             this.label5.TabIndex = 5;
             this.label5.Text = "提出者名：";
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(35, 122);
+            this.label6.Location = new System.Drawing.Point(47, 152);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 23);
+            this.label6.Size = new System.Drawing.Size(96, 29);
             this.label6.TabIndex = 6;
             this.label6.Text = "使用日：";
             // 
             // dtpUsedDate
             // 
-            this.dtpUsedDate.Location = new System.Drawing.Point(122, 121);
+            this.dtpUsedDate.Location = new System.Drawing.Point(163, 151);
+            this.dtpUsedDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpUsedDate.Name = "dtpUsedDate";
-            this.dtpUsedDate.Size = new System.Drawing.Size(121, 19);
+            this.dtpUsedDate.Size = new System.Drawing.Size(160, 22);
             this.dtpUsedDate.TabIndex = 7;
             // 
             // cbPresenter
             // 
             this.cbPresenter.FormattingEnabled = true;
-            this.cbPresenter.Location = new System.Drawing.Point(122, 159);
+            this.cbPresenter.Location = new System.Drawing.Point(163, 199);
+            this.cbPresenter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPresenter.Name = "cbPresenter";
-            this.cbPresenter.Size = new System.Drawing.Size(121, 20);
+            this.cbPresenter.Size = new System.Drawing.Size(160, 23);
             this.cbPresenter.TabIndex = 8;
             // 
             // tbMoney
             // 
-            this.tbMoney.Location = new System.Drawing.Point(122, 236);
+            this.tbMoney.Location = new System.Drawing.Point(163, 295);
+            this.tbMoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbMoney.Name = "tbMoney";
-            this.tbMoney.Size = new System.Drawing.Size(121, 19);
+            this.tbMoney.Size = new System.Drawing.Size(160, 22);
             this.tbMoney.TabIndex = 9;
             // 
             // pbReceipt
             // 
             this.pbReceipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbReceipt.Location = new System.Drawing.Point(272, 109);
+            this.pbReceipt.Location = new System.Drawing.Point(363, 136);
+            this.pbReceipt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbReceipt.Name = "pbReceipt";
-            this.pbReceipt.Size = new System.Drawing.Size(201, 314);
+            this.pbReceipt.Size = new System.Drawing.Size(267, 392);
             this.pbReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbReceipt.TabIndex = 10;
             this.pbReceipt.TabStop = false;
@@ -191,17 +202,19 @@ namespace Prototype
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(269, 83);
+            this.label7.Location = new System.Drawing.Point(359, 104);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 23);
+            this.label7.Size = new System.Drawing.Size(96, 29);
             this.label7.TabIndex = 11;
             this.label7.Text = "領収書：";
             // 
             // btReceiptOpen
             // 
-            this.btReceiptOpen.Location = new System.Drawing.Point(347, 80);
+            this.btReceiptOpen.Location = new System.Drawing.Point(463, 100);
+            this.btReceiptOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btReceiptOpen.Name = "btReceiptOpen";
-            this.btReceiptOpen.Size = new System.Drawing.Size(60, 23);
+            this.btReceiptOpen.Size = new System.Drawing.Size(80, 29);
             this.btReceiptOpen.TabIndex = 12;
             this.btReceiptOpen.Text = "開く...";
             this.btReceiptOpen.UseVisualStyleBackColor = true;
@@ -209,9 +222,10 @@ namespace Prototype
             // 
             // btReceiptDelete
             // 
-            this.btReceiptDelete.Location = new System.Drawing.Point(413, 80);
+            this.btReceiptDelete.Location = new System.Drawing.Point(551, 100);
+            this.btReceiptDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btReceiptDelete.Name = "btReceiptDelete";
-            this.btReceiptDelete.Size = new System.Drawing.Size(60, 23);
+            this.btReceiptDelete.Size = new System.Drawing.Size(80, 29);
             this.btReceiptDelete.TabIndex = 13;
             this.btReceiptDelete.Text = "削除";
             this.btReceiptDelete.UseVisualStyleBackColor = true;
@@ -220,25 +234,28 @@ namespace Prototype
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(35, 268);
+            this.label8.Location = new System.Drawing.Point(47, 335);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 23);
+            this.label8.Size = new System.Drawing.Size(96, 29);
             this.label8.TabIndex = 15;
             this.label8.Text = "概要：";
             // 
             // tbSummary
             // 
-            this.tbSummary.Location = new System.Drawing.Point(122, 268);
+            this.tbSummary.Location = new System.Drawing.Point(163, 335);
+            this.tbSummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSummary.Multiline = true;
             this.tbSummary.Name = "tbSummary";
-            this.tbSummary.Size = new System.Drawing.Size(121, 52);
+            this.tbSummary.Size = new System.Drawing.Size(160, 64);
             this.tbSummary.TabIndex = 16;
             // 
             // btRegister
             // 
-            this.btRegister.Location = new System.Drawing.Point(27, 342);
+            this.btRegister.Location = new System.Drawing.Point(36, 428);
+            this.btRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(102, 34);
+            this.btRegister.Size = new System.Drawing.Size(136, 42);
             this.btRegister.TabIndex = 17;
             this.btRegister.Text = "登録";
             this.btRegister.UseVisualStyleBackColor = true;
@@ -246,9 +263,10 @@ namespace Prototype
             // 
             // btUpdate
             // 
-            this.btUpdate.Location = new System.Drawing.Point(147, 342);
+            this.btUpdate.Location = new System.Drawing.Point(196, 428);
+            this.btUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(96, 34);
+            this.btUpdate.Size = new System.Drawing.Size(128, 42);
             this.btUpdate.TabIndex = 18;
             this.btUpdate.Text = "更新";
             this.btUpdate.UseVisualStyleBackColor = true;
@@ -256,9 +274,10 @@ namespace Prototype
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(27, 389);
+            this.btDelete.Location = new System.Drawing.Point(36, 486);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(102, 34);
+            this.btDelete.Size = new System.Drawing.Size(136, 42);
             this.btDelete.TabIndex = 19;
             this.btDelete.Text = "削除";
             this.btDelete.UseVisualStyleBackColor = true;
@@ -266,9 +285,10 @@ namespace Prototype
             // 
             // btCheck
             // 
-            this.btCheck.Location = new System.Drawing.Point(147, 389);
+            this.btCheck.Location = new System.Drawing.Point(196, 486);
+            this.btCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCheck.Name = "btCheck";
-            this.btCheck.Size = new System.Drawing.Size(96, 34);
+            this.btCheck.Size = new System.Drawing.Size(128, 42);
             this.btCheck.TabIndex = 20;
             this.btCheck.Text = "確認";
             this.btCheck.UseVisualStyleBackColor = true;
@@ -311,6 +331,7 @@ namespace Prototype
             this.manageBindingNavigator.BindingSource = this.manageBindingSource;
             this.manageBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.manageBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.manageBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.manageBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -331,7 +352,7 @@ namespace Prototype
             this.manageBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.manageBindingNavigator.Name = "manageBindingNavigator";
             this.manageBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.manageBindingNavigator.Size = new System.Drawing.Size(501, 25);
+            this.manageBindingNavigator.Size = new System.Drawing.Size(664, 27);
             this.manageBindingNavigator.TabIndex = 21;
             this.manageBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -341,13 +362,14 @@ namespace Prototype
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "新規追加";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目の総数";
             // 
@@ -357,7 +379,7 @@ namespace Prototype
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "削除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -366,7 +388,7 @@ namespace Prototype
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "最初に移動";
             // 
             // bindingNavigatorMovePreviousItem
@@ -375,13 +397,13 @@ namespace Prototype
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "前に戻る";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -389,14 +411,14 @@ namespace Prototype
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "現在の場所";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -404,7 +426,7 @@ namespace Prototype
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "次に移動";
             // 
             // bindingNavigatorMoveLastItem
@@ -413,20 +435,20 @@ namespace Prototype
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "最後に移動";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // manageBindingNavigatorSaveItem
             // 
             this.manageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.manageBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("manageBindingNavigatorSaveItem.Image")));
             this.manageBindingNavigatorSaveItem.Name = "manageBindingNavigatorSaveItem";
-            this.manageBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.manageBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.manageBindingNavigatorSaveItem.Text = "データの保存";
             this.manageBindingNavigatorSaveItem.Click += new System.EventHandler(this.manageBindingNavigatorSaveItem_Click);
             // 
@@ -447,78 +469,102 @@ namespace Prototype
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.manageDataGridView.DataSource = this.manageBindingSource;
-            this.manageDataGridView.Location = new System.Drawing.Point(27, 439);
+            this.manageDataGridView.Location = new System.Drawing.Point(36, 549);
+            this.manageDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.manageDataGridView.Name = "manageDataGridView";
+            this.manageDataGridView.RowHeadersWidth = 51;
             this.manageDataGridView.RowTemplate.Height = 21;
-            this.manageDataGridView.Size = new System.Drawing.Size(439, 212);
+            this.manageDataGridView.Size = new System.Drawing.Size(595, 265);
             this.manageDataGridView.TabIndex = 21;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "PDate";
             this.dataGridViewTextBoxColumn2.HeaderText = "PDate";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "UsedDate";
             this.dataGridViewTextBoxColumn3.HeaderText = "UsedDate";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Presenter_Id";
             this.dataGridViewTextBoxColumn4.HeaderText = "Presenter_Id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Cost_Id";
             this.dataGridViewTextBoxColumn5.HeaderText = "Cost_Id";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Money";
             this.dataGridViewTextBoxColumn6.HeaderText = "Money";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Summary";
             this.dataGridViewTextBoxColumn7.HeaderText = "Summary";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "Receipt";
             this.dataGridViewImageColumn1.HeaderText = "Receipt";
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Confirmation";
             this.dataGridViewTextBoxColumn8.HeaderText = "Confirmation";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Remarks";
             this.dataGridViewTextBoxColumn9.HeaderText = "Remarks";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Club_Id";
             this.dataGridViewTextBoxColumn10.HeaderText = "Club_Id";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
             // clubBindingSource
             // 
@@ -528,24 +574,26 @@ namespace Prototype
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(35, 85);
+            this.label2.Location = new System.Drawing.Point(47, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.Size = new System.Drawing.Size(96, 29);
             this.label2.TabIndex = 22;
             this.label2.Text = "提出日：";
             // 
             // dtpPresenDate
             // 
-            this.dtpPresenDate.Location = new System.Drawing.Point(122, 84);
+            this.dtpPresenDate.Location = new System.Drawing.Point(163, 105);
+            this.dtpPresenDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpPresenDate.Name = "dtpPresenDate";
-            this.dtpPresenDate.Size = new System.Drawing.Size(121, 19);
+            this.dtpPresenDate.Size = new System.Drawing.Size(160, 22);
             this.dtpPresenDate.TabIndex = 23;
             // 
             // Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 678);
+            this.ClientSize = new System.Drawing.Size(664, 848);
             this.Controls.Add(this.dtpPresenDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.manageDataGridView);
@@ -570,6 +618,7 @@ namespace Prototype
             this.Controls.Add(this.cbCostName);
             this.Controls.Add(this.lbClubName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Registration";
             this.Text = "部費管理システム";
             this.Load += new System.EventHandler(this.Registration_Load);
