@@ -55,6 +55,8 @@ namespace Prototype
 
         private void Registration_Load(object sender, EventArgs e)
         {
+
+#if false //学校サーバー
             // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
             // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
@@ -74,6 +76,26 @@ namespace Prototype
             manageDataGridView.Columns[8].HeaderText = "確認欄";
             manageDataGridView.Columns[9].Visible = false;      //備考
             manageDataGridView.Columns[10].Visible = false;     //部活Id　外部キー
+#endif
+#if true //自宅用
+            // TODO: このコード行はデータを 'sampleManageDataSet1.Manages' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            //this.managesTableAdapter.Fill(this.sampleManageDataSet1.Manages);
+            this.managesTableAdapter.FillByClub(this.sampleManageDataSet1.Manages, _clubId);
+
+            lbClubName.Text = this.sampleManageDataSet1.Clubs[_clubId - 1].Name;
+
+            managesDataGridView.Columns[0].Visible = false;      //Id　主キー
+            managesDataGridView.Columns[1].HeaderText = "提出日";
+            managesDataGridView.Columns[2].Visible = false;      //部費使用日
+            managesDataGridView.Columns[3].Visible = false;      //提出者Id　外部キー
+            managesDataGridView.Columns[4].Visible = false;      //費用Id　外部キー
+            managesDataGridView.Columns[5].HeaderText = "使用金額";
+            managesDataGridView.Columns[6].HeaderText = "概要";
+            managesDataGridView.Columns[7].Visible = false;      //領収書
+            managesDataGridView.Columns[8].HeaderText = "確認欄";
+            managesDataGridView.Columns[9].Visible = false;      //備考
+            managesDataGridView.Columns[10].Visible = false;     //部活Id　外部キー
+#endif
         }
 
         private void manageBindingNavigatorSaveItem_Click(object sender, EventArgs e)

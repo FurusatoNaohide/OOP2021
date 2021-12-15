@@ -33,5 +33,16 @@ namespace Prototype.Properties {
                 return ((string)(this["infosys202107DataSet"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\SampleManage." +
+            "mdf;Integrated Security=True")]
+        public string SampleManageConnectionString {
+            get {
+                return ((string)(this["SampleManageConnectionString"]));
+            }
+        }
     }
 }

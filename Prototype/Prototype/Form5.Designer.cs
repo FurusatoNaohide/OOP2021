@@ -40,49 +40,60 @@ namespace Prototype
             this.clubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clubTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ClubTableAdapter();
             this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
+            this.sampleManageDataSet1 = new Prototype.SampleManageDataSet1();
+            this.clubsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clubsTableAdapter = new Prototype.SampleManageDataSet1TableAdapters.ClubsTableAdapter();
+            this.tableAdapterManager1 = new Prototype.SampleManageDataSet1TableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleManageDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(35, 29);
+            this.label1.Location = new System.Drawing.Point(47, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 31);
+            this.label1.Size = new System.Drawing.Size(123, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "部活ID：";
             // 
             // tbClubID
             // 
             this.tbClubID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbClubID.Location = new System.Drawing.Point(124, 29);
+            this.tbClubID.Location = new System.Drawing.Point(165, 36);
+            this.tbClubID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbClubID.Name = "tbClubID";
-            this.tbClubID.Size = new System.Drawing.Size(209, 31);
+            this.tbClubID.Size = new System.Drawing.Size(277, 37);
             this.tbClubID.TabIndex = 1;
             // 
             // tbPassWord
             // 
             this.tbPassWord.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbPassWord.Location = new System.Drawing.Point(124, 92);
+            this.tbPassWord.Location = new System.Drawing.Point(165, 115);
+            this.tbPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPassWord.Name = "tbPassWord";
-            this.tbPassWord.Size = new System.Drawing.Size(209, 31);
+            this.tbPassWord.Size = new System.Drawing.Size(277, 37);
             this.tbPassWord.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(8, 95);
+            this.label2.Location = new System.Drawing.Point(11, 119);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 31);
+            this.label2.Size = new System.Drawing.Size(159, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "パスワード：";
             // 
             // btOk
             // 
-            this.btOk.Location = new System.Drawing.Point(212, 149);
+            this.btOk.Location = new System.Drawing.Point(283, 186);
+            this.btOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(63, 24);
+            this.btOk.Size = new System.Drawing.Size(84, 30);
             this.btOk.TabIndex = 4;
             this.btOk.Text = "OK";
             this.btOk.UseVisualStyleBackColor = true;
@@ -90,9 +101,10 @@ namespace Prototype
             // 
             // btCancel
             // 
-            this.btCancel.Location = new System.Drawing.Point(281, 149);
+            this.btCancel.Location = new System.Drawing.Point(375, 186);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(63, 24);
+            this.btCancel.Size = new System.Drawing.Size(84, 30);
             this.btCancel.TabIndex = 5;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -121,22 +133,48 @@ namespace Prototype
             this.tableAdapterManager.PresentersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Prototype.infosys202107DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // sampleManageDataSet1
+            // 
+            this.sampleManageDataSet1.DataSetName = "SampleManageDataSet1";
+            this.sampleManageDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clubsBindingSource
+            // 
+            this.clubsBindingSource.DataMember = "Clubs";
+            this.clubsBindingSource.DataSource = this.sampleManageDataSet1;
+            // 
+            // clubsTableAdapter
+            // 
+            this.clubsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.ClubsTableAdapter = this.clubsTableAdapter;
+            this.tableAdapterManager1.CostsTableAdapter = null;
+            this.tableAdapterManager1.ManagesTableAdapter = null;
+            this.tableAdapterManager1.PresentersTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = Prototype.SampleManageDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 192);
+            this.ClientSize = new System.Drawing.Size(505, 243);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.tbPassWord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbClubID);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form5";
             this.Text = "ログイン画面";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleManageDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +192,9 @@ namespace Prototype
         private System.Windows.Forms.BindingSource clubBindingSource;
         private infosys202107DataSetTableAdapters.ClubTableAdapter clubTableAdapter;
         private infosys202107DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private SampleManageDataSet1 sampleManageDataSet1;
+        private System.Windows.Forms.BindingSource clubsBindingSource;
+        private SampleManageDataSet1TableAdapters.ClubsTableAdapter clubsTableAdapter;
+        private SampleManageDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }
