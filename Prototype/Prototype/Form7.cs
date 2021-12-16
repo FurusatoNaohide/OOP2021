@@ -19,13 +19,14 @@ namespace Prototype
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            //学校サーバー
+#if false//学校サーバー
             // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            //this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
-
-            //自宅用
+            this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
+#endif
+#if true //自宅用
             // TODO: このコード行はデータを 'sampleManageDataSet1.Clubs' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.clubsTableAdapter.Fill(this.sampleManageDataSet1.Clubs);
+#endif
         }
 
         //データベース　Clubテーブルに登録
@@ -40,7 +41,7 @@ namespace Prototype
             this.clubBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
 #endif
-#if true //
+#if true //自宅用
             clubsDataGridView.CurrentRow.Cells[1].Value = tbClubID.Text;
             clubsDataGridView.CurrentRow.Cells[2].Value = tbClubName.Text;
             clubsDataGridView.CurrentRow.Cells[3].Value = tbPassWord.Text;
@@ -48,7 +49,12 @@ namespace Prototype
             this.Validate();
             this.clubsBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.sampleManageDataSet1);
+
 #endif
+
+            tbClubID.Text = null;
+            tbClubName.Text = null;
+            tbPassWord.Text = null;
         }
 
         private void btCancel_Click(object sender, EventArgs e)
@@ -56,14 +62,18 @@ namespace Prototype
             this.Close();
         }
 
+        //保存
         private void clubBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
 #if false //学校サーバー
+           // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
+
             this.Validate();
             this.clubBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
 #endif
-#if true
+#if true //自宅用
             this.Validate();
             this.clubsBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.sampleManageDataSet1);
@@ -79,6 +89,9 @@ namespace Prototype
             clubDataGridView.Columns[3].Visible = false;
 #endif
 #if true //自宅用
+            // TODO: このコード行はデータを 'sampleManageDataSet1.Clubs' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.clubsTableAdapter.Fill(this.sampleManageDataSet1.Clubs);
+
             clubsDataGridView.Columns[0].Visible = false;
             clubsDataGridView.Columns[1].HeaderText = "部活ID";
             clubsDataGridView.Columns[2].HeaderText = "部活動名";
@@ -87,6 +100,35 @@ namespace Prototype
         }
 
         private void clubDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void clubsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        //部活動テーブルに新規追加
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+#if false //学校サーバー
+            this.clubBindingSource.AddNew();
+            this.clubDataGridView.DataSource = this.clubBindingSource;
+#endif
+#if true //自宅用
+            this.clubsBindingSource.AddNew();
+            this.clubsDataGridView.DataSource = this.clubsBindingSource;
+#endif
+        }
+
+        //新規追加
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //削除
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
 
         }

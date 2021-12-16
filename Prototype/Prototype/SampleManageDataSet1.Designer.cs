@@ -32,12 +32,6 @@ namespace Prototype {
         
         private PresentersDataTable tablePresenters;
         
-        private global::System.Data.DataRelation relationFK_Manages_Clubs;
-        
-        private global::System.Data.DataRelation relationFK_Manages_Costs;
-        
-        private global::System.Data.DataRelation relationFK_Manages_Presenters;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -272,9 +266,6 @@ namespace Prototype {
                     this.tablePresenters.InitVars();
                 }
             }
-            this.relationFK_Manages_Clubs = this.Relations["FK_Manages_Clubs"];
-            this.relationFK_Manages_Costs = this.Relations["FK_Manages_Costs"];
-            this.relationFK_Manages_Presenters = this.Relations["FK_Manages_Presenters"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -293,18 +284,28 @@ namespace Prototype {
             base.Tables.Add(this.tableManages);
             this.tablePresenters = new PresentersDataTable();
             base.Tables.Add(this.tablePresenters);
-            this.relationFK_Manages_Clubs = new global::System.Data.DataRelation("FK_Manages_Clubs", new global::System.Data.DataColumn[] {
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Clubs", new global::System.Data.DataColumn[] {
                         this.tableClubs.NoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableManages.NoColumn}, false);
-            this.Relations.Add(this.relationFK_Manages_Clubs);
-            this.relationFK_Manages_Costs = new global::System.Data.DataRelation("FK_Manages_Costs", new global::System.Data.DataColumn[] {
-                        this.tableCosts.NoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableManages.NoColumn}, false);
-            this.Relations.Add(this.relationFK_Manages_Costs);
-            this.relationFK_Manages_Presenters = new global::System.Data.DataRelation("FK_Manages_Presenters", new global::System.Data.DataColumn[] {
+                        this.tableManages.Club_IdColumn});
+            this.tableManages.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Presenters", new global::System.Data.DataColumn[] {
                         this.tablePresenters.NoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableManages.NoColumn}, false);
-            this.Relations.Add(this.relationFK_Manages_Presenters);
+                        this.tableManages.Presenter_IdColumn});
+            this.tableManages.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Costs", new global::System.Data.DataColumn[] {
+                        this.tableCosts.NoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableManages.Cost_IdColumn});
+            this.tableManages.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1161,10 +1162,10 @@ namespace Prototype {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManagesRow AddManagesRow(ClubsRow parentClubsRowByFK_Manages_Clubs, System.DateTime PresentedDate, System.DateTime UsedDate, int Presenter_Id, int Cost_Id, decimal Money, string Summary, byte[] Receipt, string Confimation, string Remarks, int Club_Id) {
+            public ManagesRow AddManagesRow(int No, System.DateTime PresentedDate, System.DateTime UsedDate, int Presenter_Id, int Cost_Id, decimal Money, string Summary, byte[] Receipt, string Confimation, string Remarks, int Club_Id) {
                 ManagesRow rowManagesRow = ((ManagesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        No,
                         PresentedDate,
                         UsedDate,
                         Presenter_Id,
@@ -1175,9 +1176,6 @@ namespace Prototype {
                         Confimation,
                         Remarks,
                         Club_Id};
-                if ((parentClubsRowByFK_Manages_Clubs != null)) {
-                    columnValuesArray[0] = parentClubsRowByFK_Manages_Clubs[0];
-                }
                 rowManagesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowManagesRow);
                 return rowManagesRow;
@@ -1761,17 +1759,6 @@ namespace Prototype {
             public void SetPasswordNull() {
                 this[this.tableClubs.PasswordColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManagesRow[] GetManagesRows() {
-                if ((this.Table.ChildRelations["FK_Manages_Clubs"] == null)) {
-                    return new ManagesRow[0];
-                }
-                else {
-                    return ((ManagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Manages_Clubs"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1825,17 +1812,6 @@ namespace Prototype {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
                 this[this.tableCosts.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManagesRow[] GetManagesRows() {
-                if ((this.Table.ChildRelations["FK_Manages_Costs"] == null)) {
-                    return new ManagesRow[0];
-                }
-                else {
-                    return ((ManagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Manages_Costs"])));
-                }
             }
         }
         
@@ -2016,39 +1992,6 @@ namespace Prototype {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClubsRow ClubsRow {
-                get {
-                    return ((ClubsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Manages_Clubs"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Manages_Clubs"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CostsRow CostsRow {
-                get {
-                    return ((CostsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Manages_Costs"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Manages_Costs"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PresentersRow PresentersRow {
-                get {
-                    return ((PresentersRow)(this.GetParentRow(this.Table.ParentRelations["FK_Manages_Presenters"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Manages_Presenters"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsPresentedDateNull() {
                 return this.IsNull(this.tableManages.PresentedDateColumn);
             }
@@ -2195,17 +2138,6 @@ namespace Prototype {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
                 this[this.tablePresenters.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManagesRow[] GetManagesRows() {
-                if ((this.Table.ChildRelations["FK_Manages_Presenters"] == null)) {
-                    return new ManagesRow[0];
-                }
-                else {
-                    return ((ManagesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Manages_Presenters"])));
-                }
             }
         }
         

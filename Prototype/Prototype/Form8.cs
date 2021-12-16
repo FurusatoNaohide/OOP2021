@@ -43,5 +43,10 @@ namespace Prototype
                 gbMonth.Enabled = true;
             }
         }
+
+        private void gbRange_TabIndexChanged(object sender, EventArgs e)
+        {
+            selectedRange();
+        }
     }
 }

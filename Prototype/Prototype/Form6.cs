@@ -27,7 +27,8 @@ namespace Prototype
         //部費決算報告書画面に移動
         private void btManage_Click(object sender, EventArgs e)
         {
-
+            Form8 f8 = new Form8();
+            f8.ShowDialog();
         }
     }
 }

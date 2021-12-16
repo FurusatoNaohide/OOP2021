@@ -30,25 +30,25 @@ namespace Prototype
         private void InitializeComponent()
         {
             this.gbMonth = new System.Windows.Forms.GroupBox();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.gbRange = new System.Windows.Forms.GroupBox();
-            this.rbMonth = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbYear = new System.Windows.Forms.ComboBox();
             this.rbYear = new System.Windows.Forms.RadioButton();
+            this.rbMonth = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.cbYear = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gbMonth.SuspendLayout();
             this.gbRange.SuspendLayout();
             this.SuspendLayout();
@@ -68,13 +68,147 @@ namespace Prototype
             this.gbMonth.Controls.Add(this.radioButton2);
             this.gbMonth.Controls.Add(this.radioButton1);
             this.gbMonth.Location = new System.Drawing.Point(16, 47);
-            this.gbMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbMonth.Margin = new System.Windows.Forms.Padding(4);
             this.gbMonth.Name = "gbMonth";
-            this.gbMonth.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbMonth.Padding = new System.Windows.Forms.Padding(4);
             this.gbMonth.Size = new System.Drawing.Size(221, 140);
             this.gbMonth.TabIndex = 0;
             this.gbMonth.TabStop = false;
             this.gbMonth.Text = "月決算";
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(86, 22);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(51, 19);
+            this.radioButton12.TabIndex = 1;
+            this.radioButton12.Tag = "1";
+            this.radioButton12.Text = "2月";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(151, 22);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(51, 19);
+            this.radioButton11.TabIndex = 2;
+            this.radioButton11.Tag = "2";
+            this.radioButton11.Text = "3月";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(21, 47);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(51, 19);
+            this.radioButton10.TabIndex = 3;
+            this.radioButton10.Tag = "3";
+            this.radioButton10.Text = "4月";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(86, 47);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(51, 19);
+            this.radioButton9.TabIndex = 4;
+            this.radioButton9.Tag = "4";
+            this.radioButton9.Text = "5月";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(151, 47);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(51, 19);
+            this.radioButton8.TabIndex = 5;
+            this.radioButton8.Tag = "5";
+            this.radioButton8.Text = "6月";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(21, 72);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(51, 19);
+            this.radioButton7.TabIndex = 6;
+            this.radioButton7.Tag = "6";
+            this.radioButton7.Text = "7月";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(86, 72);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(51, 19);
+            this.radioButton6.TabIndex = 7;
+            this.radioButton6.Tag = "7";
+            this.radioButton6.Text = "8月";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(151, 97);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(59, 19);
+            this.radioButton5.TabIndex = 11;
+            this.radioButton5.Tag = "11";
+            this.radioButton5.Text = "12月";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(86, 97);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(59, 19);
+            this.radioButton4.TabIndex = 10;
+            this.radioButton4.Tag = "10";
+            this.radioButton4.Text = "11月";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(21, 97);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(59, 19);
+            this.radioButton3.TabIndex = 9;
+            this.radioButton3.Tag = "9";
+            this.radioButton3.Text = "10月";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(151, 72);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(51, 19);
+            this.radioButton2.TabIndex = 8;
+            this.radioButton2.Tag = "8";
+            this.radioButton2.Text = "9月";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(21, 22);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(51, 19);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Tag = "0";
+            this.radioButton1.Text = "1月";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // gbRange
             // 
@@ -89,6 +223,35 @@ namespace Prototype
             this.gbRange.TabIndex = 2;
             this.gbRange.TabStop = false;
             this.gbRange.Text = "範囲選択";
+            this.gbRange.TabIndexChanged += new System.EventHandler(this.gbRange_TabIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "年度決算";
+            // 
+            // cbYear
+            // 
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(65, 218);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(121, 23);
+            this.cbYear.TabIndex = 0;
+            // 
+            // rbYear
+            // 
+            this.rbYear.AutoSize = true;
+            this.rbYear.Location = new System.Drawing.Point(80, 21);
+            this.rbYear.Name = "rbYear";
+            this.rbYear.Size = new System.Drawing.Size(73, 19);
+            this.rbYear.TabIndex = 1;
+            this.rbYear.Tag = "1";
+            this.rbYear.Text = "年度別";
+            this.rbYear.UseVisualStyleBackColor = true;
             // 
             // rbMonth
             // 
@@ -102,17 +265,6 @@ namespace Prototype
             this.rbMonth.Tag = "0";
             this.rbMonth.Text = "月別";
             this.rbMonth.UseVisualStyleBackColor = true;
-            // 
-            // rbYear
-            // 
-            this.rbYear.AutoSize = true;
-            this.rbYear.Location = new System.Drawing.Point(80, 21);
-            this.rbYear.Name = "rbYear";
-            this.rbYear.Size = new System.Drawing.Size(73, 19);
-            this.rbYear.TabIndex = 1;
-            this.rbYear.Tag = "1";
-            this.rbYear.Text = "年度別";
-            this.rbYear.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -135,157 +287,6 @@ namespace Prototype
             this.button2.Text = "キャンセル";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(21, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Tag = "0";
-            this.radioButton1.Text = "1月";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(151, 72);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(51, 19);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.Tag = "8";
-            this.radioButton2.Text = "9月";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(21, 97);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(59, 19);
-            this.radioButton3.TabIndex = 9;
-            this.radioButton3.Tag = "9";
-            this.radioButton3.Text = "10月";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(86, 97);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(59, 19);
-            this.radioButton4.TabIndex = 10;
-            this.radioButton4.Tag = "10";
-            this.radioButton4.Text = "11月";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(151, 97);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(59, 19);
-            this.radioButton5.TabIndex = 11;
-            this.radioButton5.Tag = "11";
-            this.radioButton5.Text = "12月";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(86, 72);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(51, 19);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.Tag = "7";
-            this.radioButton6.Text = "8月";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(21, 72);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(51, 19);
-            this.radioButton7.TabIndex = 6;
-            this.radioButton7.Tag = "6";
-            this.radioButton7.Text = "7月";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(151, 47);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(51, 19);
-            this.radioButton8.TabIndex = 5;
-            this.radioButton8.Tag = "5";
-            this.radioButton8.Text = "6月";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(86, 47);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(51, 19);
-            this.radioButton9.TabIndex = 4;
-            this.radioButton9.Tag = "4";
-            this.radioButton9.Text = "5月";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(21, 47);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(51, 19);
-            this.radioButton10.TabIndex = 3;
-            this.radioButton10.Tag = "3";
-            this.radioButton10.Text = "4月";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(151, 22);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(51, 19);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.Tag = "2";
-            this.radioButton11.Text = "3月";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(86, 22);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(51, 19);
-            this.radioButton12.TabIndex = 1;
-            this.radioButton12.Tag = "1";
-            this.radioButton12.Text = "2月";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // cbYear
-            // 
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(65, 218);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(121, 23);
-            this.cbYear.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "年度決算";
-            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -294,7 +295,7 @@ namespace Prototype
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gbRange);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
             this.Text = "範囲指定";
             this.Load += new System.EventHandler(this.Form8_Load);

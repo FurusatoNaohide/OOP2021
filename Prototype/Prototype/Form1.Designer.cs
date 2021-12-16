@@ -54,6 +54,8 @@ namespace Prototype
             this.ofdPictureOpen = new System.Windows.Forms.OpenFileDialog();
             this.manageBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.manageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -66,25 +68,23 @@ namespace Prototype
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.manageBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.manageDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpPresenDate = new System.Windows.Forms.DateTimePicker();
-            this.manageBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
             this.manageTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ManageTableAdapter();
             this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
             this.clubTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ClubTableAdapter();
             this.clubBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sampleManageDataSet1 = new Prototype.SampleManageDataSet1();
             this.managesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.managesTableAdapter = new Prototype.SampleManageDataSet1TableAdapters.ManagesTableAdapter();
@@ -101,16 +101,19 @@ namespace Prototype
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clubsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clubsTableAdapter = new Prototype.SampleManageDataSet1TableAdapters.ClubsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbReceipt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageBindingNavigator)).BeginInit();
             this.manageBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleManageDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -358,10 +361,20 @@ namespace Prototype
             this.bindingNavigatorAddNewItem.Text = "新規追加";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
+            // manageBindingSource
+            // 
+            this.manageBindingSource.DataMember = "Manage";
+            this.manageBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // infosys202107DataSet
+            // 
+            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
+            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目の総数";
             // 
@@ -371,7 +384,7 @@ namespace Prototype
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "削除";
             // 
             // bindingNavigatorMoveFirstItem
@@ -380,7 +393,7 @@ namespace Prototype
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "最初に移動";
             // 
             // bindingNavigatorMovePreviousItem
@@ -389,18 +402,19 @@ namespace Prototype
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "前に戻る";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -409,7 +423,7 @@ namespace Prototype
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -417,7 +431,7 @@ namespace Prototype
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "次に移動";
             // 
             // bindingNavigatorMoveLastItem
@@ -426,20 +440,20 @@ namespace Prototype
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "最後に移動";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // manageBindingNavigatorSaveItem
             // 
             this.manageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.manageBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("manageBindingNavigatorSaveItem.Image")));
             this.manageBindingNavigatorSaveItem.Name = "manageBindingNavigatorSaveItem";
-            this.manageBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
+            this.manageBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.manageBindingNavigatorSaveItem.Text = "データの保存";
             this.manageBindingNavigatorSaveItem.Click += new System.EventHandler(this.manageBindingNavigatorSaveItem_Click);
             // 
@@ -468,6 +482,95 @@ namespace Prototype
             this.manageDataGridView.Size = new System.Drawing.Size(595, 265);
             this.manageDataGridView.TabIndex = 21;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PDate";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "UsedDate";
+            this.dataGridViewTextBoxColumn3.HeaderText = "UsedDate";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Presenter_Id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Presenter_Id";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Cost_Id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cost_Id";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Money";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Money";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Summary";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Summary";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Receipt";
+            this.dataGridViewImageColumn1.HeaderText = "Receipt";
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Confirmation";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Confirmation";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Remarks";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Remarks";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Club_Id";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Club_Id";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("HGS教科書体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -485,16 +588,6 @@ namespace Prototype
             this.dtpPresenDate.Name = "dtpPresenDate";
             this.dtpPresenDate.Size = new System.Drawing.Size(160, 22);
             this.dtpPresenDate.TabIndex = 23;
-            // 
-            // manageBindingSource
-            // 
-            this.manageBindingSource.DataMember = "Manage";
-            this.manageBindingSource.DataSource = this.infosys202107DataSet;
-            // 
-            // infosys202107DataSet
-            // 
-            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
-            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // manageTableAdapter
             // 
@@ -517,95 +610,6 @@ namespace Prototype
             // 
             this.clubBindingSource.DataMember = "Club";
             this.clubBindingSource.DataSource = this.infosys202107DataSet;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Club_Id";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Club_Id";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Remarks";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Remarks";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Confirmation";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Confirmation";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Receipt";
-            this.dataGridViewImageColumn1.HeaderText = "Receipt";
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Summary";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Summary";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Money";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Money";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Cost_Id";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cost_Id";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Presenter_Id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Presenter_Id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "UsedDate";
-            this.dataGridViewTextBoxColumn3.HeaderText = "UsedDate";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PDate";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PDate";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // sampleManageDataSet1
             // 
@@ -653,6 +657,7 @@ namespace Prototype
             this.managesDataGridView.RowTemplate.Height = 24;
             this.managesDataGridView.Size = new System.Drawing.Size(595, 265);
             this.managesDataGridView.TabIndex = 24;
+            this.managesDataGridView.SelectionChanged += new System.EventHandler(this.managesDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -742,6 +747,15 @@ namespace Prototype
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.Width = 125;
             // 
+            // clubsBindingSource
+            // 
+            this.clubsBindingSource.DataMember = "Clubs";
+            this.clubsBindingSource.DataSource = this.sampleManageDataSet1;
+            // 
+            // clubsTableAdapter
+            // 
+            this.clubsTableAdapter.ClearBeforeFill = true;
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -780,13 +794,14 @@ namespace Prototype
             ((System.ComponentModel.ISupportInitialize)(this.manageBindingNavigator)).EndInit();
             this.manageBindingNavigator.ResumeLayout(false);
             this.manageBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleManageDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.managesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.managesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clubsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -864,6 +879,8 @@ namespace Prototype
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.BindingSource clubsBindingSource;
+        private SampleManageDataSet1TableAdapters.ClubsTableAdapter clubsTableAdapter;
     }
 }
 

@@ -73,6 +73,7 @@ namespace Prototype
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clubBindingNavigator)).BeginInit();
@@ -107,7 +108,7 @@ namespace Prototype
             // 
             this.tbClubName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbClubName.Location = new System.Drawing.Point(196, 129);
-            this.tbClubName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbClubName.Margin = new System.Windows.Forms.Padding(4);
             this.tbClubName.Name = "tbClubName";
             this.tbClubName.Size = new System.Drawing.Size(277, 37);
             this.tbClubName.TabIndex = 4;
@@ -126,7 +127,7 @@ namespace Prototype
             // 
             this.tbClubID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbClubID.Location = new System.Drawing.Point(196, 208);
-            this.tbClubID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbClubID.Margin = new System.Windows.Forms.Padding(4);
             this.tbClubID.Name = "tbClubID";
             this.tbClubID.Size = new System.Drawing.Size(277, 37);
             this.tbClubID.TabIndex = 7;
@@ -145,7 +146,7 @@ namespace Prototype
             // 
             this.tbPassWord.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbPassWord.Location = new System.Drawing.Point(196, 294);
-            this.tbPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassWord.Name = "tbPassWord";
             this.tbPassWord.PasswordChar = '＊';
             this.tbPassWord.Size = new System.Drawing.Size(277, 37);
@@ -155,7 +156,7 @@ namespace Prototype
             // 
             this.btRegister.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btRegister.Location = new System.Drawing.Point(361, 555);
-            this.btRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(125, 41);
             this.btRegister.TabIndex = 10;
@@ -167,7 +168,7 @@ namespace Prototype
             // 
             this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btCancel.Location = new System.Drawing.Point(361, 619);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(125, 41);
             this.btCancel.TabIndex = 11;
@@ -237,6 +238,7 @@ namespace Prototype
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "新規追加";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -253,6 +255,7 @@ namespace Prototype
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "削除";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -281,6 +284,7 @@ namespace Prototype
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "位置";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -334,7 +338,7 @@ namespace Prototype
             this.dataGridViewTextBoxColumn4});
             this.clubDataGridView.DataSource = this.clubBindingSource;
             this.clubDataGridView.Location = new System.Drawing.Point(31, 402);
-            this.clubDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clubDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.clubDataGridView.Name = "clubDataGridView";
             this.clubDataGridView.RowHeadersWidth = 51;
             this.clubDataGridView.RowTemplate.Height = 21;
@@ -389,7 +393,7 @@ namespace Prototype
             // 
             this.btConnect.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btConnect.Location = new System.Drawing.Point(361, 402);
-            this.btConnect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btConnect.Margin = new System.Windows.Forms.Padding(4);
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(125, 41);
             this.btConnect.TabIndex = 14;
@@ -436,6 +440,7 @@ namespace Prototype
             this.clubsDataGridView.RowTemplate.Height = 24;
             this.clubsDataGridView.Size = new System.Drawing.Size(323, 258);
             this.clubsDataGridView.TabIndex = 14;
+            this.clubsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubsDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -469,11 +474,24 @@ namespace Prototype
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 125;
             // 
+            // btAdd
+            // 
+            this.btAdd.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btAdd.Location = new System.Drawing.Point(361, 462);
+            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(125, 41);
+            this.btAdd.TabIndex = 15;
+            this.btAdd.Text = "追加";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 694);
+            this.Controls.Add(this.btAdd);
             this.Controls.Add(this.clubsDataGridView);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.label6);
@@ -488,7 +506,7 @@ namespace Prototype
             this.Controls.Add(this.tbClubName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form7";
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.Form7_Load);
@@ -550,5 +568,6 @@ namespace Prototype
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Button btAdd;
     }
 }

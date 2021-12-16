@@ -303,7 +303,7 @@ SELECT No, Name FROM Presenters WHERE (No = @No)</CommandText>
   <xs:element name="SampleManageDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SampleManageDataSet1" msprop:Generator_UserDSName="SampleManageDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Clubs" msprop:Generator_TableClassName="ClubsDataTable" msprop:Generator_TableVarName="tableClubs" msprop:Generator_RowChangedName="ClubsRowChanged" msprop:Generator_TablePropName="Clubs" msprop:Generator_RowDeletingName="ClubsRowDeleting" msprop:Generator_RowChangingName="ClubsRowChanging" msprop:Generator_RowEvHandlerName="ClubsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClubsRowDeleted" msprop:Generator_RowClassName="ClubsRow" msprop:Generator_UserTableName="Clubs" msprop:Generator_RowEvArgName="ClubsRowChangeEvent">
+        <xs:element name="Clubs" msprop:Generator_TableClassName="ClubsDataTable" msprop:Generator_TableVarName="tableClubs" msprop:Generator_TablePropName="Clubs" msprop:Generator_RowDeletingName="ClubsRowDeleting" msprop:Generator_RowChangingName="ClubsRowChanging" msprop:Generator_RowEvHandlerName="ClubsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClubsRowDeleted" msprop:Generator_UserTableName="Clubs" msprop:Generator_RowChangedName="ClubsRowChanged" msprop:Generator_RowEvArgName="ClubsRowChangeEvent" msprop:Generator_RowClassName="ClubsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:int" />
@@ -331,7 +331,7 @@ SELECT No, Name FROM Presenters WHERE (No = @No)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Costs" msprop:Generator_TableClassName="CostsDataTable" msprop:Generator_TableVarName="tableCosts" msprop:Generator_RowChangedName="CostsRowChanged" msprop:Generator_TablePropName="Costs" msprop:Generator_RowDeletingName="CostsRowDeleting" msprop:Generator_RowChangingName="CostsRowChanging" msprop:Generator_RowEvHandlerName="CostsRowChangeEventHandler" msprop:Generator_RowDeletedName="CostsRowDeleted" msprop:Generator_RowClassName="CostsRow" msprop:Generator_UserTableName="Costs" msprop:Generator_RowEvArgName="CostsRowChangeEvent">
+        <xs:element name="Costs" msprop:Generator_TableClassName="CostsDataTable" msprop:Generator_TableVarName="tableCosts" msprop:Generator_TablePropName="Costs" msprop:Generator_RowDeletingName="CostsRowDeleting" msprop:Generator_RowChangingName="CostsRowChanging" msprop:Generator_RowEvHandlerName="CostsRowChangeEventHandler" msprop:Generator_RowDeletedName="CostsRowDeleted" msprop:Generator_UserTableName="Costs" msprop:Generator_RowChangedName="CostsRowChanged" msprop:Generator_RowEvArgName="CostsRowChangeEvent" msprop:Generator_RowClassName="CostsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:int" />
@@ -345,7 +345,7 @@ SELECT No, Name FROM Presenters WHERE (No = @No)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Manages" msprop:Generator_TableClassName="ManagesDataTable" msprop:Generator_TableVarName="tableManages" msprop:Generator_RowChangedName="ManagesRowChanged" msprop:Generator_TablePropName="Manages" msprop:Generator_RowDeletingName="ManagesRowDeleting" msprop:Generator_RowChangingName="ManagesRowChanging" msprop:Generator_RowEvHandlerName="ManagesRowChangeEventHandler" msprop:Generator_RowDeletedName="ManagesRowDeleted" msprop:Generator_RowClassName="ManagesRow" msprop:Generator_UserTableName="Manages" msprop:Generator_RowEvArgName="ManagesRowChangeEvent">
+        <xs:element name="Manages" msprop:Generator_TableClassName="ManagesDataTable" msprop:Generator_TableVarName="tableManages" msprop:Generator_TablePropName="Manages" msprop:Generator_RowDeletingName="ManagesRowDeleting" msprop:Generator_RowChangingName="ManagesRowChanging" msprop:Generator_RowEvHandlerName="ManagesRowChangeEventHandler" msprop:Generator_RowDeletedName="ManagesRowDeleted" msprop:Generator_UserTableName="Manages" msprop:Generator_RowChangedName="ManagesRowChanged" msprop:Generator_RowEvArgName="ManagesRowChangeEvent" msprop:Generator_RowClassName="ManagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:int" />
@@ -380,7 +380,7 @@ SELECT No, Name FROM Presenters WHERE (No = @No)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Presenters" msprop:Generator_TableClassName="PresentersDataTable" msprop:Generator_TableVarName="tablePresenters" msprop:Generator_RowChangedName="PresentersRowChanged" msprop:Generator_TablePropName="Presenters" msprop:Generator_RowDeletingName="PresentersRowDeleting" msprop:Generator_RowChangingName="PresentersRowChanging" msprop:Generator_RowEvHandlerName="PresentersRowChangeEventHandler" msprop:Generator_RowDeletedName="PresentersRowDeleted" msprop:Generator_RowClassName="PresentersRow" msprop:Generator_UserTableName="Presenters" msprop:Generator_RowEvArgName="PresentersRowChangeEvent">
+        <xs:element name="Presenters" msprop:Generator_TableClassName="PresentersDataTable" msprop:Generator_TableVarName="tablePresenters" msprop:Generator_TablePropName="Presenters" msprop:Generator_RowDeletingName="PresentersRowDeleting" msprop:Generator_RowChangingName="PresentersRowChanging" msprop:Generator_RowEvHandlerName="PresentersRowChangeEventHandler" msprop:Generator_RowDeletedName="PresentersRowDeleted" msprop:Generator_UserTableName="Presenters" msprop:Generator_RowChangedName="PresentersRowChanged" msprop:Generator_RowEvArgName="PresentersRowChangeEvent" msprop:Generator_RowClassName="PresentersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:int" />
@@ -412,12 +412,17 @@ SELECT No, Name FROM Presenters WHERE (No = @No)</CommandText>
       <xs:selector xpath=".//mstns:Presenters" />
       <xs:field xpath="mstns:No" />
     </xs:unique>
+    <xs:keyref name="FK_Manages_Clubs" refer="Constraint1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Manages" />
+      <xs:field xpath="mstns:Club_Id" />
+    </xs:keyref>
+    <xs:keyref name="FK_Manages_Presenters" refer="Presenters_Constraint1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Manages" />
+      <xs:field xpath="mstns:Presenter_Id" />
+    </xs:keyref>
+    <xs:keyref name="FK_Manages_Costs" refer="Costs_Constraint1" msdata:ConstraintOnly="true" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:Manages" />
+      <xs:field xpath="mstns:Cost_Id" />
+    </xs:keyref>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="FK_Manages_Clubs" msdata:parent="Clubs" msdata:child="Manages" msdata:parentkey="No" msdata:childkey="No" msprop:Generator_UserChildTable="Manages" msprop:Generator_ChildPropName="GetManagesRows" msprop:Generator_UserRelationName="FK_Manages_Clubs" msprop:Generator_RelationVarName="relationFK_Manages_Clubs" msprop:Generator_UserParentTable="Clubs" msprop:Generator_ParentPropName="ClubsRow" />
-      <msdata:Relationship name="FK_Manages_Costs" msdata:parent="Costs" msdata:child="Manages" msdata:parentkey="No" msdata:childkey="No" msprop:Generator_UserChildTable="Manages" msprop:Generator_ChildPropName="GetManagesRows" msprop:Generator_UserRelationName="FK_Manages_Costs" msprop:Generator_RelationVarName="relationFK_Manages_Costs" msprop:Generator_UserParentTable="Costs" msprop:Generator_ParentPropName="CostsRow" />
-      <msdata:Relationship name="FK_Manages_Presenters" msdata:parent="Presenters" msdata:child="Manages" msdata:parentkey="No" msdata:childkey="No" msprop:Generator_UserChildTable="Manages" msprop:Generator_ChildPropName="GetManagesRows" msprop:Generator_UserRelationName="FK_Manages_Presenters" msprop:Generator_ParentPropName="PresentersRow" msprop:Generator_RelationVarName="relationFK_Manages_Presenters" msprop:Generator_UserParentTable="Presenters" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

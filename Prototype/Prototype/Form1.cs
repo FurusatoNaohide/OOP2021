@@ -56,6 +56,7 @@ namespace Prototype
         private void Registration_Load(object sender, EventArgs e)
         {
 
+
 #if false //学校サーバー
             // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
@@ -78,11 +79,13 @@ namespace Prototype
             manageDataGridView.Columns[10].Visible = false;     //部活Id　外部キー
 #endif
 #if true //自宅用
+            // TODO: このコード行はデータを 'sampleManageDataSet1.Clubs' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.clubsTableAdapter.Fill(this.sampleManageDataSet1.Clubs);
             // TODO: このコード行はデータを 'sampleManageDataSet1.Manages' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             //this.managesTableAdapter.Fill(this.sampleManageDataSet1.Manages);
             this.managesTableAdapter.FillByClub(this.sampleManageDataSet1.Manages, _clubId);
 
-            lbClubName.Text = this.sampleManageDataSet1.Clubs[_clubId - 1].Name;
+            lbClubName.Text = this.sampleManageDataSet1.Clubs[_clubId -1].Name;
 
             managesDataGridView.Columns[0].Visible = false;      //Id　主キー
             managesDataGridView.Columns[1].HeaderText = "提出日";
@@ -100,15 +103,22 @@ namespace Prototype
 
         private void manageBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+#if false //学校サーバー
             this.Validate();
             this.manageBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
-
+#endif
+#if true //自宅用
+            this.Validate();
+            this.managesBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.sampleManageDataSet1);
+#endif
         }
 
         //更新ボタン
         private void btUpdate_Click(object sender, EventArgs e)
         {
+#if false //学校サーバー
             if (manageDataGridView.CurrentRow.Cells == null) return;
 
             manageDataGridView.CurrentRow.Cells[1].Value = dtpPresenDate.Value;
@@ -120,11 +130,34 @@ namespace Prototype
             manageDataGridView.CurrentRow.Cells[6].Value = tbSummary.Text;
             manageDataGridView.CurrentRow.Cells[7].Value = pbReceipt.Image;
             manageDataGridView.CurrentRow.Cells[10].Value = _clubId;
+
+            //データベースへ反映
+            this.Validate();
+            this.manageBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
+#endif
+#if true  //自宅用
+            if (managesDataGridView.CurrentRow.Cells == null) return;
+            managesDataGridView.CurrentRow.Cells[1].Value = dtpPresenDate.Value;
+            managesDataGridView.CurrentRow.Cells[2].Value = dtpUsedDate.Value;
+            //提出者、費用名は外部キーで参照
+            //managesDataGridView.CurrentRow.Cells[3].Value = ;
+            //managesDataGridView.CurrentRow.Cells[4].Value = ;
+            managesDataGridView.CurrentRow.Cells[5].Value = tbMoney.Text;
+            managesDataGridView.CurrentRow.Cells[6].Value = tbSummary.Text;
+            managesDataGridView.CurrentRow.Cells[7].Value = pbReceipt.Image;
+            managesDataGridView.CurrentRow.Cells[10].Value = _clubId;
+
+            //データベースへ反映
+            this.Validate();
+            this.managesBindingSource.EndEdit();
+            this.tableAdapterManager1.UpdateAll(this.sampleManageDataSet1);
+#endif
         }
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         //新規ボタン押下　データボックス初期化
@@ -137,6 +170,47 @@ namespace Prototype
             tbMoney.Text = null;
             tbSummary.Text = null;
             pbReceipt.Image = null;
+        }
+
+        private void managesDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (managesDataGridView.CurrentRow == null) return;
+            try
+            {
+                dtpPresenDate.Value = (DateTime)managesDataGridView.CurrentRow.Cells[1].Value;
+                dtpUsedDate.Value = (DateTime)managesDataGridView.CurrentRow.Cells[2].Value;
+                //提出者、費用名は外部キーで持ってくる
+                //cbPresenter.Text = ;
+                //cbCostName.Text = ;
+                tbMoney.Text = managesDataGridView.CurrentRow.Cells[5].Value.ToString();
+                tbSummary.Text = managesDataGridView.CurrentRow.Cells[6].Value.ToString();
+                pbReceipt.Image = ByteArrayToImage((byte[]) managesDataGridView.CurrentRow.Cells[7].Value);
+
+            }   
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //バイト配列をImageオブジェクトに変換
+        public static Image ByteArrayToImage(byte[] b)
+        {
+            Image img = null;
+            if (b.Length > 0)
+            {
+                ImageConverter imgconv = new ImageConverter();
+                img = (Image)imgconv.ConvertFrom(b);
+            }
+            return img;
+        }
+        //Imageオブジェクトをバイト配列に変換
+        public static byte[] ImageToByteArray(Image img)
+        {
+            ImageConverter imgconv = new ImageConverter();
+            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+            return b;
         }
     }
 }
