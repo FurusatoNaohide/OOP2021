@@ -173,6 +173,7 @@ namespace Prototype
             this.btApproval.TabIndex = 13;
             this.btApproval.Text = "承認";
             this.btApproval.UseVisualStyleBackColor = true;
+            this.btApproval.Click += new System.EventHandler(this.btApproval_Click);
             // 
             // btAgain
             // 

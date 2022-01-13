@@ -30,5 +30,19 @@ namespace Prototype
             Form8 f8 = new Form8();
             f8.ShowDialog();
         }
+
+        //提出者名登録画面に移動
+        private void btPresenterRegister_Click(object sender, EventArgs e)
+        {
+            Form9 f9 = new Form9();
+            f9.ShowDialog();
+        }
+
+        //費用名登録画面に移動
+        private void btCostNameRegister_Click(object sender, EventArgs e)
+        {
+            Form10 f10 = new Form10();
+            f10.ShowDialog();
+        }
     }
 }

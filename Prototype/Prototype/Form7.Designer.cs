@@ -87,78 +87,70 @@ namespace Prototype
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(24, 56);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 46);
+            this.label1.Size = new System.Drawing.Size(203, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "部活動登録画面";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(24, 129);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(18, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 46);
+            this.label2.Size = new System.Drawing.Size(137, 37);
             this.label2.TabIndex = 3;
             this.label2.Text = "部活動名：";
             // 
             // tbClubName
             // 
             this.tbClubName.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbClubName.Location = new System.Drawing.Point(196, 129);
-            this.tbClubName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbClubName.Location = new System.Drawing.Point(147, 103);
             this.tbClubName.Name = "tbClubName";
-            this.tbClubName.Size = new System.Drawing.Size(277, 37);
+            this.tbClubName.Size = new System.Drawing.Size(209, 31);
             this.tbClubName.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(64, 208);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(48, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 46);
+            this.label4.Size = new System.Drawing.Size(107, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "部活ID：";
             // 
             // tbClubID
             // 
             this.tbClubID.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbClubID.Location = new System.Drawing.Point(196, 208);
-            this.tbClubID.Margin = new System.Windows.Forms.Padding(4);
+            this.tbClubID.Location = new System.Drawing.Point(147, 166);
             this.tbClubID.Name = "tbClubID";
-            this.tbClubID.Size = new System.Drawing.Size(277, 37);
+            this.tbClubID.Size = new System.Drawing.Size(209, 31);
             this.tbClubID.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(24, 295);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(18, 236);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 46);
+            this.label5.Size = new System.Drawing.Size(137, 37);
             this.label5.TabIndex = 8;
             this.label5.Text = "パスワード：";
             // 
             // tbPassWord
             // 
             this.tbPassWord.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbPassWord.Location = new System.Drawing.Point(196, 294);
-            this.tbPassWord.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPassWord.Location = new System.Drawing.Point(147, 235);
             this.tbPassWord.Name = "tbPassWord";
             this.tbPassWord.PasswordChar = '＊';
-            this.tbPassWord.Size = new System.Drawing.Size(277, 37);
+            this.tbPassWord.Size = new System.Drawing.Size(209, 31);
             this.tbPassWord.TabIndex = 9;
             // 
             // btRegister
             // 
             this.btRegister.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btRegister.Location = new System.Drawing.Point(361, 555);
-            this.btRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.btRegister.Location = new System.Drawing.Point(271, 444);
             this.btRegister.Name = "btRegister";
-            this.btRegister.Size = new System.Drawing.Size(125, 41);
+            this.btRegister.Size = new System.Drawing.Size(94, 33);
             this.btRegister.TabIndex = 10;
             this.btRegister.Text = "登録";
             this.btRegister.UseVisualStyleBackColor = true;
@@ -167,10 +159,9 @@ namespace Prototype
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btCancel.Location = new System.Drawing.Point(361, 619);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btCancel.Location = new System.Drawing.Point(271, 495);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(125, 41);
+            this.btCancel.Size = new System.Drawing.Size(94, 33);
             this.btCancel.TabIndex = 11;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -226,7 +217,7 @@ namespace Prototype
             this.clubBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clubBindingNavigator.Name = "clubBindingNavigator";
             this.clubBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clubBindingNavigator.Size = new System.Drawing.Size(560, 27);
+            this.clubBindingNavigator.Size = new System.Drawing.Size(420, 27);
             this.clubBindingNavigator.TabIndex = 12;
             this.clubBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -236,14 +227,14 @@ namespace Prototype
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "新規追加";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorCountItem.Text = "/ {0}";
             this.bindingNavigatorCountItem.ToolTipText = "項目の総数";
             // 
@@ -253,7 +244,7 @@ namespace Prototype
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "削除";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
@@ -263,7 +254,7 @@ namespace Prototype
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "最初に移動";
             // 
             // bindingNavigatorMovePreviousItem
@@ -272,7 +263,7 @@ namespace Prototype
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "前に戻る";
             // 
             // bindingNavigatorSeparator
@@ -286,7 +277,7 @@ namespace Prototype
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Yu Gothic UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "現在の場所";
             // 
@@ -301,7 +292,7 @@ namespace Prototype
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "次に移動";
             // 
             // bindingNavigatorMoveLastItem
@@ -310,7 +301,7 @@ namespace Prototype
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "最後に移動";
             // 
             // bindingNavigatorSeparator2
@@ -323,7 +314,7 @@ namespace Prototype
             this.clubBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.clubBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("clubBindingNavigatorSaveItem.Image")));
             this.clubBindingNavigatorSaveItem.Name = "clubBindingNavigatorSaveItem";
-            this.clubBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.clubBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.clubBindingNavigatorSaveItem.Text = "データの保存";
             this.clubBindingNavigatorSaveItem.Click += new System.EventHandler(this.clubBindingNavigatorSaveItem_Click);
             // 
@@ -337,12 +328,11 @@ namespace Prototype
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.clubDataGridView.DataSource = this.clubBindingSource;
-            this.clubDataGridView.Location = new System.Drawing.Point(31, 402);
-            this.clubDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.clubDataGridView.Location = new System.Drawing.Point(24, 321);
             this.clubDataGridView.Name = "clubDataGridView";
             this.clubDataGridView.RowHeadersWidth = 51;
             this.clubDataGridView.RowTemplate.Height = 21;
-            this.clubDataGridView.Size = new System.Drawing.Size(323, 258);
+            this.clubDataGridView.Size = new System.Drawing.Size(242, 206);
             this.clubDataGridView.TabIndex = 12;
             this.clubDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubDataGridView_CellContentClick);
             // 
@@ -382,20 +372,18 @@ namespace Prototype
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(24, 352);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(18, 282);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 46);
+            this.label6.Size = new System.Drawing.Size(137, 37);
             this.label6.TabIndex = 13;
             this.label6.Text = "登録一覧：";
             // 
             // btConnect
             // 
             this.btConnect.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btConnect.Location = new System.Drawing.Point(361, 402);
-            this.btConnect.Margin = new System.Windows.Forms.Padding(4);
+            this.btConnect.Location = new System.Drawing.Point(271, 322);
             this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(125, 41);
+            this.btConnect.Size = new System.Drawing.Size(94, 33);
             this.btConnect.TabIndex = 14;
             this.btConnect.Text = "接続";
             this.btConnect.UseVisualStyleBackColor = true;
@@ -434,11 +422,12 @@ namespace Prototype
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.clubsDataGridView.DataSource = this.clubsBindingSource;
-            this.clubsDataGridView.Location = new System.Drawing.Point(31, 402);
+            this.clubsDataGridView.Location = new System.Drawing.Point(24, 321);
+            this.clubsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.clubsDataGridView.Name = "clubsDataGridView";
             this.clubsDataGridView.RowHeadersWidth = 51;
             this.clubsDataGridView.RowTemplate.Height = 24;
-            this.clubsDataGridView.Size = new System.Drawing.Size(323, 258);
+            this.clubsDataGridView.Size = new System.Drawing.Size(242, 206);
             this.clubsDataGridView.TabIndex = 14;
             this.clubsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubsDataGridView_CellContentClick);
             // 
@@ -477,10 +466,9 @@ namespace Prototype
             // btAdd
             // 
             this.btAdd.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btAdd.Location = new System.Drawing.Point(361, 462);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btAdd.Location = new System.Drawing.Point(271, 361);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(125, 41);
+            this.btAdd.Size = new System.Drawing.Size(94, 33);
             this.btAdd.TabIndex = 15;
             this.btAdd.Text = "追加";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -488,11 +476,10 @@ namespace Prototype
             // 
             // Form7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 694);
+            this.ClientSize = new System.Drawing.Size(420, 555);
             this.Controls.Add(this.btAdd);
-            this.Controls.Add(this.clubsDataGridView);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.clubDataGridView);
@@ -506,7 +493,7 @@ namespace Prototype
             this.Controls.Add(this.tbClubName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.clubsDataGridView);
             this.Name = "Form7";
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.Form7_Load);

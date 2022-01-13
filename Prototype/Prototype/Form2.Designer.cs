@@ -1,7 +1,7 @@
 ﻿
 namespace Prototype
 {
-    partial class Report
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@ namespace Prototype
             this.label2.TabIndex = 3;
             this.label2.Text = "合計金額";
             // 
-            // Report
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +80,7 @@ namespace Prototype
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Report";
+            this.Name = "Form2";
             this.Text = "部費管理システム";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

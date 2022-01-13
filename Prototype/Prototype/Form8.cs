@@ -25,11 +25,6 @@ namespace Prototype
             //年度決算ならデフォルトは今年度で過去の年度もComboBoxで指定可能
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void selectedRange()
         {
             if (gbRange.TabIndex == 1)
@@ -47,6 +42,17 @@ namespace Prototype
         private void gbRange_TabIndexChanged(object sender, EventArgs e)
         {
             selectedRange();
+        }
+
+        //指定した範囲の情報を部費報告書に渡す
+        private void btOk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

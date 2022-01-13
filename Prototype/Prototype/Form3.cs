@@ -12,9 +12,15 @@ namespace Prototype
 {
     public partial class Form3 : Form
     {
+        //部費報告書の画面でデータをクリックしたらそのデータの詳細をもらい表示
         public Form3()
         {
             InitializeComponent();
+        }
+
+        private void btApproval_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

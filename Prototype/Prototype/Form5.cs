@@ -20,25 +20,29 @@ namespace Prototype
         private void btOk_Click(object sender, EventArgs e)
         {
             //データベースを参照して部活IDとパスワードの組み合わせが合致したらログイン完了
-#if false //学校サーバー
+#if true //学校サーバー
             try
             {
                 var data = this.clubTableAdapter.FillByClub(this.infosys202107DataSet.Club, int.Parse(tbClubID.Text), tbPassWord.Text);
+                var datas = this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
                 int clubId = -1;
+                int index = 0;
                 if (data == 1)
                 {
                     //部活の主キー番号を記憶させて別フォームに持っていきたい
-                    foreach (var club in this.infosys202107DataSet.Club)
+                    foreach (var club in infosys202107DataSet.Club)
                     {
                         if (club.Club_No == int.Parse(tbClubID.Text))
                         {
                             clubId = club.Id;
+                            break;
                         }
+                        index++;
                     }
                     if (clubId != -1)
                     {
                         this.Hide();
-                        Registration registration = new Registration(clubId);
+                        Registration registration = new Registration(clubId,index);
                         registration.ShowDialog();
                     }
 
@@ -55,7 +59,7 @@ namespace Prototype
                 MessageBox.Show(fx.Message);
             }
 #endif
-#if true
+#if false //自宅用
             try
             {
                 var data = this.clubsTableAdapter.FillByClub(this.sampleManageDataSet1.Clubs, tbClubID.Text, tbPassWord.Text);
@@ -98,12 +102,12 @@ namespace Prototype
 
         private void clubBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-#if false //学校サーバー
+#if true //学校サーバー
             this.Validate();
             this.clubBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
 #endif
-#if true
+#if false //自宅用
             this.Validate();
             this.clubsBindingSource.EndEdit();
             this.tableAdapterManager1.UpdateAll(this.sampleManageDataSet1);
@@ -114,11 +118,11 @@ namespace Prototype
         {
             //自宅用
             // TODO: このコード行はデータを 'sampleManageDataSet1.Clubs' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.clubsTableAdapter.Fill(this.sampleManageDataSet1.Clubs);
+            //this.clubsTableAdapter.Fill(this.sampleManageDataSet1.Clubs);
 
             //学校サーバー
             // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            //this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
+            this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
 
         }
     }

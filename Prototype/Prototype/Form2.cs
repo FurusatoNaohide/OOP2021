@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototype
 {
-    public partial class Report : Form
+    public partial class Form2 : Form
     {
-        public Report()
+        public Form2()
         {
             InitializeComponent();
         }
