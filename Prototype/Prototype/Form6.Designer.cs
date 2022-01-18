@@ -39,18 +39,20 @@ namespace Prototype
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(79, 30);
+            this.label1.Location = new System.Drawing.Point(103, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 37);
+            this.label1.Size = new System.Drawing.Size(420, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "部費管理システム　管理用";
             // 
             // btManage
             // 
             this.btManage.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btManage.Location = new System.Drawing.Point(272, 185);
+            this.btManage.Location = new System.Drawing.Point(346, 217);
+            this.btManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btManage.Name = "btManage";
-            this.btManage.Size = new System.Drawing.Size(162, 67);
+            this.btManage.Size = new System.Drawing.Size(216, 84);
             this.btManage.TabIndex = 2;
             this.btManage.Text = "決算管理";
             this.btManage.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@ namespace Prototype
             // btClubRegister
             // 
             this.btClubRegister.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btClubRegister.Location = new System.Drawing.Point(55, 85);
+            this.btClubRegister.Location = new System.Drawing.Point(56, 92);
+            this.btClubRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btClubRegister.Name = "btClubRegister";
-            this.btClubRegister.Size = new System.Drawing.Size(162, 67);
+            this.btClubRegister.Size = new System.Drawing.Size(216, 84);
             this.btClubRegister.TabIndex = 3;
             this.btClubRegister.Text = "部活動登録";
             this.btClubRegister.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@ namespace Prototype
             // btCostNameRegister
             // 
             this.btCostNameRegister.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btCostNameRegister.Location = new System.Drawing.Point(55, 185);
+            this.btCostNameRegister.Location = new System.Drawing.Point(56, 217);
+            this.btCostNameRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCostNameRegister.Name = "btCostNameRegister";
-            this.btCostNameRegister.Size = new System.Drawing.Size(162, 67);
+            this.btCostNameRegister.Size = new System.Drawing.Size(216, 84);
             this.btCostNameRegister.TabIndex = 4;
             this.btCostNameRegister.Text = "費用名登録";
             this.btCostNameRegister.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@ namespace Prototype
             // btPresenterRegister
             // 
             this.btPresenterRegister.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btPresenterRegister.Location = new System.Drawing.Point(272, 85);
+            this.btPresenterRegister.Location = new System.Drawing.Point(346, 92);
+            this.btPresenterRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btPresenterRegister.Name = "btPresenterRegister";
-            this.btPresenterRegister.Size = new System.Drawing.Size(162, 67);
+            this.btPresenterRegister.Size = new System.Drawing.Size(216, 84);
             this.btPresenterRegister.TabIndex = 5;
             this.btPresenterRegister.Text = "提出者登録";
             this.btPresenterRegister.UseVisualStyleBackColor = true;
@@ -91,14 +96,15 @@ namespace Prototype
             // 
             // Form6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 264);
+            this.ClientSize = new System.Drawing.Size(622, 330);
             this.Controls.Add(this.btPresenterRegister);
             this.Controls.Add(this.btCostNameRegister);
             this.Controls.Add(this.btClubRegister);
             this.Controls.Add(this.btManage);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form6";
             this.Text = "Form6";
             this.ResumeLayout(false);

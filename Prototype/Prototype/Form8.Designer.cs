@@ -30,18 +30,18 @@ namespace Prototype
         private void InitializeComponent()
         {
             this.gbMonth = new System.Windows.Forms.GroupBox();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbApril = new System.Windows.Forms.RadioButton();
+            this.rbFebruary = new System.Windows.Forms.RadioButton();
+            this.rbMarch = new System.Windows.Forms.RadioButton();
+            this.rbMay = new System.Windows.Forms.RadioButton();
+            this.rbJanuary = new System.Windows.Forms.RadioButton();
+            this.rbJune = new System.Windows.Forms.RadioButton();
+            this.rbAugust = new System.Windows.Forms.RadioButton();
+            this.rbJuly = new System.Windows.Forms.RadioButton();
+            this.rbNovember = new System.Windows.Forms.RadioButton();
+            this.rbOctober = new System.Windows.Forms.RadioButton();
+            this.rbSeptember = new System.Windows.Forms.RadioButton();
+            this.rbDecember = new System.Windows.Forms.RadioButton();
             this.gbRange = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbYear = new System.Windows.Forms.ComboBox();
@@ -55,170 +55,173 @@ namespace Prototype
             // 
             // gbMonth
             // 
-            this.gbMonth.Controls.Add(this.radioButton12);
-            this.gbMonth.Controls.Add(this.radioButton11);
-            this.gbMonth.Controls.Add(this.radioButton10);
-            this.gbMonth.Controls.Add(this.radioButton9);
-            this.gbMonth.Controls.Add(this.radioButton8);
-            this.gbMonth.Controls.Add(this.radioButton7);
-            this.gbMonth.Controls.Add(this.radioButton6);
-            this.gbMonth.Controls.Add(this.radioButton5);
-            this.gbMonth.Controls.Add(this.radioButton4);
-            this.gbMonth.Controls.Add(this.radioButton3);
-            this.gbMonth.Controls.Add(this.radioButton2);
-            this.gbMonth.Controls.Add(this.radioButton1);
-            this.gbMonth.Location = new System.Drawing.Point(12, 38);
+            this.gbMonth.Controls.Add(this.rbApril);
+            this.gbMonth.Controls.Add(this.rbFebruary);
+            this.gbMonth.Controls.Add(this.rbMarch);
+            this.gbMonth.Controls.Add(this.rbMay);
+            this.gbMonth.Controls.Add(this.rbJanuary);
+            this.gbMonth.Controls.Add(this.rbJune);
+            this.gbMonth.Controls.Add(this.rbAugust);
+            this.gbMonth.Controls.Add(this.rbJuly);
+            this.gbMonth.Controls.Add(this.rbNovember);
+            this.gbMonth.Controls.Add(this.rbOctober);
+            this.gbMonth.Controls.Add(this.rbSeptember);
+            this.gbMonth.Controls.Add(this.rbDecember);
+            this.gbMonth.Location = new System.Drawing.Point(16, 48);
+            this.gbMonth.Margin = new System.Windows.Forms.Padding(4);
             this.gbMonth.Name = "gbMonth";
-            this.gbMonth.Size = new System.Drawing.Size(166, 112);
+            this.gbMonth.Padding = new System.Windows.Forms.Padding(4);
+            this.gbMonth.Size = new System.Drawing.Size(221, 140);
             this.gbMonth.TabIndex = 0;
             this.gbMonth.TabStop = false;
             this.gbMonth.Text = "月決算";
             // 
-            // radioButton12
+            // rbApril
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(64, 18);
-            this.radioButton12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(41, 16);
-            this.radioButton12.TabIndex = 1;
-            this.radioButton12.Tag = "1";
-            this.radioButton12.Text = "2月";
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.rbApril.AutoSize = true;
+            this.rbApril.Checked = true;
+            this.rbApril.Location = new System.Drawing.Point(16, 31);
+            this.rbApril.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbApril.Name = "rbApril";
+            this.rbApril.Size = new System.Drawing.Size(51, 19);
+            this.rbApril.TabIndex = 3;
+            this.rbApril.TabStop = true;
+            this.rbApril.Tag = "3";
+            this.rbApril.Text = "4月";
+            this.rbApril.UseVisualStyleBackColor = true;
+            this.rbApril.CheckedChanged += new System.EventHandler(this.rbApril_CheckedChanged);
             // 
-            // radioButton11
+            // rbFebruary
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(113, 18);
-            this.radioButton11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(41, 16);
-            this.radioButton11.TabIndex = 2;
-            this.radioButton11.Tag = "2";
-            this.radioButton11.Text = "3月";
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.rbFebruary.AutoSize = true;
+            this.rbFebruary.Location = new System.Drawing.Point(80, 101);
+            this.rbFebruary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbFebruary.Name = "rbFebruary";
+            this.rbFebruary.Size = new System.Drawing.Size(51, 19);
+            this.rbFebruary.TabIndex = 1;
+            this.rbFebruary.Tag = "1";
+            this.rbFebruary.Text = "2月";
+            this.rbFebruary.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // rbMarch
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(16, 38);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(41, 16);
-            this.radioButton10.TabIndex = 3;
-            this.radioButton10.Tag = "3";
-            this.radioButton10.Text = "4月";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.rbMarch.AutoSize = true;
+            this.rbMarch.Location = new System.Drawing.Point(146, 101);
+            this.rbMarch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMarch.Name = "rbMarch";
+            this.rbMarch.Size = new System.Drawing.Size(51, 19);
+            this.rbMarch.TabIndex = 2;
+            this.rbMarch.Tag = "2";
+            this.rbMarch.Text = "3月";
+            this.rbMarch.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // rbMay
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(64, 38);
-            this.radioButton9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(41, 16);
-            this.radioButton9.TabIndex = 4;
-            this.radioButton9.Tag = "4";
-            this.radioButton9.Text = "5月";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rbMay.AutoSize = true;
+            this.rbMay.Location = new System.Drawing.Point(80, 31);
+            this.rbMay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMay.Name = "rbMay";
+            this.rbMay.Size = new System.Drawing.Size(51, 19);
+            this.rbMay.TabIndex = 4;
+            this.rbMay.Tag = "4";
+            this.rbMay.Text = "5月";
+            this.rbMay.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // rbJanuary
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(113, 38);
-            this.radioButton8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(41, 16);
-            this.radioButton8.TabIndex = 5;
-            this.radioButton8.Tag = "5";
-            this.radioButton8.Text = "6月";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.rbJanuary.AutoSize = true;
+            this.rbJanuary.Location = new System.Drawing.Point(16, 101);
+            this.rbJanuary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJanuary.Name = "rbJanuary";
+            this.rbJanuary.Size = new System.Drawing.Size(51, 19);
+            this.rbJanuary.TabIndex = 0;
+            this.rbJanuary.Tag = "0";
+            this.rbJanuary.Text = "1月";
+            this.rbJanuary.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // rbJune
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(16, 58);
-            this.radioButton7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(41, 16);
-            this.radioButton7.TabIndex = 6;
-            this.radioButton7.Tag = "6";
-            this.radioButton7.Text = "7月";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.rbJune.AutoSize = true;
+            this.rbJune.Location = new System.Drawing.Point(146, 32);
+            this.rbJune.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJune.Name = "rbJune";
+            this.rbJune.Size = new System.Drawing.Size(51, 19);
+            this.rbJune.TabIndex = 5;
+            this.rbJune.Tag = "5";
+            this.rbJune.Text = "6月";
+            this.rbJune.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rbAugust
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(64, 58);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(41, 16);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.Tag = "7";
-            this.radioButton6.Text = "8月";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rbAugust.AutoSize = true;
+            this.rbAugust.Location = new System.Drawing.Point(80, 55);
+            this.rbAugust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbAugust.Name = "rbAugust";
+            this.rbAugust.Size = new System.Drawing.Size(51, 19);
+            this.rbAugust.TabIndex = 7;
+            this.rbAugust.Tag = "7";
+            this.rbAugust.Text = "8月";
+            this.rbAugust.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rbJuly
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(113, 78);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(47, 16);
-            this.radioButton5.TabIndex = 11;
-            this.radioButton5.Tag = "11";
-            this.radioButton5.Text = "12月";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbJuly.AutoSize = true;
+            this.rbJuly.Location = new System.Drawing.Point(16, 55);
+            this.rbJuly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJuly.Name = "rbJuly";
+            this.rbJuly.Size = new System.Drawing.Size(51, 19);
+            this.rbJuly.TabIndex = 6;
+            this.rbJuly.Tag = "6";
+            this.rbJuly.Text = "7月";
+            this.rbJuly.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbNovember
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(64, 78);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(47, 16);
-            this.radioButton4.TabIndex = 10;
-            this.radioButton4.Tag = "10";
-            this.radioButton4.Text = "11月";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbNovember.AutoSize = true;
+            this.rbNovember.Location = new System.Drawing.Point(80, 78);
+            this.rbNovember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbNovember.Name = "rbNovember";
+            this.rbNovember.Size = new System.Drawing.Size(59, 19);
+            this.rbNovember.TabIndex = 10;
+            this.rbNovember.Tag = "10";
+            this.rbNovember.Text = "11月";
+            this.rbNovember.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbOctober
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(16, 78);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(47, 16);
-            this.radioButton3.TabIndex = 9;
-            this.radioButton3.Tag = "9";
-            this.radioButton3.Text = "10月";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbOctober.AutoSize = true;
+            this.rbOctober.Location = new System.Drawing.Point(16, 78);
+            this.rbOctober.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOctober.Name = "rbOctober";
+            this.rbOctober.Size = new System.Drawing.Size(59, 19);
+            this.rbOctober.TabIndex = 9;
+            this.rbOctober.Tag = "9";
+            this.rbOctober.Text = "10月";
+            this.rbOctober.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbSeptember
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(113, 58);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(41, 16);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.Tag = "8";
-            this.radioButton2.Text = "9月";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbSeptember.AutoSize = true;
+            this.rbSeptember.Location = new System.Drawing.Point(146, 55);
+            this.rbSeptember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbSeptember.Name = "rbSeptember";
+            this.rbSeptember.Size = new System.Drawing.Size(51, 19);
+            this.rbSeptember.TabIndex = 8;
+            this.rbSeptember.Tag = "8";
+            this.rbSeptember.Text = "9月";
+            this.rbSeptember.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbDecember
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(16, 18);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(41, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Tag = "0";
-            this.radioButton1.Text = "1月";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbDecember.AutoSize = true;
+            this.rbDecember.Location = new System.Drawing.Point(146, 78);
+            this.rbDecember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbDecember.Name = "rbDecember";
+            this.rbDecember.Size = new System.Drawing.Size(59, 19);
+            this.rbDecember.TabIndex = 11;
+            this.rbDecember.Tag = "11";
+            this.rbDecember.Text = "12月";
+            this.rbDecember.UseVisualStyleBackColor = true;
             // 
             // gbRange
             // 
@@ -227,42 +230,40 @@ namespace Prototype
             this.gbRange.Controls.Add(this.rbYear);
             this.gbRange.Controls.Add(this.rbMonth);
             this.gbRange.Controls.Add(this.gbMonth);
-            this.gbRange.Location = new System.Drawing.Point(24, 19);
-            this.gbRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRange.Location = new System.Drawing.Point(32, 24);
+            this.gbRange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbRange.Name = "gbRange";
-            this.gbRange.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbRange.Size = new System.Drawing.Size(194, 219);
+            this.gbRange.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbRange.Size = new System.Drawing.Size(259, 274);
             this.gbRange.TabIndex = 2;
             this.gbRange.TabStop = false;
             this.gbRange.Text = "範囲選択";
-            this.gbRange.TabIndexChanged += new System.EventHandler(this.gbRange_TabIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 160);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(29, 192);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "年度決算";
             // 
             // cbYear
             // 
             this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(49, 174);
-            this.cbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbYear.Location = new System.Drawing.Point(65, 219);
+            this.cbYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(92, 20);
+            this.cbYear.Size = new System.Drawing.Size(121, 23);
             this.cbYear.TabIndex = 0;
             // 
             // rbYear
             // 
             this.rbYear.AutoSize = true;
-            this.rbYear.Location = new System.Drawing.Point(60, 17);
-            this.rbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbYear.Location = new System.Drawing.Point(80, 21);
+            this.rbYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbYear.Name = "rbYear";
-            this.rbYear.Size = new System.Drawing.Size(59, 16);
+            this.rbYear.Size = new System.Drawing.Size(73, 19);
             this.rbYear.TabIndex = 1;
             this.rbYear.Tag = "1";
             this.rbYear.Text = "年度別";
@@ -272,23 +273,24 @@ namespace Prototype
             // 
             this.rbMonth.AutoSize = true;
             this.rbMonth.Checked = true;
-            this.rbMonth.Location = new System.Drawing.Point(12, 17);
-            this.rbMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMonth.Location = new System.Drawing.Point(16, 21);
+            this.rbMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbMonth.Name = "rbMonth";
-            this.rbMonth.Size = new System.Drawing.Size(47, 16);
+            this.rbMonth.Size = new System.Drawing.Size(58, 19);
             this.rbMonth.TabIndex = 0;
             this.rbMonth.TabStop = true;
             this.rbMonth.Tag = "0";
             this.rbMonth.Text = "月別";
             this.rbMonth.UseVisualStyleBackColor = true;
+            this.rbMonth.CheckedChanged += new System.EventHandler(this.rbMonth_CheckedChanged);
             // 
             // btOk
             // 
             this.btOk.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btOk.Location = new System.Drawing.Point(64, 242);
-            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btOk.Location = new System.Drawing.Point(85, 302);
+            this.btOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(56, 32);
+            this.btOk.Size = new System.Drawing.Size(75, 40);
             this.btOk.TabIndex = 3;
             this.btOk.Text = "OK";
             this.btOk.UseVisualStyleBackColor = true;
@@ -297,10 +299,10 @@ namespace Prototype
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btCancel.Location = new System.Drawing.Point(124, 243);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btCancel.Location = new System.Drawing.Point(165, 304);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(95, 32);
+            this.btCancel.Size = new System.Drawing.Size(127, 40);
             this.btCancel.TabIndex = 4;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
@@ -308,12 +310,13 @@ namespace Prototype
             // 
             // Form8
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 294);
+            this.ClientSize = new System.Drawing.Size(317, 368);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.gbRange);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
             this.Text = "範囲指定";
             this.Load += new System.EventHandler(this.Form8_Load);
@@ -333,18 +336,18 @@ namespace Prototype
         private System.Windows.Forms.RadioButton rbMonth;
         private System.Windows.Forms.Button btOk;
         private System.Windows.Forms.Button btCancel;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbFebruary;
+        private System.Windows.Forms.RadioButton rbMarch;
+        private System.Windows.Forms.RadioButton rbApril;
+        private System.Windows.Forms.RadioButton rbMay;
+        private System.Windows.Forms.RadioButton rbJune;
+        private System.Windows.Forms.RadioButton rbJuly;
+        private System.Windows.Forms.RadioButton rbAugust;
+        private System.Windows.Forms.RadioButton rbDecember;
+        private System.Windows.Forms.RadioButton rbNovember;
+        private System.Windows.Forms.RadioButton rbOctober;
+        private System.Windows.Forms.RadioButton rbSeptember;
+        private System.Windows.Forms.RadioButton rbJanuary;
         private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.Label label1;
     }
