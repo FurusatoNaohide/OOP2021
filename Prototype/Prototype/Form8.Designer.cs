@@ -89,7 +89,6 @@ namespace Prototype
             this.rbApril.Tag = "3";
             this.rbApril.Text = "4月";
             this.rbApril.UseVisualStyleBackColor = true;
-            this.rbApril.CheckedChanged += new System.EventHandler(this.rbApril_CheckedChanged);
             // 
             // rbFebruary
             // 

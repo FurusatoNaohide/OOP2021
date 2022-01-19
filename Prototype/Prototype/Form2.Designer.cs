@@ -30,59 +30,69 @@ namespace Prototype
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cbClub = new System.Windows.Forms.ComboBox();
+            this.dgvClubCost = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClubCost)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(137, 24);
+            this.label1.Location = new System.Drawing.Point(183, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 26);
+            this.label1.Size = new System.Drawing.Size(360, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "＿＿年度＿＿月　部費報告書";
             // 
-            // comboBox1
+            // cbClub
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 1;
+            this.cbClub.FormattingEnabled = true;
+            this.cbClub.Location = new System.Drawing.Point(53, 85);
+            this.cbClub.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbClub.Name = "cbClub";
+            this.cbClub.Size = new System.Drawing.Size(160, 23);
+            this.cbClub.TabIndex = 1;
+            this.cbClub.SelectedIndexChanged += new System.EventHandler(this.cbClub_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvClubCost
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 537);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvClubCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClubCost.Location = new System.Drawing.Point(55, 138);
+            this.dgvClubCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvClubCost.Name = "dgvClubCost";
+            this.dgvClubCost.RowHeadersWidth = 51;
+            this.dgvClubCost.RowTemplate.Height = 21;
+            this.dgvClubCost.Size = new System.Drawing.Size(640, 671);
+            this.dgvClubCost.TabIndex = 2;
+            this.dgvClubCost.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvClubCost_DataError);
+            this.dgvClubCost.SelectionChanged += new System.EventHandler(this.dgvClubCost_SelectionChanged);
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(332, 650);
+            this.label2.Location = new System.Drawing.Point(443, 812);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 23);
+            this.label2.Size = new System.Drawing.Size(100, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "合計金額";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 707);
+            this.ClientSize = new System.Drawing.Size(732, 884);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvClubCost);
+            this.Controls.Add(this.cbClub);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "部費管理システム";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClubCost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,8 +100,8 @@ namespace Prototype
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cbClub;
+        private System.Windows.Forms.DataGridView dgvClubCost;
         private System.Windows.Forms.Label label2;
     }
 }

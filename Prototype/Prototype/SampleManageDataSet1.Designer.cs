@@ -285,9 +285,9 @@ namespace Prototype {
             this.tablePresenters = new PresentersDataTable();
             base.Tables.Add(this.tablePresenters);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Clubs", new global::System.Data.DataColumn[] {
-                        this.tableClubs.NoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableManages.Club_IdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Presenters", new global::System.Data.DataColumn[] {
+                        this.tablePresenters.NoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableManages.Presenter_IdColumn});
             this.tableManages.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -299,9 +299,9 @@ namespace Prototype {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Presenters", new global::System.Data.DataColumn[] {
-                        this.tablePresenters.NoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableManages.Presenter_IdColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Manages_Clubs", new global::System.Data.DataColumn[] {
+                        this.tableClubs.NoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableManages.Club_IdColumn});
             this.tableManages.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;

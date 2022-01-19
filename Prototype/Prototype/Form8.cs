@@ -12,8 +12,8 @@ namespace Prototype
 {
     public partial class Form8 : Form
     {
-        string nendo;
-        int month;
+        string _year;
+        int _month;
         System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ja-JP");
         
 
@@ -22,6 +22,7 @@ namespace Prototype
             InitializeComponent();
         }
 
+        //ここでは範囲情報を持ってくる
         private void Form8_Load(object sender, EventArgs e)
         {
             //範囲指定
@@ -40,7 +41,7 @@ namespace Prototype
             var now = DateTime.Now;
             //nendo = now.AddMonths(-3).ToString("yyyy");
             ci.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
-            nendo = now.ToString("gg y年",ci);
+            _year = now.ToString("gg y年",ci);
 
         }
 
@@ -69,19 +70,35 @@ namespace Prototype
         }
 
         //指定した範囲の情報を部費報告書に渡す
+        //どの月か決定したときに持ってくる
         private void btOk_Click(object sender, EventArgs e)
         {
-            if (rbYear.Checked)
+            try
             {
+                if (rbYear.Checked)
+                {
+                    //年度別 月は関係ない
+                    _year = cbYear.Text;
+                    _month = 0;
+                }
+                else
+                {
+                    //月別　年度は今年度（起動時に今年度が初期値になっている）
+                    //指定したグループ内のラジオボタンでチェックされているものを取り出す
+                    var rb_select = gbMonth.Controls.OfType<RadioButton>().SingleOrDefault(x => x.Checked);
+                    _month = int.Parse(rb_select.Text.Replace("月", ""));
+
+                }
                 this.Hide();
-                //Form2 form2 = new Form2(cbYear.Text);
+                Form2 form2 = new Form2(_year, _month);
+                form2.ShowDialog();
             }
-            else
+            catch (Exception ex)
             {
-                
-                this.Hide();
-                
+                MessageBox.Show(ex.Message);
             }
+            
+            
         }
 
         private void btCancel_Click(object sender, EventArgs e)
@@ -92,14 +109,6 @@ namespace Prototype
         private void rbMonth_CheckedChanged(object sender, EventArgs e)
         {
             selectedRange();
-        }
-
-        //これだと四月空の変更しか反映されていないので何処からでも反映できるメソッドを探す（改良必要）
-        private void rbApril_CheckedChanged(object sender, EventArgs e)
-        {
-            //指定したグループ内のラジオボタンでチェックされているものを取り出す
-            var rb_select = gbMonth.Controls.OfType<RadioButton>().SingleOrDefault(x => x.Checked);
-            month = int.Parse(rb_select.Text.Replace("月", ""));
         }
     }
 }
