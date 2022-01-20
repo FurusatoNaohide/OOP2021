@@ -25,17 +25,13 @@ namespace Prototype
         //ここでは範囲情報を持ってくる
         private void Form8_Load(object sender, EventArgs e)
         {
+            // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.manageTableAdapter.Fill(this.infosys202107DataSet.Manage);
             //範囲指定
             selectedRange();
             //月毎決算ならデフォルトは今年度で1月～12月のどれかを指定　デフォルト値は年度初め月の4月
             //年度決算ならデフォルトは今年度で過去の年度もComboBoxで指定可能
             //年度は登録データから該当年度を持ってくる
-
-            
-            //foreach (var item in infosys202107DataSet.Manage)
-            //{
-            //    setCbYear(item.PDate);
-            //}
 
             //初期値として現在の年度を代入
             var now = DateTime.Now;
@@ -43,6 +39,12 @@ namespace Prototype
             ci.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
             _year = now.ToString("gg y年",ci);
 
+            foreach (var item in infosys202107DataSet.Manage)
+            {
+                setCbYear(item.PDate);
+            }
+
+            cbYear.Text = _year;
         }
 
         //Manageにある提出日から年度を検出
@@ -109,6 +111,14 @@ namespace Prototype
         private void rbMonth_CheckedChanged(object sender, EventArgs e)
         {
             selectedRange();
+        }
+
+        private void manageBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.manageBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
+
         }
     }
 }

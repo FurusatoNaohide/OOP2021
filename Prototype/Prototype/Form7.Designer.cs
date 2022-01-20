@@ -329,12 +329,15 @@ namespace Prototype
             this.dataGridViewTextBoxColumn4});
             this.clubDataGridView.DataSource = this.clubBindingSource;
             this.clubDataGridView.Location = new System.Drawing.Point(24, 321);
+            this.clubDataGridView.MultiSelect = false;
             this.clubDataGridView.Name = "clubDataGridView";
             this.clubDataGridView.RowHeadersWidth = 51;
             this.clubDataGridView.RowTemplate.Height = 21;
+            this.clubDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clubDataGridView.Size = new System.Drawing.Size(242, 206);
             this.clubDataGridView.TabIndex = 12;
             this.clubDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubDataGridView_CellContentClick);
+            this.clubDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.clubDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -429,7 +432,6 @@ namespace Prototype
             this.clubsDataGridView.RowTemplate.Height = 24;
             this.clubsDataGridView.Size = new System.Drawing.Size(242, 206);
             this.clubsDataGridView.TabIndex = 14;
-            this.clubsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clubsDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn5
             // 

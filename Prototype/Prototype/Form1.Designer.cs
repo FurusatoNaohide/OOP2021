@@ -686,8 +686,10 @@ namespace Prototype
             this.dataGridViewTextBoxColumn10});
             this.manageDataGridView.DataSource = this.manageBindingSource;
             this.manageDataGridView.Location = new System.Drawing.Point(27, 443);
+            this.manageDataGridView.MultiSelect = false;
             this.manageDataGridView.Name = "manageDataGridView";
             this.manageDataGridView.RowTemplate.Height = 21;
+            this.manageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.manageDataGridView.Size = new System.Drawing.Size(446, 220);
             this.manageDataGridView.TabIndex = 25;
             this.manageDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.manageDataGridView_DataError);

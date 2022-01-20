@@ -88,6 +88,8 @@ namespace Prototype
             clubDataGridView.Columns[1].HeaderText = "部活ID";
             clubDataGridView.Columns[2].HeaderText = "部活動名";
             clubDataGridView.Columns[3].Visible = false;
+
+            clubDataGridView.Columns[1].Width = 70;
 #endif
 #if false //自宅用
             // TODO: このコード行はデータを 'sampleManageDataSet1.Clubs' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
@@ -100,15 +102,7 @@ namespace Prototype
 #endif
         }
 
-        private void clubDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void clubsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         //部活動テーブルに新規追加
         private void btAdd_Click(object sender, EventArgs e)
@@ -133,5 +127,25 @@ namespace Prototype
         {
 
         }
+
+#if true
+        //学校サーバー
+        private void clubDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void clubDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+#endif
+
+#if false //自宅用
+        private void clubsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+#endif
     }
 }

@@ -29,6 +29,7 @@ namespace Prototype
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbMonth = new System.Windows.Forms.GroupBox();
             this.rbApril = new System.Windows.Forms.RadioButton();
             this.rbFebruary = new System.Windows.Forms.RadioButton();
@@ -49,8 +50,14 @@ namespace Prototype
             this.rbMonth = new System.Windows.Forms.RadioButton();
             this.btOk = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.infosys202107DataSet = new Prototype.infosys202107DataSet();
+            this.manageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.manageTableAdapter = new Prototype.infosys202107DataSetTableAdapters.ManageTableAdapter();
+            this.tableAdapterManager = new Prototype.infosys202107DataSetTableAdapters.TableAdapterManager();
             this.gbMonth.SuspendLayout();
             this.gbRange.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbMonth
@@ -67,11 +74,9 @@ namespace Prototype
             this.gbMonth.Controls.Add(this.rbOctober);
             this.gbMonth.Controls.Add(this.rbSeptember);
             this.gbMonth.Controls.Add(this.rbDecember);
-            this.gbMonth.Location = new System.Drawing.Point(16, 48);
-            this.gbMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.gbMonth.Location = new System.Drawing.Point(12, 38);
             this.gbMonth.Name = "gbMonth";
-            this.gbMonth.Padding = new System.Windows.Forms.Padding(4);
-            this.gbMonth.Size = new System.Drawing.Size(221, 140);
+            this.gbMonth.Size = new System.Drawing.Size(166, 112);
             this.gbMonth.TabIndex = 0;
             this.gbMonth.TabStop = false;
             this.gbMonth.Text = "月決算";
@@ -80,10 +85,10 @@ namespace Prototype
             // 
             this.rbApril.AutoSize = true;
             this.rbApril.Checked = true;
-            this.rbApril.Location = new System.Drawing.Point(16, 31);
-            this.rbApril.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbApril.Location = new System.Drawing.Point(12, 25);
+            this.rbApril.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbApril.Name = "rbApril";
-            this.rbApril.Size = new System.Drawing.Size(51, 19);
+            this.rbApril.Size = new System.Drawing.Size(41, 16);
             this.rbApril.TabIndex = 3;
             this.rbApril.TabStop = true;
             this.rbApril.Tag = "3";
@@ -93,10 +98,10 @@ namespace Prototype
             // rbFebruary
             // 
             this.rbFebruary.AutoSize = true;
-            this.rbFebruary.Location = new System.Drawing.Point(80, 101);
-            this.rbFebruary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbFebruary.Location = new System.Drawing.Point(60, 81);
+            this.rbFebruary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbFebruary.Name = "rbFebruary";
-            this.rbFebruary.Size = new System.Drawing.Size(51, 19);
+            this.rbFebruary.Size = new System.Drawing.Size(41, 16);
             this.rbFebruary.TabIndex = 1;
             this.rbFebruary.Tag = "1";
             this.rbFebruary.Text = "2月";
@@ -105,10 +110,10 @@ namespace Prototype
             // rbMarch
             // 
             this.rbMarch.AutoSize = true;
-            this.rbMarch.Location = new System.Drawing.Point(146, 101);
-            this.rbMarch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMarch.Location = new System.Drawing.Point(110, 81);
+            this.rbMarch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbMarch.Name = "rbMarch";
-            this.rbMarch.Size = new System.Drawing.Size(51, 19);
+            this.rbMarch.Size = new System.Drawing.Size(41, 16);
             this.rbMarch.TabIndex = 2;
             this.rbMarch.Tag = "2";
             this.rbMarch.Text = "3月";
@@ -117,10 +122,10 @@ namespace Prototype
             // rbMay
             // 
             this.rbMay.AutoSize = true;
-            this.rbMay.Location = new System.Drawing.Point(80, 31);
-            this.rbMay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMay.Location = new System.Drawing.Point(60, 25);
+            this.rbMay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbMay.Name = "rbMay";
-            this.rbMay.Size = new System.Drawing.Size(51, 19);
+            this.rbMay.Size = new System.Drawing.Size(41, 16);
             this.rbMay.TabIndex = 4;
             this.rbMay.Tag = "4";
             this.rbMay.Text = "5月";
@@ -129,10 +134,10 @@ namespace Prototype
             // rbJanuary
             // 
             this.rbJanuary.AutoSize = true;
-            this.rbJanuary.Location = new System.Drawing.Point(16, 101);
-            this.rbJanuary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJanuary.Location = new System.Drawing.Point(12, 81);
+            this.rbJanuary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbJanuary.Name = "rbJanuary";
-            this.rbJanuary.Size = new System.Drawing.Size(51, 19);
+            this.rbJanuary.Size = new System.Drawing.Size(41, 16);
             this.rbJanuary.TabIndex = 0;
             this.rbJanuary.Tag = "0";
             this.rbJanuary.Text = "1月";
@@ -141,10 +146,10 @@ namespace Prototype
             // rbJune
             // 
             this.rbJune.AutoSize = true;
-            this.rbJune.Location = new System.Drawing.Point(146, 32);
-            this.rbJune.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJune.Location = new System.Drawing.Point(110, 26);
+            this.rbJune.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbJune.Name = "rbJune";
-            this.rbJune.Size = new System.Drawing.Size(51, 19);
+            this.rbJune.Size = new System.Drawing.Size(41, 16);
             this.rbJune.TabIndex = 5;
             this.rbJune.Tag = "5";
             this.rbJune.Text = "6月";
@@ -153,10 +158,10 @@ namespace Prototype
             // rbAugust
             // 
             this.rbAugust.AutoSize = true;
-            this.rbAugust.Location = new System.Drawing.Point(80, 55);
-            this.rbAugust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbAugust.Location = new System.Drawing.Point(60, 44);
+            this.rbAugust.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbAugust.Name = "rbAugust";
-            this.rbAugust.Size = new System.Drawing.Size(51, 19);
+            this.rbAugust.Size = new System.Drawing.Size(41, 16);
             this.rbAugust.TabIndex = 7;
             this.rbAugust.Tag = "7";
             this.rbAugust.Text = "8月";
@@ -165,10 +170,10 @@ namespace Prototype
             // rbJuly
             // 
             this.rbJuly.AutoSize = true;
-            this.rbJuly.Location = new System.Drawing.Point(16, 55);
-            this.rbJuly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbJuly.Location = new System.Drawing.Point(12, 44);
+            this.rbJuly.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbJuly.Name = "rbJuly";
-            this.rbJuly.Size = new System.Drawing.Size(51, 19);
+            this.rbJuly.Size = new System.Drawing.Size(41, 16);
             this.rbJuly.TabIndex = 6;
             this.rbJuly.Tag = "6";
             this.rbJuly.Text = "7月";
@@ -177,10 +182,10 @@ namespace Prototype
             // rbNovember
             // 
             this.rbNovember.AutoSize = true;
-            this.rbNovember.Location = new System.Drawing.Point(80, 78);
-            this.rbNovember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbNovember.Location = new System.Drawing.Point(60, 62);
+            this.rbNovember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbNovember.Name = "rbNovember";
-            this.rbNovember.Size = new System.Drawing.Size(59, 19);
+            this.rbNovember.Size = new System.Drawing.Size(47, 16);
             this.rbNovember.TabIndex = 10;
             this.rbNovember.Tag = "10";
             this.rbNovember.Text = "11月";
@@ -189,10 +194,10 @@ namespace Prototype
             // rbOctober
             // 
             this.rbOctober.AutoSize = true;
-            this.rbOctober.Location = new System.Drawing.Point(16, 78);
-            this.rbOctober.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbOctober.Location = new System.Drawing.Point(12, 62);
+            this.rbOctober.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbOctober.Name = "rbOctober";
-            this.rbOctober.Size = new System.Drawing.Size(59, 19);
+            this.rbOctober.Size = new System.Drawing.Size(47, 16);
             this.rbOctober.TabIndex = 9;
             this.rbOctober.Tag = "9";
             this.rbOctober.Text = "10月";
@@ -201,10 +206,10 @@ namespace Prototype
             // rbSeptember
             // 
             this.rbSeptember.AutoSize = true;
-            this.rbSeptember.Location = new System.Drawing.Point(146, 55);
-            this.rbSeptember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbSeptember.Location = new System.Drawing.Point(110, 44);
+            this.rbSeptember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbSeptember.Name = "rbSeptember";
-            this.rbSeptember.Size = new System.Drawing.Size(51, 19);
+            this.rbSeptember.Size = new System.Drawing.Size(41, 16);
             this.rbSeptember.TabIndex = 8;
             this.rbSeptember.Tag = "8";
             this.rbSeptember.Text = "9月";
@@ -213,10 +218,10 @@ namespace Prototype
             // rbDecember
             // 
             this.rbDecember.AutoSize = true;
-            this.rbDecember.Location = new System.Drawing.Point(146, 78);
-            this.rbDecember.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbDecember.Location = new System.Drawing.Point(110, 62);
+            this.rbDecember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbDecember.Name = "rbDecember";
-            this.rbDecember.Size = new System.Drawing.Size(59, 19);
+            this.rbDecember.Size = new System.Drawing.Size(47, 16);
             this.rbDecember.TabIndex = 11;
             this.rbDecember.Tag = "11";
             this.rbDecember.Text = "12月";
@@ -229,11 +234,11 @@ namespace Prototype
             this.gbRange.Controls.Add(this.rbYear);
             this.gbRange.Controls.Add(this.rbMonth);
             this.gbRange.Controls.Add(this.gbMonth);
-            this.gbRange.Location = new System.Drawing.Point(32, 24);
-            this.gbRange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbRange.Location = new System.Drawing.Point(15, 14);
+            this.gbRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbRange.Name = "gbRange";
-            this.gbRange.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbRange.Size = new System.Drawing.Size(259, 274);
+            this.gbRange.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRange.Size = new System.Drawing.Size(194, 219);
             this.gbRange.TabIndex = 2;
             this.gbRange.TabStop = false;
             this.gbRange.Text = "範囲選択";
@@ -241,28 +246,29 @@ namespace Prototype
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 192);
+            this.label1.Location = new System.Drawing.Point(22, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "年度決算";
             // 
             // cbYear
             // 
             this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(65, 219);
-            this.cbYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbYear.Location = new System.Drawing.Point(49, 175);
+            this.cbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(121, 23);
+            this.cbYear.Size = new System.Drawing.Size(92, 20);
             this.cbYear.TabIndex = 0;
             // 
             // rbYear
             // 
             this.rbYear.AutoSize = true;
-            this.rbYear.Location = new System.Drawing.Point(80, 21);
-            this.rbYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbYear.Location = new System.Drawing.Point(60, 17);
+            this.rbYear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbYear.Name = "rbYear";
-            this.rbYear.Size = new System.Drawing.Size(73, 19);
+            this.rbYear.Size = new System.Drawing.Size(59, 16);
             this.rbYear.TabIndex = 1;
             this.rbYear.Tag = "1";
             this.rbYear.Text = "年度別";
@@ -272,10 +278,10 @@ namespace Prototype
             // 
             this.rbMonth.AutoSize = true;
             this.rbMonth.Checked = true;
-            this.rbMonth.Location = new System.Drawing.Point(16, 21);
-            this.rbMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbMonth.Location = new System.Drawing.Point(12, 17);
+            this.rbMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbMonth.Name = "rbMonth";
-            this.rbMonth.Size = new System.Drawing.Size(58, 19);
+            this.rbMonth.Size = new System.Drawing.Size(47, 16);
             this.rbMonth.TabIndex = 0;
             this.rbMonth.TabStop = true;
             this.rbMonth.Tag = "0";
@@ -286,10 +292,10 @@ namespace Prototype
             // btOk
             // 
             this.btOk.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btOk.Location = new System.Drawing.Point(85, 302);
-            this.btOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btOk.Location = new System.Drawing.Point(55, 237);
+            this.btOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btOk.Name = "btOk";
-            this.btOk.Size = new System.Drawing.Size(75, 40);
+            this.btOk.Size = new System.Drawing.Size(56, 32);
             this.btOk.TabIndex = 3;
             this.btOk.Text = "OK";
             this.btOk.UseVisualStyleBackColor = true;
@@ -298,24 +304,46 @@ namespace Prototype
             // btCancel
             // 
             this.btCancel.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btCancel.Location = new System.Drawing.Point(165, 304);
-            this.btCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCancel.Location = new System.Drawing.Point(115, 238);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(127, 40);
+            this.btCancel.Size = new System.Drawing.Size(95, 32);
             this.btCancel.TabIndex = 4;
             this.btCancel.Text = "キャンセル";
             this.btCancel.UseVisualStyleBackColor = true;
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
+            // infosys202107DataSet
+            // 
+            this.infosys202107DataSet.DataSetName = "infosys202107DataSet";
+            this.infosys202107DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // manageBindingSource
+            // 
+            this.manageBindingSource.DataMember = "Manage";
+            this.manageBindingSource.DataSource = this.infosys202107DataSet;
+            // 
+            // manageTableAdapter
+            // 
+            this.manageTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClubTableAdapter = null;
+            this.tableAdapterManager.CostTableAdapter = null;
+            this.tableAdapterManager.ManageTableAdapter = this.manageTableAdapter;
+            this.tableAdapterManager.PresentersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Prototype.infosys202107DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form8
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 368);
+            this.ClientSize = new System.Drawing.Size(232, 281);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.gbRange);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
             this.Text = "範囲指定";
             this.Load += new System.EventHandler(this.Form8_Load);
@@ -323,6 +351,8 @@ namespace Prototype
             this.gbMonth.PerformLayout();
             this.gbRange.ResumeLayout(false);
             this.gbRange.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.infosys202107DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.manageBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +379,9 @@ namespace Prototype
         private System.Windows.Forms.RadioButton rbJanuary;
         private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.Label label1;
+        private infosys202107DataSet infosys202107DataSet;
+        private System.Windows.Forms.BindingSource manageBindingSource;
+        private infosys202107DataSetTableAdapters.ManageTableAdapter manageTableAdapter;
+        private infosys202107DataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

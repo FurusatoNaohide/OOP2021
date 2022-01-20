@@ -62,5 +62,10 @@ namespace Prototype
         {
             this.Close();
         }
+
+        private void presentersDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

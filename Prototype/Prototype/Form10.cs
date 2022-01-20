@@ -60,5 +60,10 @@ namespace Prototype
         {
             this.Close();
         }
+
+        private void costDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

@@ -55,10 +55,7 @@ namespace Prototype
             manageDataGridView.CurrentRow.Cells[7].Value = pbReceipt.Image;
             manageDataGridView.CurrentRow.Cells[10].Value = _clubId;
 
-            //データベースへ反映
-            this.Validate();
-            this.manageBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
+            manageBindingNavigatorSaveItem_Click(sender, e);
         }
 
         private void Registration_Load(object sender, EventArgs e)
@@ -69,6 +66,7 @@ namespace Prototype
             this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
             // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             //this.manageTableAdapter.Fill(this.infosys202107DataSet.Manage);
+            //※予期せぬ動作　ここで「シーケンスに要素が含まれていません」と出てくる。
             this.manageTableAdapter.FillByClub(this.infosys202107DataSet.Manage, _clubId);
             // TODO: このコード行はデータを 'infosys202107DataSet.Presenters' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.presentersTableAdapter.Fill(this.infosys202107DataSet.Presenters);
@@ -146,6 +144,7 @@ namespace Prototype
         private void manageBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
 #if true //学校サーバー
+            //データベースへ反映
             this.Validate();
             this.manageBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.infosys202107DataSet);
@@ -187,7 +186,11 @@ namespace Prototype
         //削除ボタン
         private void btDelete_Click(object sender, EventArgs e)
         {
-            
+            //DataGridViewSelectedRowCollection sRow = manageDataGridView.SelectedRows;
+            //for (int i = sRow.Count; i >= 0; i--)
+            //{
+            //    manageDataGridView.Rows.RemoveAt(sRow[i].Index);
+            //}
         }
 
         //新規ボタン押下　データボックス初期化
@@ -229,17 +232,26 @@ namespace Prototype
         private int Presenter_Refer(string name)
         {
             #region
-            var pData = infosys202107DataSet.Presenters.Where(x => x.Name == name).First();
             int P_Id = 0;
-            if (pData != null)
+            try
             {
-                P_Id = pData.Id;
+                var pData = infosys202107DataSet.Presenters.Where(x => x.Name == name).First();
+                
+                if (pData != null)
+                {
+                    P_Id = pData.Id;
+                }
+                else
+                {
+                    cbPresenter.Text = null;
+                    MessageBox.Show("この名前は登録されていません。\r\nもう一度確認するか、登録してください。");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cbPresenter.Text = null;
-                MessageBox.Show("この名前は登録されていません。\r\nもう一度確認するか、登録してください。");
+                MessageBox.Show(ex.Message);
             }
+
             return P_Id;
             #endregion
         }
@@ -247,17 +259,26 @@ namespace Prototype
         private int Cost_Refer(string costname)
         {
             #region
-            var cData = infosys202107DataSet.Cost.Where(x => x.Name == costname).First();
             int C_Id = 0;
-            if (cData != null)
+            try
             {
-                C_Id = cData.Id;
+                var cData = infosys202107DataSet.Cost.Where(x => x.Name == costname).First();
+                
+                if (cData != null)
+                {
+                    C_Id = cData.Id;
+                }
+                else
+                {
+                    cbCostName.Text = null;
+                    MessageBox.Show("この費用名は登録されていません。\r\nもう一度確認するか、登録してください。");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                cbCostName.Text = null;
-                MessageBox.Show("この費用名は登録されていません。\r\nもう一度確認するか、登録してください。");
+                MessageBox.Show(ex.Message);
             }
+
             return C_Id;
             #endregion
         }
@@ -274,7 +295,7 @@ namespace Prototype
                 //提出者名と費用名は外部キーで持ってくる
                 cbPresenter.Text = Presenter_getName(manageDataGridView.CurrentRow.Cells[3].Value.ToString());
                 cbCostName.Text = Cost_getName(manageDataGridView.CurrentRow.Cells[4].Value.ToString());
-                tbMoney.Text = manageDataGridView.CurrentRow.Cells[5].Value.ToString();
+                tbMoney.Text = double.Parse(manageDataGridView.CurrentRow.Cells[5].Value.ToString()).ToString();
                 tbSummary.Text = manageDataGridView.CurrentRow.Cells[6].Value.ToString();
                 pbReceipt.Image = ByteArrayToImage((byte[])manageDataGridView.CurrentRow.Cells[7].Value);
 
