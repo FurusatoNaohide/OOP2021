@@ -41,7 +41,7 @@ namespace Prototype
                     }
                     if (clubId != -1)
                     {
-                        this.Hide();
+                        //this.Hide();
                         Registration registration = new Registration(clubId,index);
                         registration.ShowDialog();
                     }

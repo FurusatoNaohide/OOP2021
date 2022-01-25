@@ -216,6 +216,7 @@ namespace Prototype
             this.Controls.Add(this.lbPDate);
             this.Name = "Form3";
             this.Text = "確認画面";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbReceipt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

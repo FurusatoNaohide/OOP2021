@@ -13,13 +13,13 @@ namespace Prototype
     public partial class Form2 : Form
     {
         private string _year;
-        private int _month;
+        private string _month;
 
         private DateTime _PresentedDate;
         private DateTime _UsedDate;
         private string _Presenter;
         private string _CostName;
-        private string _Money;
+        private double _Money;
         private string _Summary;
         private Image _Recipt;
 
@@ -33,7 +33,11 @@ namespace Prototype
         {
             InitializeComponent();
             _year = year;
-            _month = month;
+            if (month != 0)
+            {
+                _month = month + "月";
+            }
+            
         }
 
         //データベース導入（Manage）クエリ追加
@@ -51,6 +55,9 @@ namespace Prototype
             {
                 setCbClub(item.Name);
             }
+
+            //年度表示
+            lbYearOrMonth.Text = _year + _month;
 
             //範囲抽出
 
@@ -85,6 +92,8 @@ namespace Prototype
             //部活IDを基に、部活ごとのデータを持ってくる
             this.clubTableAdapter.FillByNameforId(this.infosys202107DataSet.Club, cbClub.Text);
             var club_id = infosys202107DataSet.Club.FirstOrDefault().Id;
+            manageDataGridView.CurrentCell = null;
+            //部活IDと一緒に年度又は年度と月を条件に抽出する
             this.manageTableAdapter.FillByClub(this.infosys202107DataSet.Manage,club_id);
 
             // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
@@ -104,39 +113,19 @@ namespace Prototype
         //データ選択後別フォームに情報を持っていく
         private void dgvClubCost_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvClubCost.CurrentRow == null) return;
-            try
-            {
-                _PresentedDate = (DateTime)dgvClubCost.CurrentRow.Cells[1].Value;
-                _UsedDate = (DateTime)dgvClubCost.CurrentRow.Cells[2].Value;
-                //提出者名と費用名は外部キーで持ってくる
-                _Presenter = Presenter_getName(dgvClubCost.CurrentRow.Cells[3].Value.ToString());
-                _CostName = Cost_getName(dgvClubCost.CurrentRow.Cells[4].Value.ToString());
-                _Money = dgvClubCost.CurrentRow.Cells[5].Value.ToString();
-                _Summary = dgvClubCost.CurrentRow.Cells[6].Value.ToString();
-                _Recipt = ByteArrayToImage((byte[])dgvClubCost.CurrentRow.Cells[7].Value);
-
-            }
-            catch (InvalidCastException) //変換できなかったときのエラー
-            {
-                _Recipt = null;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
+            
         }
 
-        //データベース導入後コメント文解除+修正
         private string Presenter_getName(string pId)
         {
             #region
-            //var pdata = infosys202107DataSet.Presenters.Where(x => x.Id == int.Parse(pId)).First();
+            var pdata = infosys202107DataSet.Presenters.Where(x => x.Id == int.Parse(pId)).First();
             string p_Name = null;
-            //if (pdata != null)
-            //{
-            //    p_Name = pdata.Name;
-            //}
+            if (pdata != null)
+            {
+                p_Name = pdata.Name;
+            }
             return p_Name;
             #endregion
         }
@@ -190,6 +179,84 @@ namespace Prototype
         private void manageDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void manageDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+#if false
+            //if (manageDataGridView.CurrentRow == null) return;
+            //try
+            //{
+            //    _PresentedDate = (DateTime)manageDataGridView.CurrentRow.Cells[1].Value;
+            //    _UsedDate = (DateTime)manageDataGridView.CurrentRow.Cells[2].Value;
+            //    //提出者名と費用名は外部キーで持ってくる
+            //    _Presenter = Presenter_getName(manageDataGridView.CurrentRow.Cells[3].Value.ToString());
+            //    _CostName = Cost_getName(manageDataGridView.CurrentRow.Cells[4].Value.ToString());
+            //    _Money = double.Parse(manageDataGridView.CurrentRow.Cells[5].Value.ToString());
+            //    _Summary = manageDataGridView.CurrentRow.Cells[6].Value.ToString();
+            //    _Recipt = ByteArrayToImage((byte[])manageDataGridView.CurrentRow.Cells[7].Value);
+
+
+            //}
+            //catch (InvalidCastException) //変換できなかったときのエラー
+            //{
+            //    _Recipt = null;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //Form3 f3 = new Form3(_PresentedDate, _UsedDate, _Presenter, _CostName, _Money, _Summary, _Recipt);
+            //f3.ShowDialog();
+#endif
+        }
+
+        private void manageDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            if (manageDataGridView.CurrentRow == null) return;
+            try
+            {
+                _PresentedDate = (DateTime)manageDataGridView.CurrentRow.Cells[1].Value;
+                _UsedDate = (DateTime)manageDataGridView.CurrentRow.Cells[2].Value;
+                //提出者名と費用名は外部キーで持ってくる
+                _Presenter = Presenter_getName(manageDataGridView.CurrentRow.Cells[3].Value.ToString());
+                _CostName = Cost_getName(manageDataGridView.CurrentRow.Cells[4].Value.ToString());
+                _Money = double.Parse(manageDataGridView.CurrentRow.Cells[5].Value.ToString());
+                _Summary = manageDataGridView.CurrentRow.Cells[6].Value.ToString();
+                _Recipt = ByteArrayToImage((byte[])manageDataGridView.CurrentRow.Cells[7].Value);
+
+
+            }
+            catch (InvalidCastException) //変換できなかったときのエラー
+            {
+                _Recipt = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            using (Form3 f3 = new Form3())
+            {
+
+                //プロパティに値を設定し、詳細画面を開く
+                f3.PresentedDate = this._PresentedDate;
+                f3.UsedDate = this._UsedDate;
+                f3.Presenter = this._Presenter;
+                f3.CostName = this._CostName;
+                f3.Money = this._Money;
+                f3.Summary = this._Summary;
+                f3.Recipt = this._Recipt;
+
+                f3.ShowDialog(this);
+                //詳細画面で設定されたプロパティから値を反映する
+                this.manageDataGridView.CurrentRow.Cells[8].Value = f3.Confimation; //確認欄
+                this.manageDataGridView.CurrentRow.Cells[9].Value = f3.Remarks;
+            }
+
+
+            //Form3 f3 = new Form3(_PresentedDate, _UsedDate, _Presenter, _CostName, _Money, _Summary, _Recipt);
+            //f3.ShowDialog();
         }
     }
 }

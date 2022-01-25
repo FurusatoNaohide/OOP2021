@@ -64,14 +64,16 @@ namespace Prototype
 #if true //学校サーバー
             // TODO: このコード行はデータを 'infosys202107DataSet.Club' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.clubTableAdapter.Fill(this.infosys202107DataSet.Club);
-            // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            //this.manageTableAdapter.Fill(this.infosys202107DataSet.Manage);
-            //※予期せぬ動作　ここで「シーケンスに要素が含まれていません」と出てくる。
-            this.manageTableAdapter.FillByClub(this.infosys202107DataSet.Manage, _clubId);
             // TODO: このコード行はデータを 'infosys202107DataSet.Presenters' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.presentersTableAdapter.Fill(this.infosys202107DataSet.Presenters);
             // TODO: このコード行はデータを 'infosys202107DataSet.Cost' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.costTableAdapter.Fill(this.infosys202107DataSet.Cost);
+
+            // TODO: このコード行はデータを 'infosys202107DataSet.Manage' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            //this.manageTableAdapter.Fill(this.infosys202107DataSet.Manage);
+            //※予期せぬ動作　ここで「シーケンスに要素が含まれていません」と出てくる。
+            this.manageTableAdapter.FillByClub(this.infosys202107DataSet.Manage, _clubId);
+            
 
             lbClubName.Text = this.infosys202107DataSet.Club[_index].Name;
 
